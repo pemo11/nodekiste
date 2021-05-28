@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Die Messewerte für den angefragten Zeitraum</title>
+        <link rel="stylesheet" href="styles.css"></link>
+        <script src="jQuery/jquery-3.6.0.js" type = "text/javascript"></script>
+        <script>
+            // Direktes Einbinden von Platzhaltern ist möglich
+            var tagesDatum = '<%- datum %>'
+
+            $().ready(function() {
+                console.log("jQuery on board...");
+                // Laden der Json-Daten
+                let jsonPfad = "messwerte_klein.json";
+                $.getJSON(jsonPfad, function(jsonData) {
+                    // jsonData kann als Array angesprochen werden
+                    $.each(jsonData, (i,daten) => {
+                        // # ist der id selector
+                        // Ein unsichtbares Html als "Behälter" für Werte ist nicht erforderlich
+                        // tagesDatum = $("#datum").text();
+                        // Das Ergebnis ist [Tag, Monat, Jahr]
+                        tagesDatumElemente = tagesDatum.split(".");
+                        // console.log(tagesDatumElemente);
+                        // das JSON-Datum /Date(1609459260000)/ muss noch etwas aufbereitet werden
+                        jsonDate = daten["TimeStamp"]
+                        datum = new Date(parseInt(jsonDate.substr(6)));
+                        // Direktes Vergleichen der Datumsbestandteile ist vermutlich am einfachsten
+                        // Wichtig: getMonth() beginnt bei 0 
+                        // Wichtig: getDate() liefert den Tag des Monats, getDay() liefert den Tag der Woche!
+                        if (datum.getDate() == parseInt(tagesDatumElemente[0]) && (datum.getMonth() + 1) == parseInt(tagesDatumElemente[1]) && datum.getFullYear() == parseInt(tagesDatumElemente[2])) {
+                            // console.log("Datum="+ [datum.getDate(),(datum.getMonth()+1),datum.getFullYear()]);
+                            // console.log("Tagesdatum=" + [parseInt(tagesDatumElemente[0]),parseInt(tagesDatumElemente[1]),parseInt(tagesDatumElemente[2])])
+                            // console.log(datum);
+                            // Relativ umständlich
+                            // datumTxt = datum.getFullYear() + "." + (datum.getMonth()+1) + "." + datum.getDate() + " " + datum.getHours() + ":" + datum.getMinutes()
+                            // Etwas moderner
+                            datumTxt = datum.toLocaleDateString("de-DE", {
+                                year: "numeric",
+                                month: "2-digit",
+                                day: "2-digit"
+                            });
+                            datumTxt += " " + datum.toLocaleTimeString();
+                            trText = "<tr><td>" + (i+1) + "</td><td>" + datumTxt + "</td><td>" + daten["Wert"] + "</td></tr>"
+                            $("#messwerte > tbody:last").append(trText);
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h3>Die aktuellen Messewerte für den <%= datum %></h3>
+        <!-- <div id="datum"><%= datum %></div> -->
+        <div id="daten">
+            <table id="messwerte">
+                <th>Nr</th><th>Zeitstempel</th><th>Wert</th>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>   
+        <p>
+        <h5>Remembering Les McKeown</h5>
+    </body>
+</html>

@@ -1,0 +1,2490 @@
+[
+    {
+        "TimeStamp":  "\/Date(1609459260000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1609462860000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1609466460000)\/",
+        "Wert":  25
+    },
+    {
+        "TimeStamp":  "\/Date(1609470060000)\/",
+        "Wert":  4
+    },
+    {
+        "TimeStamp":  "\/Date(1609473660000)\/",
+        "Wert":  -20
+    },
+    {
+        "TimeStamp":  "\/Date(1609477260000)\/",
+        "Wert":  16
+    },
+    {
+        "TimeStamp":  "\/Date(1609480860000)\/",
+        "Wert":  6
+    },
+    {
+        "TimeStamp":  "\/Date(1609484460000)\/",
+        "Wert":  36
+    },
+    {
+        "TimeStamp":  "\/Date(1609488060000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1609491660000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1609495260000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1609498860000)\/",
+        "Wert":  38
+    },
+    {
+        "TimeStamp":  "\/Date(1609502460000)\/",
+        "Wert":  -22
+    },
+    {
+        "TimeStamp":  "\/Date(1609506060000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1609509660000)\/",
+        "Wert":  7
+    },
+    {
+        "TimeStamp":  "\/Date(1609513260000)\/",
+        "Wert":  -23
+    },
+    {
+        "TimeStamp":  "\/Date(1609516860000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1609520460000)\/",
+        "Wert":  -2
+    },
+    {
+        "TimeStamp":  "\/Date(1609524060000)\/",
+        "Wert":  25
+    },
+    {
+        "TimeStamp":  "\/Date(1609527660000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1609531260000)\/",
+        "Wert":  16
+    },
+    {
+        "TimeStamp":  "\/Date(1609534860000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1609538460000)\/",
+        "Wert":  9
+    },
+    {
+        "TimeStamp":  "\/Date(1609545660000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1609549260000)\/",
+        "Wert":  -19
+    },
+    {
+        "TimeStamp":  "\/Date(1609552860000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1609556460000)\/",
+        "Wert":  -7
+    },
+    {
+        "TimeStamp":  "\/Date(1609560060000)\/",
+        "Wert":  -9
+    },
+    {
+        "TimeStamp":  "\/Date(1609563660000)\/",
+        "Wert":  -4
+    },
+    {
+        "TimeStamp":  "\/Date(1609567260000)\/",
+        "Wert":  22
+    },
+    {
+        "TimeStamp":  "\/Date(1609570860000)\/",
+        "Wert":  -22
+    },
+    {
+        "TimeStamp":  "\/Date(1609574460000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1609578060000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1609581660000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1609585260000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1609588860000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1609592460000)\/",
+        "Wert":  31
+    },
+    {
+        "TimeStamp":  "\/Date(1609596060000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1609599660000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1609603260000)\/",
+        "Wert":  28
+    },
+    {
+        "TimeStamp":  "\/Date(1609606860000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1609610460000)\/",
+        "Wert":  -18
+    },
+    {
+        "TimeStamp":  "\/Date(1609614060000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1609617660000)\/",
+        "Wert":  22
+    },
+    {
+        "TimeStamp":  "\/Date(1609621260000)\/",
+        "Wert":  -15
+    },
+    {
+        "TimeStamp":  "\/Date(1609624860000)\/",
+        "Wert":  35
+    },
+    {
+        "TimeStamp":  "\/Date(1609632060000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1609635660000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1609639260000)\/",
+        "Wert":  22
+    },
+    {
+        "TimeStamp":  "\/Date(1609642860000)\/",
+        "Wert":  -18
+    },
+    {
+        "TimeStamp":  "\/Date(1609646460000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1609650060000)\/",
+        "Wert":  -18
+    },
+    {
+        "TimeStamp":  "\/Date(1609653660000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1609657260000)\/",
+        "Wert":  -19
+    },
+    {
+        "TimeStamp":  "\/Date(1609660860000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1609664460000)\/",
+        "Wert":  10
+    },
+    {
+        "TimeStamp":  "\/Date(1609668060000)\/",
+        "Wert":  33
+    },
+    {
+        "TimeStamp":  "\/Date(1609671660000)\/",
+        "Wert":  -21
+    },
+    {
+        "TimeStamp":  "\/Date(1609675260000)\/",
+        "Wert":  23
+    },
+    {
+        "TimeStamp":  "\/Date(1609678860000)\/",
+        "Wert":  -3
+    },
+    {
+        "TimeStamp":  "\/Date(1609682460000)\/",
+        "Wert":  -9
+    },
+    {
+        "TimeStamp":  "\/Date(1609686060000)\/",
+        "Wert":  38
+    },
+    {
+        "TimeStamp":  "\/Date(1609689660000)\/",
+        "Wert":  38
+    },
+    {
+        "TimeStamp":  "\/Date(1609693260000)\/",
+        "Wert":  36
+    },
+    {
+        "TimeStamp":  "\/Date(1609696860000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1609700460000)\/",
+        "Wert":  -21
+    },
+    {
+        "TimeStamp":  "\/Date(1609704060000)\/",
+        "Wert":  25
+    },
+    {
+        "TimeStamp":  "\/Date(1609707660000)\/",
+        "Wert":  40
+    },
+    {
+        "TimeStamp":  "\/Date(1609711260000)\/",
+        "Wert":  -20
+    },
+    {
+        "TimeStamp":  "\/Date(1609718460000)\/",
+        "Wert":  6
+    },
+    {
+        "TimeStamp":  "\/Date(1609722060000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1609725660000)\/",
+        "Wert":  -13
+    },
+    {
+        "TimeStamp":  "\/Date(1609729260000)\/",
+        "Wert":  15
+    },
+    {
+        "TimeStamp":  "\/Date(1609732860000)\/",
+        "Wert":  -23
+    },
+    {
+        "TimeStamp":  "\/Date(1609736460000)\/",
+        "Wert":  39
+    },
+    {
+        "TimeStamp":  "\/Date(1609740060000)\/",
+        "Wert":  -6
+    },
+    {
+        "TimeStamp":  "\/Date(1609743660000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1609747260000)\/",
+        "Wert":  -6
+    },
+    {
+        "TimeStamp":  "\/Date(1609750860000)\/",
+        "Wert":  -30
+    },
+    {
+        "TimeStamp":  "\/Date(1609754460000)\/",
+        "Wert":  -29
+    },
+    {
+        "TimeStamp":  "\/Date(1609758060000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1609761660000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1609765260000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1609768860000)\/",
+        "Wert":  -16
+    },
+    {
+        "TimeStamp":  "\/Date(1609772460000)\/",
+        "Wert":  28
+    },
+    {
+        "TimeStamp":  "\/Date(1609776060000)\/",
+        "Wert":  28
+    },
+    {
+        "TimeStamp":  "\/Date(1609779660000)\/",
+        "Wert":  -30
+    },
+    {
+        "TimeStamp":  "\/Date(1609783260000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1609786860000)\/",
+        "Wert":  -17
+    },
+    {
+        "TimeStamp":  "\/Date(1609790460000)\/",
+        "Wert":  19
+    },
+    {
+        "TimeStamp":  "\/Date(1609794060000)\/",
+        "Wert":  -15
+    },
+    {
+        "TimeStamp":  "\/Date(1609797660000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1609804860000)\/",
+        "Wert":  -23
+    },
+    {
+        "TimeStamp":  "\/Date(1609808460000)\/",
+        "Wert":  38
+    },
+    {
+        "TimeStamp":  "\/Date(1609812060000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1609815660000)\/",
+        "Wert":  9
+    },
+    {
+        "TimeStamp":  "\/Date(1609819260000)\/",
+        "Wert":  31
+    },
+    {
+        "TimeStamp":  "\/Date(1609822860000)\/",
+        "Wert":  9
+    },
+    {
+        "TimeStamp":  "\/Date(1609826460000)\/",
+        "Wert":  15
+    },
+    {
+        "TimeStamp":  "\/Date(1609830060000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1609833660000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1609837260000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1609840860000)\/",
+        "Wert":  6
+    },
+    {
+        "TimeStamp":  "\/Date(1609844460000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1609848060000)\/",
+        "Wert":  -21
+    },
+    {
+        "TimeStamp":  "\/Date(1609851660000)\/",
+        "Wert":  -21
+    },
+    {
+        "TimeStamp":  "\/Date(1609855260000)\/",
+        "Wert":  25
+    },
+    {
+        "TimeStamp":  "\/Date(1609858860000)\/",
+        "Wert":  -19
+    },
+    {
+        "TimeStamp":  "\/Date(1609862460000)\/",
+        "Wert":  -12
+    },
+    {
+        "TimeStamp":  "\/Date(1609866060000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1609869660000)\/",
+        "Wert":  39
+    },
+    {
+        "TimeStamp":  "\/Date(1609873260000)\/",
+        "Wert":  33
+    },
+    {
+        "TimeStamp":  "\/Date(1609876860000)\/",
+        "Wert":  -13
+    },
+    {
+        "TimeStamp":  "\/Date(1609880460000)\/",
+        "Wert":  -12
+    },
+    {
+        "TimeStamp":  "\/Date(1609884060000)\/",
+        "Wert":  31
+    },
+    {
+        "TimeStamp":  "\/Date(1609891260000)\/",
+        "Wert":  6
+    },
+    {
+        "TimeStamp":  "\/Date(1609894860000)\/",
+        "Wert":  -7
+    },
+    {
+        "TimeStamp":  "\/Date(1609898460000)\/",
+        "Wert":  27
+    },
+    {
+        "TimeStamp":  "\/Date(1609902060000)\/",
+        "Wert":  1
+    },
+    {
+        "TimeStamp":  "\/Date(1609905660000)\/",
+        "Wert":  -9
+    },
+    {
+        "TimeStamp":  "\/Date(1609909260000)\/",
+        "Wert":  40
+    },
+    {
+        "TimeStamp":  "\/Date(1609912860000)\/",
+        "Wert":  24
+    },
+    {
+        "TimeStamp":  "\/Date(1609916460000)\/",
+        "Wert":  15
+    },
+    {
+        "TimeStamp":  "\/Date(1609920060000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1609923660000)\/",
+        "Wert":  26
+    },
+    {
+        "TimeStamp":  "\/Date(1609927260000)\/",
+        "Wert":  23
+    },
+    {
+        "TimeStamp":  "\/Date(1609930860000)\/",
+        "Wert":  -21
+    },
+    {
+        "TimeStamp":  "\/Date(1609934460000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1609938060000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1609941660000)\/",
+        "Wert":  -12
+    },
+    {
+        "TimeStamp":  "\/Date(1609945260000)\/",
+        "Wert":  5
+    },
+    {
+        "TimeStamp":  "\/Date(1609948860000)\/",
+        "Wert":  -7
+    },
+    {
+        "TimeStamp":  "\/Date(1609952460000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1609956060000)\/",
+        "Wert":  19
+    },
+    {
+        "TimeStamp":  "\/Date(1609959660000)\/",
+        "Wert":  36
+    },
+    {
+        "TimeStamp":  "\/Date(1609963260000)\/",
+        "Wert":  -19
+    },
+    {
+        "TimeStamp":  "\/Date(1609966860000)\/",
+        "Wert":  21
+    },
+    {
+        "TimeStamp":  "\/Date(1609970460000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1609977660000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1609981260000)\/",
+        "Wert":  29
+    },
+    {
+        "TimeStamp":  "\/Date(1609984860000)\/",
+        "Wert":  32
+    },
+    {
+        "TimeStamp":  "\/Date(1609988460000)\/",
+        "Wert":  29
+    },
+    {
+        "TimeStamp":  "\/Date(1609992060000)\/",
+        "Wert":  -3
+    },
+    {
+        "TimeStamp":  "\/Date(1609995660000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1609999260000)\/",
+        "Wert":  -23
+    },
+    {
+        "TimeStamp":  "\/Date(1610002860000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1610006460000)\/",
+        "Wert":  -3
+    },
+    {
+        "TimeStamp":  "\/Date(1610010060000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1610013660000)\/",
+        "Wert":  -20
+    },
+    {
+        "TimeStamp":  "\/Date(1610017260000)\/",
+        "Wert":  -18
+    },
+    {
+        "TimeStamp":  "\/Date(1610020860000)\/",
+        "Wert":  26
+    },
+    {
+        "TimeStamp":  "\/Date(1610024460000)\/",
+        "Wert":  -17
+    },
+    {
+        "TimeStamp":  "\/Date(1610028060000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1610031660000)\/",
+        "Wert":  22
+    },
+    {
+        "TimeStamp":  "\/Date(1610035260000)\/",
+        "Wert":  -19
+    },
+    {
+        "TimeStamp":  "\/Date(1610038860000)\/",
+        "Wert":  -20
+    },
+    {
+        "TimeStamp":  "\/Date(1610042460000)\/",
+        "Wert":  -7
+    },
+    {
+        "TimeStamp":  "\/Date(1610046060000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1610049660000)\/",
+        "Wert":  -17
+    },
+    {
+        "TimeStamp":  "\/Date(1610053260000)\/",
+        "Wert":  -6
+    },
+    {
+        "TimeStamp":  "\/Date(1610056860000)\/",
+        "Wert":  -12
+    },
+    {
+        "TimeStamp":  "\/Date(1610064060000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1610067660000)\/",
+        "Wert":  18
+    },
+    {
+        "TimeStamp":  "\/Date(1610071260000)\/",
+        "Wert":  -3
+    },
+    {
+        "TimeStamp":  "\/Date(1610074860000)\/",
+        "Wert":  -17
+    },
+    {
+        "TimeStamp":  "\/Date(1610078460000)\/",
+        "Wert":  32
+    },
+    {
+        "TimeStamp":  "\/Date(1610082060000)\/",
+        "Wert":  -20
+    },
+    {
+        "TimeStamp":  "\/Date(1610085660000)\/",
+        "Wert":  26
+    },
+    {
+        "TimeStamp":  "\/Date(1610089260000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1610092860000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1610096460000)\/",
+        "Wert":  7
+    },
+    {
+        "TimeStamp":  "\/Date(1610100060000)\/",
+        "Wert":  38
+    },
+    {
+        "TimeStamp":  "\/Date(1610103660000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1610107260000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1610110860000)\/",
+        "Wert":  29
+    },
+    {
+        "TimeStamp":  "\/Date(1610114460000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1610118060000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1610121660000)\/",
+        "Wert":  24
+    },
+    {
+        "TimeStamp":  "\/Date(1610125260000)\/",
+        "Wert":  1
+    },
+    {
+        "TimeStamp":  "\/Date(1610128860000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1610132460000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1610136060000)\/",
+        "Wert":  -21
+    },
+    {
+        "TimeStamp":  "\/Date(1610139660000)\/",
+        "Wert":  4
+    },
+    {
+        "TimeStamp":  "\/Date(1610143260000)\/",
+        "Wert":  1
+    },
+    {
+        "TimeStamp":  "\/Date(1610150460000)\/",
+        "Wert":  25
+    },
+    {
+        "TimeStamp":  "\/Date(1610154060000)\/",
+        "Wert":  40
+    },
+    {
+        "TimeStamp":  "\/Date(1610157660000)\/",
+        "Wert":  9
+    },
+    {
+        "TimeStamp":  "\/Date(1610161260000)\/",
+        "Wert":  19
+    },
+    {
+        "TimeStamp":  "\/Date(1610164860000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1610168460000)\/",
+        "Wert":  -7
+    },
+    {
+        "TimeStamp":  "\/Date(1610172060000)\/",
+        "Wert":  33
+    },
+    {
+        "TimeStamp":  "\/Date(1610175660000)\/",
+        "Wert":  27
+    },
+    {
+        "TimeStamp":  "\/Date(1610179260000)\/",
+        "Wert":  -2
+    },
+    {
+        "TimeStamp":  "\/Date(1610182860000)\/",
+        "Wert":  -23
+    },
+    {
+        "TimeStamp":  "\/Date(1610186460000)\/",
+        "Wert":  -6
+    },
+    {
+        "TimeStamp":  "\/Date(1610190060000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1610193660000)\/",
+        "Wert":  -2
+    },
+    {
+        "TimeStamp":  "\/Date(1610197260000)\/",
+        "Wert":  24
+    },
+    {
+        "TimeStamp":  "\/Date(1610200860000)\/",
+        "Wert":  39
+    },
+    {
+        "TimeStamp":  "\/Date(1610204460000)\/",
+        "Wert":  22
+    },
+    {
+        "TimeStamp":  "\/Date(1610208060000)\/",
+        "Wert":  -2
+    },
+    {
+        "TimeStamp":  "\/Date(1610211660000)\/",
+        "Wert":  23
+    },
+    {
+        "TimeStamp":  "\/Date(1610215260000)\/",
+        "Wert":  7
+    },
+    {
+        "TimeStamp":  "\/Date(1610218860000)\/",
+        "Wert":  -3
+    },
+    {
+        "TimeStamp":  "\/Date(1610222460000)\/",
+        "Wert":  -25
+    },
+    {
+        "TimeStamp":  "\/Date(1610226060000)\/",
+        "Wert":  8
+    },
+    {
+        "TimeStamp":  "\/Date(1610229660000)\/",
+        "Wert":  40
+    },
+    {
+        "TimeStamp":  "\/Date(1610236860000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1610240460000)\/",
+        "Wert":  -30
+    },
+    {
+        "TimeStamp":  "\/Date(1610244060000)\/",
+        "Wert":  4
+    },
+    {
+        "TimeStamp":  "\/Date(1610247660000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1610251260000)\/",
+        "Wert":  5
+    },
+    {
+        "TimeStamp":  "\/Date(1610254860000)\/",
+        "Wert":  24
+    },
+    {
+        "TimeStamp":  "\/Date(1610258460000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1610262060000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1610265660000)\/",
+        "Wert":  -13
+    },
+    {
+        "TimeStamp":  "\/Date(1610269260000)\/",
+        "Wert":  21
+    },
+    {
+        "TimeStamp":  "\/Date(1610272860000)\/",
+        "Wert":  9
+    },
+    {
+        "TimeStamp":  "\/Date(1610276460000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1610280060000)\/",
+        "Wert":  -23
+    },
+    {
+        "TimeStamp":  "\/Date(1610283660000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1610287260000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1610290860000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1610294460000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1610298060000)\/",
+        "Wert":  25
+    },
+    {
+        "TimeStamp":  "\/Date(1610301660000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1610305260000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1610308860000)\/",
+        "Wert":  2
+    },
+    {
+        "TimeStamp":  "\/Date(1610312460000)\/",
+        "Wert":  6
+    },
+    {
+        "TimeStamp":  "\/Date(1610316060000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1610323260000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1610326860000)\/",
+        "Wert":  5
+    },
+    {
+        "TimeStamp":  "\/Date(1610330460000)\/",
+        "Wert":  -7
+    },
+    {
+        "TimeStamp":  "\/Date(1610334060000)\/",
+        "Wert":  15
+    },
+    {
+        "TimeStamp":  "\/Date(1610337660000)\/",
+        "Wert":  17
+    },
+    {
+        "TimeStamp":  "\/Date(1610341260000)\/",
+        "Wert":  -9
+    },
+    {
+        "TimeStamp":  "\/Date(1610344860000)\/",
+        "Wert":  -29
+    },
+    {
+        "TimeStamp":  "\/Date(1610348460000)\/",
+        "Wert":  -9
+    },
+    {
+        "TimeStamp":  "\/Date(1610352060000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1610355660000)\/",
+        "Wert":  40
+    },
+    {
+        "TimeStamp":  "\/Date(1610359260000)\/",
+        "Wert":  -17
+    },
+    {
+        "TimeStamp":  "\/Date(1610362860000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1610366460000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1610370060000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1610373660000)\/",
+        "Wert":  -22
+    },
+    {
+        "TimeStamp":  "\/Date(1610377260000)\/",
+        "Wert":  18
+    },
+    {
+        "TimeStamp":  "\/Date(1610380860000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1610384460000)\/",
+        "Wert":  25
+    },
+    {
+        "TimeStamp":  "\/Date(1610388060000)\/",
+        "Wert":  16
+    },
+    {
+        "TimeStamp":  "\/Date(1610391660000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1610395260000)\/",
+        "Wert":  -21
+    },
+    {
+        "TimeStamp":  "\/Date(1610398860000)\/",
+        "Wert":  22
+    },
+    {
+        "TimeStamp":  "\/Date(1610402460000)\/",
+        "Wert":  -9
+    },
+    {
+        "TimeStamp":  "\/Date(1610409660000)\/",
+        "Wert":  9
+    },
+    {
+        "TimeStamp":  "\/Date(1610413260000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1610416860000)\/",
+        "Wert":  21
+    },
+    {
+        "TimeStamp":  "\/Date(1610420460000)\/",
+        "Wert":  14
+    },
+    {
+        "TimeStamp":  "\/Date(1610424060000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1610427660000)\/",
+        "Wert":  -21
+    },
+    {
+        "TimeStamp":  "\/Date(1610431260000)\/",
+        "Wert":  -19
+    },
+    {
+        "TimeStamp":  "\/Date(1610434860000)\/",
+        "Wert":  -29
+    },
+    {
+        "TimeStamp":  "\/Date(1610438460000)\/",
+        "Wert":  -18
+    },
+    {
+        "TimeStamp":  "\/Date(1610442060000)\/",
+        "Wert":  26
+    },
+    {
+        "TimeStamp":  "\/Date(1610445660000)\/",
+        "Wert":  29
+    },
+    {
+        "TimeStamp":  "\/Date(1610449260000)\/",
+        "Wert":  -10
+    },
+    {
+        "TimeStamp":  "\/Date(1610452860000)\/",
+        "Wert":  -25
+    },
+    {
+        "TimeStamp":  "\/Date(1610456460000)\/",
+        "Wert":  -18
+    },
+    {
+        "TimeStamp":  "\/Date(1610460060000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1610463660000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1610467260000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1610470860000)\/",
+        "Wert":  29
+    },
+    {
+        "TimeStamp":  "\/Date(1610474460000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1610478060000)\/",
+        "Wert":  26
+    },
+    {
+        "TimeStamp":  "\/Date(1610481660000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1610485260000)\/",
+        "Wert":  1
+    },
+    {
+        "TimeStamp":  "\/Date(1610488860000)\/",
+        "Wert":  -29
+    },
+    {
+        "TimeStamp":  "\/Date(1610496060000)\/",
+        "Wert":  19
+    },
+    {
+        "TimeStamp":  "\/Date(1610499660000)\/",
+        "Wert":  8
+    },
+    {
+        "TimeStamp":  "\/Date(1610503260000)\/",
+        "Wert":  -30
+    },
+    {
+        "TimeStamp":  "\/Date(1610506860000)\/",
+        "Wert":  -9
+    },
+    {
+        "TimeStamp":  "\/Date(1610510460000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1610514060000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1610517660000)\/",
+        "Wert":  27
+    },
+    {
+        "TimeStamp":  "\/Date(1610521260000)\/",
+        "Wert":  27
+    },
+    {
+        "TimeStamp":  "\/Date(1610524860000)\/",
+        "Wert":  14
+    },
+    {
+        "TimeStamp":  "\/Date(1610528460000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1610532060000)\/",
+        "Wert":  -16
+    },
+    {
+        "TimeStamp":  "\/Date(1610535660000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1610539260000)\/",
+        "Wert":  25
+    },
+    {
+        "TimeStamp":  "\/Date(1610542860000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1610546460000)\/",
+        "Wert":  18
+    },
+    {
+        "TimeStamp":  "\/Date(1610550060000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1610553660000)\/",
+        "Wert":  -30
+    },
+    {
+        "TimeStamp":  "\/Date(1610557260000)\/",
+        "Wert":  -23
+    },
+    {
+        "TimeStamp":  "\/Date(1610560860000)\/",
+        "Wert":  4
+    },
+    {
+        "TimeStamp":  "\/Date(1610564460000)\/",
+        "Wert":  23
+    },
+    {
+        "TimeStamp":  "\/Date(1610568060000)\/",
+        "Wert":  24
+    },
+    {
+        "TimeStamp":  "\/Date(1610571660000)\/",
+        "Wert":  -30
+    },
+    {
+        "TimeStamp":  "\/Date(1610575260000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1610582460000)\/",
+        "Wert":  -10
+    },
+    {
+        "TimeStamp":  "\/Date(1610586060000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1610589660000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1610593260000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1610596860000)\/",
+        "Wert":  38
+    },
+    {
+        "TimeStamp":  "\/Date(1610600460000)\/",
+        "Wert":  -13
+    },
+    {
+        "TimeStamp":  "\/Date(1610604060000)\/",
+        "Wert":  -12
+    },
+    {
+        "TimeStamp":  "\/Date(1610607660000)\/",
+        "Wert":  -10
+    },
+    {
+        "TimeStamp":  "\/Date(1610611260000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1610614860000)\/",
+        "Wert":  18
+    },
+    {
+        "TimeStamp":  "\/Date(1610618460000)\/",
+        "Wert":  17
+    },
+    {
+        "TimeStamp":  "\/Date(1610622060000)\/",
+        "Wert":  -16
+    },
+    {
+        "TimeStamp":  "\/Date(1610625660000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1610629260000)\/",
+        "Wert":  2
+    },
+    {
+        "TimeStamp":  "\/Date(1610632860000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1610636460000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1610640060000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1610643660000)\/",
+        "Wert":  -29
+    },
+    {
+        "TimeStamp":  "\/Date(1610647260000)\/",
+        "Wert":  36
+    },
+    {
+        "TimeStamp":  "\/Date(1610650860000)\/",
+        "Wert":  36
+    },
+    {
+        "TimeStamp":  "\/Date(1610654460000)\/",
+        "Wert":  40
+    },
+    {
+        "TimeStamp":  "\/Date(1610658060000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1610661660000)\/",
+        "Wert":  -4
+    },
+    {
+        "TimeStamp":  "\/Date(1610668860000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1610672460000)\/",
+        "Wert":  -7
+    },
+    {
+        "TimeStamp":  "\/Date(1610676060000)\/",
+        "Wert":  -23
+    },
+    {
+        "TimeStamp":  "\/Date(1610679660000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1610683260000)\/",
+        "Wert":  5
+    },
+    {
+        "TimeStamp":  "\/Date(1610686860000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1610690460000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1610694060000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1610697660000)\/",
+        "Wert":  -16
+    },
+    {
+        "TimeStamp":  "\/Date(1610701260000)\/",
+        "Wert":  40
+    },
+    {
+        "TimeStamp":  "\/Date(1610704860000)\/",
+        "Wert":  5
+    },
+    {
+        "TimeStamp":  "\/Date(1610708460000)\/",
+        "Wert":  19
+    },
+    {
+        "TimeStamp":  "\/Date(1610712060000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1610715660000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1610719260000)\/",
+        "Wert":  7
+    },
+    {
+        "TimeStamp":  "\/Date(1610722860000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1610726460000)\/",
+        "Wert":  1
+    },
+    {
+        "TimeStamp":  "\/Date(1610730060000)\/",
+        "Wert":  27
+    },
+    {
+        "TimeStamp":  "\/Date(1610733660000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1610737260000)\/",
+        "Wert":  35
+    },
+    {
+        "TimeStamp":  "\/Date(1610740860000)\/",
+        "Wert":  -2
+    },
+    {
+        "TimeStamp":  "\/Date(1610744460000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1610748060000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1610755260000)\/",
+        "Wert":  26
+    },
+    {
+        "TimeStamp":  "\/Date(1610758860000)\/",
+        "Wert":  -3
+    },
+    {
+        "TimeStamp":  "\/Date(1610762460000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1610766060000)\/",
+        "Wert":  -7
+    },
+    {
+        "TimeStamp":  "\/Date(1610769660000)\/",
+        "Wert":  2
+    },
+    {
+        "TimeStamp":  "\/Date(1610773260000)\/",
+        "Wert":  8
+    },
+    {
+        "TimeStamp":  "\/Date(1610776860000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1610780460000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1610784060000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1610787660000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1610791260000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1610794860000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1610798460000)\/",
+        "Wert":  5
+    },
+    {
+        "TimeStamp":  "\/Date(1610802060000)\/",
+        "Wert":  25
+    },
+    {
+        "TimeStamp":  "\/Date(1610805660000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1610809260000)\/",
+        "Wert":  39
+    },
+    {
+        "TimeStamp":  "\/Date(1610812860000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1610816460000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1610820060000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1610823660000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1610827260000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1610830860000)\/",
+        "Wert":  -18
+    },
+    {
+        "TimeStamp":  "\/Date(1610834460000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1610841660000)\/",
+        "Wert":  15
+    },
+    {
+        "TimeStamp":  "\/Date(1610845260000)\/",
+        "Wert":  40
+    },
+    {
+        "TimeStamp":  "\/Date(1610848860000)\/",
+        "Wert":  -17
+    },
+    {
+        "TimeStamp":  "\/Date(1610852460000)\/",
+        "Wert":  -30
+    },
+    {
+        "TimeStamp":  "\/Date(1610856060000)\/",
+        "Wert":  15
+    },
+    {
+        "TimeStamp":  "\/Date(1610859660000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1610863260000)\/",
+        "Wert":  28
+    },
+    {
+        "TimeStamp":  "\/Date(1610866860000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1610870460000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1610874060000)\/",
+        "Wert":  -20
+    },
+    {
+        "TimeStamp":  "\/Date(1610877660000)\/",
+        "Wert":  15
+    },
+    {
+        "TimeStamp":  "\/Date(1610881260000)\/",
+        "Wert":  -25
+    },
+    {
+        "TimeStamp":  "\/Date(1610884860000)\/",
+        "Wert":  35
+    },
+    {
+        "TimeStamp":  "\/Date(1610888460000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1610892060000)\/",
+        "Wert":  25
+    },
+    {
+        "TimeStamp":  "\/Date(1610895660000)\/",
+        "Wert":  32
+    },
+    {
+        "TimeStamp":  "\/Date(1610899260000)\/",
+        "Wert":  -17
+    },
+    {
+        "TimeStamp":  "\/Date(1610902860000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1610906460000)\/",
+        "Wert":  -7
+    },
+    {
+        "TimeStamp":  "\/Date(1610910060000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1610913660000)\/",
+        "Wert":  28
+    },
+    {
+        "TimeStamp":  "\/Date(1610917260000)\/",
+        "Wert":  2
+    },
+    {
+        "TimeStamp":  "\/Date(1610920860000)\/",
+        "Wert":  8
+    },
+    {
+        "TimeStamp":  "\/Date(1610928060000)\/",
+        "Wert":  1
+    },
+    {
+        "TimeStamp":  "\/Date(1610931660000)\/",
+        "Wert":  31
+    },
+    {
+        "TimeStamp":  "\/Date(1610935260000)\/",
+        "Wert":  -17
+    },
+    {
+        "TimeStamp":  "\/Date(1610938860000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1610942460000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1610946060000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1610949660000)\/",
+        "Wert":  4
+    },
+    {
+        "TimeStamp":  "\/Date(1610953260000)\/",
+        "Wert":  32
+    },
+    {
+        "TimeStamp":  "\/Date(1610956860000)\/",
+        "Wert":  -4
+    },
+    {
+        "TimeStamp":  "\/Date(1610960460000)\/",
+        "Wert":  -29
+    },
+    {
+        "TimeStamp":  "\/Date(1610964060000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1610967660000)\/",
+        "Wert":  -23
+    },
+    {
+        "TimeStamp":  "\/Date(1610971260000)\/",
+        "Wert":  1
+    },
+    {
+        "TimeStamp":  "\/Date(1610974860000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1610978460000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1610982060000)\/",
+        "Wert":  -18
+    },
+    {
+        "TimeStamp":  "\/Date(1610985660000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1610989260000)\/",
+        "Wert":  36
+    },
+    {
+        "TimeStamp":  "\/Date(1610992860000)\/",
+        "Wert":  -19
+    },
+    {
+        "TimeStamp":  "\/Date(1610996460000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1611000060000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1611003660000)\/",
+        "Wert":  -17
+    },
+    {
+        "TimeStamp":  "\/Date(1611007260000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1611014460000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1611018060000)\/",
+        "Wert":  32
+    },
+    {
+        "TimeStamp":  "\/Date(1611021660000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1611025260000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1611028860000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1611032460000)\/",
+        "Wert":  5
+    },
+    {
+        "TimeStamp":  "\/Date(1611036060000)\/",
+        "Wert":  8
+    },
+    {
+        "TimeStamp":  "\/Date(1611039660000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1611043260000)\/",
+        "Wert":  -29
+    },
+    {
+        "TimeStamp":  "\/Date(1611046860000)\/",
+        "Wert":  -12
+    },
+    {
+        "TimeStamp":  "\/Date(1611050460000)\/",
+        "Wert":  -20
+    },
+    {
+        "TimeStamp":  "\/Date(1611054060000)\/",
+        "Wert":  -21
+    },
+    {
+        "TimeStamp":  "\/Date(1611057660000)\/",
+        "Wert":  1
+    },
+    {
+        "TimeStamp":  "\/Date(1611061260000)\/",
+        "Wert":  15
+    },
+    {
+        "TimeStamp":  "\/Date(1611064860000)\/",
+        "Wert":  9
+    },
+    {
+        "TimeStamp":  "\/Date(1611068460000)\/",
+        "Wert":  4
+    },
+    {
+        "TimeStamp":  "\/Date(1611072060000)\/",
+        "Wert":  39
+    },
+    {
+        "TimeStamp":  "\/Date(1611075660000)\/",
+        "Wert":  29
+    },
+    {
+        "TimeStamp":  "\/Date(1611079260000)\/",
+        "Wert":  -25
+    },
+    {
+        "TimeStamp":  "\/Date(1611082860000)\/",
+        "Wert":  39
+    },
+    {
+        "TimeStamp":  "\/Date(1611086460000)\/",
+        "Wert":  32
+    },
+    {
+        "TimeStamp":  "\/Date(1611090060000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1611093660000)\/",
+        "Wert":  27
+    },
+    {
+        "TimeStamp":  "\/Date(1611100860000)\/",
+        "Wert":  27
+    },
+    {
+        "TimeStamp":  "\/Date(1611104460000)\/",
+        "Wert":  31
+    },
+    {
+        "TimeStamp":  "\/Date(1611108060000)\/",
+        "Wert":  -17
+    },
+    {
+        "TimeStamp":  "\/Date(1611111660000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1611115260000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1611118860000)\/",
+        "Wert":  16
+    },
+    {
+        "TimeStamp":  "\/Date(1611122460000)\/",
+        "Wert":  29
+    },
+    {
+        "TimeStamp":  "\/Date(1611126060000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1611129660000)\/",
+        "Wert":  17
+    },
+    {
+        "TimeStamp":  "\/Date(1611133260000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1611136860000)\/",
+        "Wert":  10
+    },
+    {
+        "TimeStamp":  "\/Date(1611140460000)\/",
+        "Wert":  -9
+    },
+    {
+        "TimeStamp":  "\/Date(1611144060000)\/",
+        "Wert":  19
+    },
+    {
+        "TimeStamp":  "\/Date(1611147660000)\/",
+        "Wert":  4
+    },
+    {
+        "TimeStamp":  "\/Date(1611151260000)\/",
+        "Wert":  15
+    },
+    {
+        "TimeStamp":  "\/Date(1611154860000)\/",
+        "Wert":  31
+    },
+    {
+        "TimeStamp":  "\/Date(1611158460000)\/",
+        "Wert":  27
+    },
+    {
+        "TimeStamp":  "\/Date(1611162060000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1611165660000)\/",
+        "Wert":  -6
+    },
+    {
+        "TimeStamp":  "\/Date(1611169260000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1611172860000)\/",
+        "Wert":  -20
+    },
+    {
+        "TimeStamp":  "\/Date(1611176460000)\/",
+        "Wert":  -20
+    },
+    {
+        "TimeStamp":  "\/Date(1611180060000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1611187260000)\/",
+        "Wert":  -10
+    },
+    {
+        "TimeStamp":  "\/Date(1611190860000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1611194460000)\/",
+        "Wert":  -13
+    },
+    {
+        "TimeStamp":  "\/Date(1611198060000)\/",
+        "Wert":  21
+    },
+    {
+        "TimeStamp":  "\/Date(1611201660000)\/",
+        "Wert":  24
+    },
+    {
+        "TimeStamp":  "\/Date(1611205260000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1611208860000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1611212460000)\/",
+        "Wert":  4
+    },
+    {
+        "TimeStamp":  "\/Date(1611216060000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1611219660000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1611223260000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1611226860000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1611230460000)\/",
+        "Wert":  21
+    },
+    {
+        "TimeStamp":  "\/Date(1611234060000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1611237660000)\/",
+        "Wert":  -19
+    },
+    {
+        "TimeStamp":  "\/Date(1611241260000)\/",
+        "Wert":  24
+    },
+    {
+        "TimeStamp":  "\/Date(1611244860000)\/",
+        "Wert":  -16
+    },
+    {
+        "TimeStamp":  "\/Date(1611248460000)\/",
+        "Wert":  26
+    },
+    {
+        "TimeStamp":  "\/Date(1611252060000)\/",
+        "Wert":  -27
+    },
+    {
+        "TimeStamp":  "\/Date(1611255660000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1611259260000)\/",
+        "Wert":  36
+    },
+    {
+        "TimeStamp":  "\/Date(1611262860000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1611266460000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1611273660000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1611277260000)\/",
+        "Wert":  9
+    },
+    {
+        "TimeStamp":  "\/Date(1611280860000)\/",
+        "Wert":  40
+    },
+    {
+        "TimeStamp":  "\/Date(1611284460000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1611288060000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1611291660000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1611295260000)\/",
+        "Wert":  -2
+    },
+    {
+        "TimeStamp":  "\/Date(1611298860000)\/",
+        "Wert":  -4
+    },
+    {
+        "TimeStamp":  "\/Date(1611302460000)\/",
+        "Wert":  8
+    },
+    {
+        "TimeStamp":  "\/Date(1611306060000)\/",
+        "Wert":  -10
+    },
+    {
+        "TimeStamp":  "\/Date(1611309660000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1611313260000)\/",
+        "Wert":  -7
+    },
+    {
+        "TimeStamp":  "\/Date(1611316860000)\/",
+        "Wert":  -16
+    },
+    {
+        "TimeStamp":  "\/Date(1611320460000)\/",
+        "Wert":  2
+    },
+    {
+        "TimeStamp":  "\/Date(1611324060000)\/",
+        "Wert":  35
+    },
+    {
+        "TimeStamp":  "\/Date(1611327660000)\/",
+        "Wert":  -3
+    },
+    {
+        "TimeStamp":  "\/Date(1611331260000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1611334860000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1611338460000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1611342060000)\/",
+        "Wert":  13
+    },
+    {
+        "TimeStamp":  "\/Date(1611345660000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1611349260000)\/",
+        "Wert":  -12
+    },
+    {
+        "TimeStamp":  "\/Date(1611352860000)\/",
+        "Wert":  33
+    },
+    {
+        "TimeStamp":  "\/Date(1611360060000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1611363660000)\/",
+        "Wert":  16
+    },
+    {
+        "TimeStamp":  "\/Date(1611367260000)\/",
+        "Wert":  26
+    },
+    {
+        "TimeStamp":  "\/Date(1611370860000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1611374460000)\/",
+        "Wert":  -15
+    },
+    {
+        "TimeStamp":  "\/Date(1611378060000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1611381660000)\/",
+        "Wert":  10
+    },
+    {
+        "TimeStamp":  "\/Date(1611385260000)\/",
+        "Wert":  7
+    },
+    {
+        "TimeStamp":  "\/Date(1611388860000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1611392460000)\/",
+        "Wert":  -16
+    },
+    {
+        "TimeStamp":  "\/Date(1611396060000)\/",
+        "Wert":  8
+    },
+    {
+        "TimeStamp":  "\/Date(1611399660000)\/",
+        "Wert":  32
+    },
+    {
+        "TimeStamp":  "\/Date(1611403260000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1611406860000)\/",
+        "Wert":  39
+    },
+    {
+        "TimeStamp":  "\/Date(1611410460000)\/",
+        "Wert":  8
+    },
+    {
+        "TimeStamp":  "\/Date(1611414060000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1611417660000)\/",
+        "Wert":  -13
+    },
+    {
+        "TimeStamp":  "\/Date(1611421260000)\/",
+        "Wert":  16
+    },
+    {
+        "TimeStamp":  "\/Date(1611424860000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1611428460000)\/",
+        "Wert":  -14
+    },
+    {
+        "TimeStamp":  "\/Date(1611432060000)\/",
+        "Wert":  11
+    },
+    {
+        "TimeStamp":  "\/Date(1611435660000)\/",
+        "Wert":  -25
+    },
+    {
+        "TimeStamp":  "\/Date(1611439260000)\/",
+        "Wert":  -16
+    },
+    {
+        "TimeStamp":  "\/Date(1611446460000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1611450060000)\/",
+        "Wert":  -16
+    },
+    {
+        "TimeStamp":  "\/Date(1611453660000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1611457260000)\/",
+        "Wert":  15
+    },
+    {
+        "TimeStamp":  "\/Date(1611460860000)\/",
+        "Wert":  32
+    },
+    {
+        "TimeStamp":  "\/Date(1611464460000)\/",
+        "Wert":  33
+    },
+    {
+        "TimeStamp":  "\/Date(1611468060000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1611471660000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1611475260000)\/",
+        "Wert":  9
+    },
+    {
+        "TimeStamp":  "\/Date(1611478860000)\/",
+        "Wert":  -10
+    },
+    {
+        "TimeStamp":  "\/Date(1611482460000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1611486060000)\/",
+        "Wert":  -3
+    },
+    {
+        "TimeStamp":  "\/Date(1611489660000)\/",
+        "Wert":  16
+    },
+    {
+        "TimeStamp":  "\/Date(1611493260000)\/",
+        "Wert":  29
+    },
+    {
+        "TimeStamp":  "\/Date(1611496860000)\/",
+        "Wert":  8
+    },
+    {
+        "TimeStamp":  "\/Date(1611500460000)\/",
+        "Wert":  -18
+    },
+    {
+        "TimeStamp":  "\/Date(1611504060000)\/",
+        "Wert":  31
+    },
+    {
+        "TimeStamp":  "\/Date(1611507660000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1611511260000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1611514860000)\/",
+        "Wert":  -2
+    },
+    {
+        "TimeStamp":  "\/Date(1611518460000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1611522060000)\/",
+        "Wert":  14
+    },
+    {
+        "TimeStamp":  "\/Date(1611525660000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1611532860000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1611536460000)\/",
+        "Wert":  21
+    },
+    {
+        "TimeStamp":  "\/Date(1611540060000)\/",
+        "Wert":  9
+    },
+    {
+        "TimeStamp":  "\/Date(1611543660000)\/",
+        "Wert":  -18
+    },
+    {
+        "TimeStamp":  "\/Date(1611547260000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1611550860000)\/",
+        "Wert":  18
+    },
+    {
+        "TimeStamp":  "\/Date(1611554460000)\/",
+        "Wert":  37
+    },
+    {
+        "TimeStamp":  "\/Date(1611558060000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1611561660000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1611565260000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1611568860000)\/",
+        "Wert":  -30
+    },
+    {
+        "TimeStamp":  "\/Date(1611572460000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1611576060000)\/",
+        "Wert":  -9
+    },
+    {
+        "TimeStamp":  "\/Date(1611579660000)\/",
+        "Wert":  4
+    },
+    {
+        "TimeStamp":  "\/Date(1611583260000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1611586860000)\/",
+        "Wert":  29
+    },
+    {
+        "TimeStamp":  "\/Date(1611590460000)\/",
+        "Wert":  1
+    },
+    {
+        "TimeStamp":  "\/Date(1611594060000)\/",
+        "Wert":  -13
+    },
+    {
+        "TimeStamp":  "\/Date(1611597660000)\/",
+        "Wert":  14
+    },
+    {
+        "TimeStamp":  "\/Date(1611601260000)\/",
+        "Wert":  -28
+    },
+    {
+        "TimeStamp":  "\/Date(1611604860000)\/",
+        "Wert":  -23
+    },
+    {
+        "TimeStamp":  "\/Date(1611608460000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1611612060000)\/",
+        "Wert":  18
+    },
+    {
+        "TimeStamp":  "\/Date(1611619260000)\/",
+        "Wert":  36
+    },
+    {
+        "TimeStamp":  "\/Date(1611622860000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1611626460000)\/",
+        "Wert":  24
+    },
+    {
+        "TimeStamp":  "\/Date(1611630060000)\/",
+        "Wert":  24
+    },
+    {
+        "TimeStamp":  "\/Date(1611633660000)\/",
+        "Wert":  -26
+    },
+    {
+        "TimeStamp":  "\/Date(1611637260000)\/",
+        "Wert":  -22
+    },
+    {
+        "TimeStamp":  "\/Date(1611640860000)\/",
+        "Wert":  17
+    },
+    {
+        "TimeStamp":  "\/Date(1611644460000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1611648060000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1611651660000)\/",
+        "Wert":  -1
+    },
+    {
+        "TimeStamp":  "\/Date(1611655260000)\/",
+        "Wert":  18
+    },
+    {
+        "TimeStamp":  "\/Date(1611658860000)\/",
+        "Wert":  7
+    },
+    {
+        "TimeStamp":  "\/Date(1611662460000)\/",
+        "Wert":  34
+    },
+    {
+        "TimeStamp":  "\/Date(1611666060000)\/",
+        "Wert":  33
+    },
+    {
+        "TimeStamp":  "\/Date(1611669660000)\/",
+        "Wert":  -29
+    },
+    {
+        "TimeStamp":  "\/Date(1611673260000)\/",
+        "Wert":  -13
+    },
+    {
+        "TimeStamp":  "\/Date(1611676860000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1611680460000)\/",
+        "Wert":  -20
+    },
+    {
+        "TimeStamp":  "\/Date(1611684060000)\/",
+        "Wert":  -30
+    },
+    {
+        "TimeStamp":  "\/Date(1611687660000)\/",
+        "Wert":  2
+    },
+    {
+        "TimeStamp":  "\/Date(1611691260000)\/",
+        "Wert":  3
+    },
+    {
+        "TimeStamp":  "\/Date(1611694860000)\/",
+        "Wert":  2
+    },
+    {
+        "TimeStamp":  "\/Date(1611698460000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1611705660000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1611709260000)\/",
+        "Wert":  20
+    },
+    {
+        "TimeStamp":  "\/Date(1611712860000)\/",
+        "Wert":  40
+    },
+    {
+        "TimeStamp":  "\/Date(1611716460000)\/",
+        "Wert":  -16
+    },
+    {
+        "TimeStamp":  "\/Date(1611720060000)\/",
+        "Wert":  -24
+    },
+    {
+        "TimeStamp":  "\/Date(1611723660000)\/",
+        "Wert":  28
+    },
+    {
+        "TimeStamp":  "\/Date(1611727260000)\/",
+        "Wert":  -5
+    },
+    {
+        "TimeStamp":  "\/Date(1611730860000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1611734460000)\/",
+        "Wert":  22
+    },
+    {
+        "TimeStamp":  "\/Date(1611738060000)\/",
+        "Wert":  35
+    },
+    {
+        "TimeStamp":  "\/Date(1611741660000)\/",
+        "Wert":  0
+    },
+    {
+        "TimeStamp":  "\/Date(1611745260000)\/",
+        "Wert":  -8
+    },
+    {
+        "TimeStamp":  "\/Date(1611748860000)\/",
+        "Wert":  -25
+    },
+    {
+        "TimeStamp":  "\/Date(1611752460000)\/",
+        "Wert":  -19
+    },
+    {
+        "TimeStamp":  "\/Date(1611756060000)\/",
+        "Wert":  12
+    },
+    {
+        "TimeStamp":  "\/Date(1611759660000)\/",
+        "Wert":  -15
+    },
+    {
+        "TimeStamp":  "\/Date(1611763260000)\/",
+        "Wert":  22
+    },
+    {
+        "TimeStamp":  "\/Date(1611766860000)\/",
+        "Wert":  21
+    },
+    {
+        "TimeStamp":  "\/Date(1611770460000)\/",
+        "Wert":  -11
+    },
+    {
+        "TimeStamp":  "\/Date(1611774060000)\/",
+        "Wert":  28
+    },
+    {
+        "TimeStamp":  "\/Date(1611777660000)\/",
+        "Wert":  21
+    },
+    {
+        "TimeStamp":  "\/Date(1611781260000)\/",
+        "Wert":  30
+    },
+    {
+        "TimeStamp":  "\/Date(1611784860000)\/",
+        "Wert":  6
+    },
+    {
+        "TimeStamp":  "\/Date(1611792060000)\/",
+        "Wert":  -26
+    }
+]

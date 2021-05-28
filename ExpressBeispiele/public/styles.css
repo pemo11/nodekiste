@@ -1,0 +1,14 @@
+/* Standardstylesheet für alle Beispiele */
+
+body {
+    font-family: verdana;
+    font-size: 11pt;
+}
+
+/* genialer Selektor, der nur submit-Buttons auswählt */
+input[type="submit"] {
+    width: 180px;
+    height: 30px;
+    background-color: aqua;
+    border-radius: 10px;
+}
