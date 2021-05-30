@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Willkommen bei der kleinen Wetterstation in der Antarktis</title>
+    <link rel="stylesheet" href="jQuery/jquery-ui.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="jQuery/jquery-3.6.0.js" type = "text/javascript"></script>
+    <script src="jQuery/jquery-ui.js" type = "text/javascript"></script>
+    <script>
+
+        $(function() {
+
+            // Dieser Aufruf "aktiviert" den datepicker
+            $("#datum").datepicker({
+                changeMonth: true,
+                changeYear: true,
+            });
+
+            // Feintuning der regionalen Einstellungen
+            $.datepicker.regional["de"] = {
+                monthNames: ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],
+                monthNamesShort: ["Jan","Feb","Mrz","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"],
+                dayNames: ["Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag","Sonntag"],
+                dayNamesMin: ["Mo","Di","Mi","Do","Fr","Sa","So"],
+            };
+            // Dieser Aufruf ist auch wichtig
+            $.datepicker.setDefaults($.datepicker.regional["de"]);
+        });
+    </script>
+ </head>
+ <body>
+    <h3>Willkommen bei der kleinen Wetterstation in der Antarktis</h3>
+    <div>Abruf der Messwerte für einen bestimmten Tag</div>
+    </p>
+    <form action="/daten" method="POST">
+        <input type="text" id="datum" name="datum">
+        <input type="submit" value="Daten abrufen">
+    </form>
+ </body>
+</html>

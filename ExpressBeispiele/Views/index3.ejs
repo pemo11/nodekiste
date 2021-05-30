@@ -4,13 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Willkommen bei der kleinen Wetterstation in der Antarktis</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="jQuery/jquery-ui.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="jQuery/jquery-3.6.0.js" type = "text/javascript"></script>
+    <script src="jQuery/jquery-ui.js" type = "text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js"></script>
     <script>
+
         $(function() {
-            $("#datepicker").datepicker();
+            // Dieser Aufruf "aktiviert" den datepicker
+            $("#datum").datepicker();
+            // Setzen des Datumsformats - kann auch über setDefaults erledigt werden
+            // $("#datum").datepicker("option", "dateFormat", "dd/mm/yy");
+            // Das Setzen von regional auf de genügt nicht, um eine Anzeige deutscher Namen zu erreichen
+            // Es werden auch die i18n Dateien benötiogt
+            // $("#datum").datepicker("option", "regional", "de");
+            var options = $.extend(
+                {}, // empty object
+                $.datepicker.regional["de"],    // Regionale Einstellungen
+                { dateFormat: "dd/mm/yy" }      // Ein eigenes Datumsformat
+            );
+            $.datepicker.setDefaults(options);
         });
     </script>
  </head>
@@ -18,8 +32,9 @@
     <h3>Willkommen bei der kleinen Wetterstation in der Antarktis</h3>
     <div>Abruf der Messwerte für einen bestimmten Tag</div>
     </p>
-    <form action="/Daten3" method="POST">
+    <form action="/daten" method="POST">
         <input type="text" id="datum" name="datum">
+        <input type="submit" value="Daten abrufen">
     </form>
  </body>
 </html>

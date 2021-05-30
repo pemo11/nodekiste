@@ -20,7 +20,9 @@ var hostAdr = "127.0.0.1"
 app.get("/", (request, response) => {
     console.log("*** Route / wird abgerufen ***");
     // Einfache Datumsauswahl ohne jQueryUI
-    response.render("index2");
+    // response.render("index2");
+    // Mit jQueryUI DatePicker
+    response.render("index4");
 });
 
 app.post("/daten", (request, response) => {

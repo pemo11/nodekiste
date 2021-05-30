@@ -17,7 +17,7 @@ app.get("/", (request, response) => {
 
 // es gibt keine daten-view mehr, da die Daten nicht direkt abrufbar sein sollen
 
-var server = app.listen(portNr,hostAdr, () => {
+var server = app.listen(portNr, hostAdr, () => {
     var host = server.address().address;
     var port = server.address().port;
     console.log(`Ich bin der Host ${host} und laufe auf Port ${port}...`);

@@ -1,0 +1,7 @@
+{
+    "name": "test1234",
+    "version": "1.0.0.0",
+    "main":"m2.js",
+    "type": "module",
+    "author": "pemo"
+}
