@@ -1,6 +1,6 @@
 // File: HalloMongo01.js
 // Erstellt: 01/06/21
-// Abfrage einer vorhandenen Datenbank - das absolute Minimum
+// Abfrage einer vorhandenen Datenbank - das absolute Minimum - Beispiel funktioniert
 
 const mongoose = require("mongoose");
 const conStr = "mongodb://localhost:27017/MusikDB"

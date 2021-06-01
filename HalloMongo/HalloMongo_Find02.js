@@ -1,24 +1,32 @@
 // File: HalloMongo01.js
 // Erstellt: 01/06/21
-// Abfrage einer vorhandenen Datenbank
+// Abfrage einer vorhandenen Datenbank MusikDB - Beispiel funktioniert
 
 const mongoose = require("mongoose");
 
-const registrationSchema = new mongoose.Schema({
-    name: {
+const titelSchema = new mongoose.Schema({
+    Id: String,
+    Titel: {
         type: String,
         trim: true,
     },
-    email: {
+    Interpret: {
         type: String,
         trim: true,
     },
+    Jahr: String,
+    Kategorie: {
+        type: String,
+        trim: true,
+    },
+    Bewertung: String,
+    Laenge: String,
 });
 
 // Groß-/Kleinschreibung spielt beim Collection-Namen keine Rolle, also z.B. Registration oder registration
-const Registration = mongoose.model("Registration", registrationSchema);
+const titelModel = mongoose.model("musiktitel", titelSchema, "Titel");
 
-var conStr = "mongodb://localhost:27017/HalloMongo"
+var conStr = "mongodb://localhost:27017/MusikDB"
 
 mongoose.connect(conStr, {
     useNewUrlParser: true,
@@ -34,11 +42,11 @@ mongoose.connection
 });
 
 // Variante 1: find()-Aufruf und then
-Registration.find()
-.then((registrations) => {
-    registrations.forEach((registration, i) => {
+titelModel.find()
+.then((alleTitel) => {
+    alleTitel.forEach((titel, i) => {
         console.log("+++ Variante 1 +++");
-        console.log(`Name=${registration["name"]} EMail=${registration["email"]}`);
+        console.log(`Titel=${titel["Titel"]} Interpret=${titel["Interpret"]}`);
     });
     // Schließen der Verbindung
     // mongoose.connection.close();
@@ -47,27 +55,27 @@ Registration.find()
     console.log(`Hhmm, irgendetwas ging jetzt wieder mal total daneben ${err}`);
 });
 
-// Variante 2: find mit Callback und Projection - alle holen, aber nur name als Feld zurückgeben
-Registration.find({},"name", (err, result) => {
+// Variante 2: find mit Callback und Projection - alle holen, aber nur Titel als Feld zurückgeben
+titelModel.find({},"Titel", (err, result) => {
     if (err) {
         console.log("!!! Fehler: " + err);
     } else {
-        result.forEach((registration, i) => {
+        result.forEach((titel) => {
             console.log("+++ Variante 2 +++");
-            console.log(`Name=${registration["name"]} EMail=${registration["email"]}`);
+            console.log(`Titel=${titel["Titel"]} Interpret=${titel["Interpret"]}`);
         });
     }
 })
 
 // Variante 3: find mit Parametern
-Registration.find({name: "Peter Monadjemi"}, (err, result) => {
+titelModel.find({Kategorie: "Pop"}, (err, result) => {
     if (err) {
         console.log("!!! Fehler: " + err);
     } else {
         console.log(result);
-        result.forEach((registration, i) => {
+        result.forEach((titel) => {
             console.log("+++ Variante 3 +++");
-            console.log(`Name=${registration["name"]} EMail=${registration["email"]}`);
+            console.log(`Titel=${titel["Titel"]} Interpret=${titel["Interpret"]}`);
         });
     }
     // Schließen der Verbindung

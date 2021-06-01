@@ -6,19 +6,30 @@ const mongoose = require("mongoose");
 var conStr = "mongodb://localhost:27017/HalloMongo"
 
 // Schritt 1: Schema definieren
-const registrationSchema = new mongoose.Schema({
-    name: {
+const titelSchema = new mongoose.Schema({
+    Id: String,
+    Titel: {
         type: String,
         trim: true,
     },
-    email: {
+    Interpret: {
         type: String,
         trim: true,
     },
+    Jahr: String,
+    Kategorie: {
+        type: String,
+        trim: true,
+    },
+    Bewertung: String,
+    Laenge: String,
 });
 
 // Schritt 2: model anlegen
-const model = mongoose.model("Registration", registrationSchema);
+// Groß-/Kleinschreibung spielt beim Collection-Namen keine Rolle, also z.B. Registration oder registration
+const titelModel = mongoose.model("musiktitel", titelSchema, "Titel");
+
+var conStr = "mongodb://localhost:27017/MusikDB"
 
 // Schritt 3: Verbindung herstellen
 mongoose.connect(conStr, {
@@ -42,10 +53,10 @@ db.on("open", () => {
     console.log("*** Hey, ich bin mit Mongo connected! ***");
 
     // find()-Aufruf mit then
-    model.find()
-    .then((registrations) => {
-        registrations.forEach((registration, i) => {
-            console.log(`Name=${registration["name"]} EMail=${registration["email"]}`);
+    titelModel.find()
+    .then((alleTitel) => {
+        alleTitel.forEach((titel, i) => {
+            console.log(`Titel=${titel["Titel"]} Interpret=${titel["Interpret"]} Jahr=${titel["Jahr"]}`);
         })
     })
     .then(()=>{
