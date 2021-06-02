@@ -15,8 +15,8 @@ const fs = require("fs");
 
 const options = {
     // Pfade müssen absolut sein
-    key: fs.readFileSync(__dirname + "\\" + "key.pem"),
-    cert: fs.readFileSync(__dirname + "\\" + "cert.pem"),
+    key: fs.readFileSync(__dirname + "//" + "key.pem"),
+    cert: fs.readFileSync(__dirname + "//" + "cert.pem"),
     // passphrase: "!nopw2020"
   };
 
