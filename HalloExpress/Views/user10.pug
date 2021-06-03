@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    table(style="width:100%", border="1")
+     tr
+      th Name
+      th Beruf
+      each user in data
+       tr
+        td= user.name
+        td= user.profession

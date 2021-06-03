@@ -3,6 +3,8 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "formidable": "^1.2.2",
-    "mongoose": "^5.12.12"
+    "http-errors": "^1.7.2",
+    "mongoose": "^5.12.12",
+    "pug": "^3.0.2"
   }
 }

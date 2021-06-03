@@ -1,0 +1,209 @@
+﻿[
+    {
+        "Titel":  "Wild boys",
+        "Interpret":  "Duran Duran",
+        "Album":  "Arena",
+        "Jahr":  "1984",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "4,14"
+    },
+    {
+        "Titel":  "Waiting for a train",
+        "Interpret":  "Flash and the pan",
+        "Album":  "Headlines",
+        "Jahr":  "1983",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "3,58"
+    },
+    {
+        "Titel":  "Love and pride",
+        "Interpret":  "King",
+        "Album":  "Steps in Time",
+        "Jahr":  "1984",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "3,20"
+    },
+    {
+        "Titel":  "Do you really want to hurt me",
+        "Interpret":  "Culture Club",
+        "Album":  "Kissing to Be Clever",
+        "Jahr":  "1982",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "4,15"
+    },
+    {
+        "Titel":  "Somewhere in my heart",
+        "Interpret":  "Aztec Camera",
+        "Album":  "Love",
+        "Jahr":  "1987",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "4,0"
+    },
+    {
+        "Titel":  "Such a shame",
+        "Interpret":  "Talk Talk",
+        "Album":  "Its my life",
+        "Jahr":  "1984",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "3,59"
+    },
+    {
+        "Titel":  "Sometimes",
+        "Interpret":  "Erasure",
+        "Album":  "Wonderland",
+        "Jahr":  "1986",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "3,37"
+    },
+    {
+        "Titel":  "Shout",
+        "Interpret":  "Tears For Fears",
+        "Album":  "Songs from the big chair",
+        "Jahr":  "1984",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "5,58"
+    },
+    {
+        "Titel":  "Vienna",
+        "Interpret":  "Ultravox",
+        "Album":  "Vienna",
+        "Jahr":  "1980",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "4,52"
+    },
+    {
+        "Titel":  "Feels like Heaven",
+        "Interpret":  "Fiction Factory",
+        "Album":  "Throw the Warped Wheel Out",
+        "Jahr":  "1983",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "3,39"
+    },
+    {
+        "Titel":  "What is love?",
+        "Interpret":  "Howard Jones",
+        "Album":  "Humans\u0027s Lib",
+        "Jahr":  "1983",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "3,37"
+    },
+    {
+        "Titel":  "Dont leave me this way",
+        "Interpret":  "Communards",
+        "Album":  "Communards",
+        "Jahr":  "1986",
+        "Kategorie":  "Pop",
+        "Bewertung":  "4",
+        "Laenge":  "4,42"
+    },
+    {
+        "Titel":  "Dancing with tears in my eyes",
+        "Interpret":  "Ultravox",
+        "Album":  "Lament",
+        "Jahr":  "1984",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "4,07"
+    },
+    {
+        "Titel":  "Passion",
+        "Interpret":  "Rod Stewart",
+        "Album":  "Foolish Behaviour",
+        "Jahr":  "1980",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "5,20"
+    },
+    {
+        "Titel":  "Everything little thing she does is magic",
+        "Interpret":  "The Police",
+        "Album":  "Ghost in the Machine",
+        "Jahr":  "1982",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "4,20"
+    },
+    {
+        "Titel":  "I want a new drug",
+        "Interpret":  "Huey Lewis and the News",
+        "Album":  "Sports",
+        "Jahr":  "1983",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "4,46"
+    },
+    {
+        "Titel":  "Footloose",
+        "Interpret":  "Kenny Loggins",
+        "Album":  "Footloose",
+        "Jahr":  "1984",
+        "Kategorie": "Pop",
+        "Bewertung": "5",
+        "Laenge":  "3,48"
+    },
+    {
+        "Titel":  "Erbarmen, die Hessen kommen",
+        "Interpret":  "Rodgau Monotones",
+        "Album":  "Volle Lotte",
+        "Jahr":  "1983",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "4,30"
+    },
+    {
+        "Titel":  "1000 und eine Nacht",
+        "Interpret":  "Klaus Lange",
+        "Album":  "Schweißperlen",
+        "Jahr":  "1984",
+        "Kategorie": "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "3,23"
+    },
+    {
+        "Titel":  "Monopoly",
+        "Interpret":  "Klaus Lange",
+        "Album":  "Schweißperlen",
+        "Jahr":  "1984",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "3,30"
+    },
+    {
+        "Titel":  "Verdamp lang her",
+        "Interpret":  "BAP",
+        "Album":  "Für usszeschnigge!",
+        "Jahr":  "1981",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "5,48"
+    },
+    {
+        "Titel":  "Cat people",
+        "Interpret":  "David Bowie",
+        "Album":  "Cat People",
+        "Jahr":  "1982",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "4,08"
+    },
+    {
+        "Titel":  "Axel F",
+        "Interpret":  "Harald Faltermeyer",
+        "Album":  "Bevery Hills Cop",
+        "Jahr":  "1985",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "3,00"
+    }
+]
