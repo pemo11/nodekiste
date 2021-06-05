@@ -1,0 +1,252 @@
+﻿[
+    {
+        "Id":  "1",
+        "Titel":  "Another One bites the Dust",
+        "Interpret":  "Queen",
+        "Jahr":  "1980",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "3,03",
+        "Album":  "The Game"
+    },
+    {
+        "Id":  "2",
+        "Titel":  "Crazy Little Thing Called Love",
+        "Interpret":  "Queen",
+        "Jahr":  "1980",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "2,42",
+        "Album":  "The Game"
+    },
+    {
+        "Id":  "3",
+        "Titel":  "Bohemian Rhapsody",
+        "Interpret":  "Queen",
+        "Jahr":  "1975",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "5,55",
+        "Album":  "A Night at the Opera"
+    },
+    {
+        "Id":  "4",
+        "Titel":  "Sunshine Of Your Love",
+        "Interpret":  "Cream",
+        "Jahr":  "1967",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "3,33",
+        "Album":  "Disraeli Gears"
+    },
+    {
+        "Id":  "5",
+        "Titel":  "Do You Feel Like We Do",
+        "Interpret":  "Peter Frampton",
+        "Jahr":  "1976",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "13,46",
+        "Album":  "Frampton Comes Alive!"
+    },
+    {
+        "Id":  "6",
+        "Titel":  "Tonight\u0027s the Night",
+        "Interpret":  "Neil Young",
+        "Jahr":  "1975",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "4,4",
+        "Album":  "Tonight the the Night"
+    },
+    {
+        "Id":  "7",
+        "Titel":  "Dont bring me down",
+        "Interpret":  "Electric Light Orchestra",
+        "Jahr":  "1979",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "4,03",
+        "Album":  "Discovery"
+    },
+    {
+        "Id":  "8",
+        "Titel":  "Roxanne",
+        "Interpret":  "The Police",
+        "Jahr":  "1978",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "3,52",
+        "Album":  "Outlandos d�Amour"
+    },
+    {
+        "Id":  "9",
+        "Titel":  "So Lonely",
+        "Interpret":  "The Police",
+        "Jahr":  "1978",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "4,5",
+        "Album":  "Outlandos d�Amour"
+    },
+    {
+        "Id":  "10",
+        "Titel":  "Smalltown boy",
+        "Interpret":  "Bronski Beat",
+        "Jahr":  "1984",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "5,02",
+        "Album":  "The Age of Consent"
+    },
+    {
+        "Id":  "11",
+        "Titel":  "Relax",
+        "Interpret":  "Frankie Goes to Hollywood",
+        "Jahr":  "1983",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "3,53",
+        "Album":  "Welcome to the Pleasuredome"
+    },
+    {
+        "Id":  "12",
+        "Titel":  "Two Tribes",
+        "Interpret":  "Frankie Goes to Hollywood",
+        "Jahr":  "1984",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "3,57",
+        "Album":  "Welcome to the Pleasuredome"
+    },
+    {
+        "Id":  "13",
+        "Titel":  "Pour Some Sugar on Me",
+        "Interpret":  "Def Leppard",
+        "Jahr":  "1987",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "4,27",
+        "Album":  "Hysteria"
+    },
+    {
+        "Id":  "14",
+        "Titel":  "Dancing in the dark",
+        "Interpret":  "Bruce Springsteen",
+        "Jahr":  "1984",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "3,59",
+        "Album":  "Born in the U.S.A."
+    },
+    {
+        "Id":  "15",
+        "Titel":  "My generation",
+        "Interpret":  "The Who",
+        "Jahr":  "1965",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "3,18",
+        "Album":  "My Generation"
+    },
+    {
+        "Id":  "16",
+        "Titel":  "Lola",
+        "Interpret":  "The Kinks",
+        "Jahr":  "1970",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "4,03",
+        "Album":  "Lola Versus Powerman"
+    },
+    {
+        "Id":  "17",
+        "Titel":  "Thriller",
+        "Interpret":  "Michael Jackson",
+        "Jahr":  "1982",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "5,57",
+        "Album":  "Thriller"
+    },
+    {
+        "Id":  "18",
+        "Titel":  "Billy Jean",
+        "Interpret":  "Michael Jackson",
+        "Jahr":  "1983",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "4,52",
+        "Album":  "Thriller"
+    },
+    {
+        "Id":  "19",
+        "Titel":  "Purple Rain",
+        "Interpret":  "Prince",
+        "Jahr":  "1984",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "4,05",
+        "Album":  "Purple Rain"
+    },
+    {
+        "Id":  "20",
+        "Titel":  "The Power of love",
+        "Interpret":  "Hue Lewis and the news",
+        "Jahr":  "1985",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "3,53",
+        "Album":  "Back to the Future (Soundtrack)"
+    },
+    {
+        "Id":  "21",
+        "Titel":  "When Doves Cry",
+        "Interpret":  "Prince",
+        "Jahr":  "1984",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "3,47",
+        "Album":  "Purple Rain"
+    },
+    {
+        "Id":  "22",
+        "Titel":  "Running down a dream",
+        "Interpret":  "Tom Petty",
+        "Jahr":  "1989",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "4,25",
+        "Album":  "Full Moon Fever"
+    },
+    {
+        "Id":  "23",
+        "Titel":  "Erotica",
+        "Interpret":  "Madonna",
+        "Jahr":  "1992",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "5,2",
+        "Album":  "Erotica"
+    },
+    {
+        "Id":  "24",
+        "Titel":  "Tobacco Road",
+        "Interpret":  "Eric Burdon and War",
+        "Jahr":  "1970",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "13,44",
+        "Album":  "Eric Burdon Declares �War�"
+    },
+    {
+        "Id":  "25",
+        "Titel":  "Highway star",
+        "Interpret":  "Deep Purple",
+        "Jahr":  "1972",
+        "Kategorie":  "Rock",
+        "Bewertung":  "5",
+        "Laenge":  "6,09",
+        "Album":  "Machine Head"
+    }
+]

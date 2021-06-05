@@ -1,6 +1,5 @@
 // File: HalloMongo_FindOne01.js
-// Erstellt: 01/06/21 - Beispiel für FindOne mit Filter
-
+// Erstellt: 01/06/21 - Beispiel für Find() mit Callback
 const mongoose = require("mongoose");
 const conStr = "mongodb://localhost:27017/MusikDB"
 
@@ -39,31 +38,27 @@ mongoose.connect(conStr, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
-    console.log("*** connect-Aufruf abgeschlossen ***");
+   console.log("*** Verbindung wurde geöffnet ***");
 });
 
-// Schritt 4: Einen Titel per FindOne und Filter finden
-var filter = {Interpret:"Udo Lindenberg"};
-
-// Schritt 5: findOne aufrufen und am Ende die Verbindung auch wieder schließen
-var titel = titelModel.findOne(filter, (err, result) => {
-    if (err) {
-        console.log(`!!! Echt unerwarteter Fehler ${err} !!!`); 
-    } else {
-        console.log(`*** Id: ${result._id} Titel: ${result.Titel} ***`);
-    }
+// Schritt 4: Alle Titel per Find finden
+var filter = {Jahr:"1984"};
+    
+// Schritt 5: find aufrufen und am Ende die Verbindung auch wieder schließen
+titelModel.find(filter)
+.then((alleTitel) => {
+    alleTitel.forEach((titel, i) => {
+        console.log(`*** Id: ${titel._id} Titel: ${titel.Titel} Interpret: ${titel.Interpret} ***`);
+    });
 })
-// Bei diesem then()-Aufruf wird keine err-Parameter übergeben
-.then((doc) => {
+
+// Wirklich genial, dass sich das so schreiben lässt
+.then(()=> {
     db.close((err) => {
         if (err) {
             console.log(`!!! Close - echt unerwarteter Fehler ${err} !!!`); 
         } else {
-            console.log(`*** Id: ${doc._id} Titel: ${doc.Titel} ***`);
             console.log("*** Verbindung wurde ordnungsgemäß geschlossen ***");
         }
     });
 });
-
-// titel ist nicht das Ergebnis der Abfrage, sondern ein Promise mit state=pending ???
-console.log(titel);

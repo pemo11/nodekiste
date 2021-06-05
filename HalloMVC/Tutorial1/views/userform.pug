@@ -1,0 +1,46 @@
+extends layout
+
+block content
+    -data = data || {}
+  
+    form(action="create" method="POST" class="form-registration")
+        label(for="name") Name:
+        input(
+         type="text"
+         id="username"
+         name="username"
+         class="form-control"
+         value=data.username
+        )
+        <br>
+        label(for="email") Email:
+        input(
+         type="text"
+         id="email"
+         name="email"
+         class="form-control"
+         value=data.email
+        )
+        <br>
+        label(for="city") City:
+        input(
+         type="text"
+         id="city"
+         name="city"
+         class="form-control"
+         value=data.city
+        )
+        <br>
+        label(for="country") Country:
+        input(
+         type="text"
+         id="country"
+         name="country"
+         class="form-control"
+         value=data.country
+        )
+        input(
+         type="submit"
+         value="Anmelden"
+         class="btn btn-lg btn-primary btn-block"
+         )

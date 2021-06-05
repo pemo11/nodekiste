@@ -1,5 +1,5 @@
-// File: HalloMongo_Update01.js
-// Erstellt: 01/06/21
+// File: HalloMongo_UpdateOne01.js
+// Erstellt: 04/06/21
 // Aktualisieren eines Datensatzes (Document)
 
 const mongoose = require("mongoose");
@@ -51,22 +51,18 @@ mongoose.connect(conStr, {
     console.log("*** connect-Aufruf abgeschlossen ***");
 });
 
-// Schritt 3A: Neuerdings erforderlich!
-mongoose.set("useFindAndModify", false);
-
 // Schritt 4: Default-Connection über eine Variable ansprechbar machen
 const db = mongoose.connection;
 
 // Schritt 5: Ein Document auswählen
-const id = "60b5db4edd9ee74a04eb9f3d"
 
-titelModel.findByIdAndUpdate(id, 
-    {Bewertung:"2"}, (err, titel) => {
-    if (err) {
-        console.log("Error: " + err);
-    } else {
-        // Titel ist das nicht aktualisierte Objekt
-        console.log("Aktualisierung erfolgreisch " + titel);
+// Geht...
+
+titelModel.updateOne({Titel:"Alles klar auf der Andrea Doria"}, 
+{Bewertung: "4"}, (err, titel) => {
+    if (err) console.log("Fehler bei UpdateOne:" + err);
+    else
+        console.log("UpdateOne: " + titel.Bewertung);
         db.close();
-    }
 });
+

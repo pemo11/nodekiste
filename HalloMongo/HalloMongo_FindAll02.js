@@ -1,14 +1,7 @@
 // File: HalloMongo_FindOne01.js
-// Erstellt: 01/06/21 - Beispiel für FindOne mit Filter und exec()
-// Nach anfänglichen Schwierigkeiten mit await (muss Teil einer Function sein) hat es dann gut funktoniert!
+// Erstellt: 01/06/21 - Beispiel für Find() mit Filter und exec()
 const mongoose = require("mongoose");
 const conStr = "mongodb://localhost:27017/MusikDB"
-
-// Nur optional und hilft auch nicht, den await-Fehler abzufangen
-process.on("uncaughtException", err => {
-    console.error("Es gab einen nicht behandelten Fehler", err)
-    process.exit(-1) //mandatory (as per the Node.js docs)
-});
 
 // Schritt 1: Schema definieren
 const titelSchema = new mongoose.Schema({
@@ -46,8 +39,10 @@ const db = mongoose.connection;
 // Damit der close() immer nach (!) dem find ausgeführt wird, muss es so gemacht werden
 async function findTitel(filter)
 {
-    const titel = await titelModel.findOne(filter).exec();
-    console.log(`*** Id: ${titel._id} Titel: ${titel.Titel} ***`);
+    const alleTitel = await titelModel.find(filter).exec();
+    alleTitel.forEach((titel, i) => {
+        console.log(`*** Id: ${titel._id} Titel: ${titel.Titel} Interpret: ${titel.Interpret} ***`);
+    });
     return new Promise((resolve)=> {
         resolve();
     });
@@ -61,8 +56,8 @@ mongoose.connect(conStr, {
    console.log("*** Verbindung wurde geöffnet ***");
 });
 
-// Schritt 4: Einen Titel per FindOne und Filter finden
-var filter = {Interpret:"Udo Lindenberg"};
+// Schritt 4: Alle Titel per Find finden
+var filter = {Jahr:"1984"};
     
 // Schritt 5: findOne aufrufen und am Ende die Verbindung auch wieder schließen
 
