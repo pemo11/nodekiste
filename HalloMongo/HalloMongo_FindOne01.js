@@ -65,3 +65,5 @@ var titel = titelModel.findOne(filter, (err, result) => {
     });
 });
 
+// titel ist nicht das Ergebnis der Abfrage, sondern ein Promise mit state=pending ???
+console.log(titel);

@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // http-Logging aktivieren
-app.use(morgan("tiny"));
+app.use(morgan("dev"));
 
 // Diese Function wird immer aufgerufen - wichtig ist der next-Parameter
 // ansonsten bleibt die Pipeline hängen und es geht nicht weiter

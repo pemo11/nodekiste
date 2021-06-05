@@ -205,5 +205,51 @@
         "Kategorie":  "Pop",
         "Bewertung":  "5",
         "Laenge":  "3,00"
+    },
+    {
+        "Titel":  "All night long",
+        "Interpret": "Lionel Richie",
+        "Album":  "Can't slow down",
+        "Jahr":  "1983",
+        "Kategorie":  "Pop",
+        "Bewertung":  "5",
+        "Laenge":  "4,20"
+    },
+    {
+        "Titel": "Careless Whisper",
+        "Interpret": "Wham!",
+        "Album": "Make it big",
+        "Jahr": "1984",
+        "Kategorie": "Pop",
+        "Bewertung": "3",
+        "Laenge": "5,00"
+    },
+    {
+        "Titel": "I Just Called to Say I Love You",
+        "Interpret": "Stevie Wonder",
+        "Album": "Women in red",
+        "Jahr": "1984",
+        "Kategorie": "Pop",
+        "Bewertung": "4",
+        "Laenge":  "4,25"
+    },
+    {
+        "Titel": "Master blaster",
+        "Interpret": "Stevie Wonder",
+        "Album": "Hotter than July",
+        "Jahr": "1980",
+        "Kategorie": "Reggae",
+        "Bewertung": "5",
+        "Laenge": "4,49"
+    },
+    ,
+    {
+        "Titel": "Sultans of swing",
+        "Interpret": "Dire Straits",
+        "Album": "Dire Straits",
+        "Jahr": "1978",
+        "Kategorie": "Rock",
+        "Bewertung": "5",
+        "Laenge":  "5,47"
     }
 ]
