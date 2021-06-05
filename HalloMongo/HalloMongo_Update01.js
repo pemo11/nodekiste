@@ -51,9 +51,22 @@ mongoose.connect(conStr, {
     console.log("*** connect-Aufruf abgeschlossen ***");
 });
 
+// Schritt 3A: Neuerdings erforderlich!
+mongoose.set("useFindAndModify", false);
+
 // Schritt 4: Default-Connection über eine Variable ansprechbar machen
 const db = mongoose.connection;
 
 // Schritt 5: Ein Document auswählen
+const id = "60b5db4edd9ee74a04eb9f3d"
 
-titel = titelModel.findByIdAndUpdate()
+titelModel.findByIdAndUpdate(id, 
+    {Bewertung:"2"}, (err, titel) => {
+    if (err) {
+        console.log("Error: " + err);
+    } else {
+        // Titel ist das nicht aktualisierte Objekt
+        console.log("Aktualisierung erfolgreisch " + titel);
+        db.close();
+    }
+});
