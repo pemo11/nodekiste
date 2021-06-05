@@ -8,8 +8,8 @@ console.log(__dirname)
 // Durch readFilesSync blockiert den Prozess bis alles gelesen ist
 const options = {
     // Pfade müssen absolut sein
-    key: fs.readFileSync(__dirname + "\\" + "key.pem"),
-    cert: fs.readFileSync(__dirname + "\\" + "cert.pem"),
+    key: fs.readFileSync(__dirname + "//" + "key.pem"),
+    cert: fs.readFileSync(__dirname + "//" + "cert.pem"),
     // passphrase: "!nopw2020"
 };
 

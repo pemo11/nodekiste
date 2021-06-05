@@ -1,0 +1,18 @@
+extends master
+
+block scripts
+ script(src="./bootstrap.js")
+
+block content
+  - users = [{name:"Pemo",alter:50},{name:"Susi",alter:29},{name:"Harry",alter:66},{name:"Emo",alter:31}]
+  - users1 = ["Pemo","Susi","Harry","Emo"]
+
+  ul
+   each user in users
+    li #{user.name}
+
+  p
+
+  ul
+    each user in users
+     li= user.name + " ist " + user.alter + " Jahre alt"
