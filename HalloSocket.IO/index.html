@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body {
+                font-family: Verdana;
+                font-size:11pt;
+            }
+
+            #messageHub {
+                height:320px;
+                width:600px;
+                background-color:skyblue;
+            }
+        </style>
+        <script>
+        </script>
+    </head>
+    <body>
+        <script src="/socket.io/socket.io.js" ></script>
+        <script>
+            var socket = io.connect("http://127.0.0.1:8008");
+            socket.on("message", (daten) => {
+                console.log("*** Message ****");
+                var divEl = document.getElementById("messageHub");
+                divEl.innerHTML += daten.text + "<br>"
+                console.log(daten);
+            });
+        </script>
+        <h3>Hallo, Welt! (what else)</h3>
+        <div id="messageHub"></div>
+
+    </body>
+</html>

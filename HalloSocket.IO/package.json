@@ -1,0 +1,8 @@
+{
+    "name": "hallosocket.io",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "socket.io": "4.1.2"
+    }
+}

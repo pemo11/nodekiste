@@ -1,7 +1,7 @@
 // File: Pug01.js
 const pug = require("pug");
 
-const compiledFunction = pug.compileFile("./template.pug");
+const compiledFunction = pug.compileFile("./template1.pug");
 
 // Render a set of data
 htmlText = compiledFunction({
@@ -10,6 +10,6 @@ htmlText = compiledFunction({
 
 console.log(htmlText);
 
-console.log(pug.renderFile("./template.pug", { name: "Timothy" }));
+console.log(pug.renderFile("./template1.pug", { name: "Timothy" }));
 
 console.log("*** Fertig ***");
