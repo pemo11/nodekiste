@@ -1,0 +1,19 @@
+extends layout
+
+block content
+ h1= title
+
+ ul
+  each val in bookinstance_list
+   li
+    a(href=val.url) #(val.book.title) : #(val.imprint) -
+    if val.status == "Verfuegbar"
+     span.text-success #{val.status}
+    else if val.status == "Reperatur"
+     span.text-danger #{val.status}
+    else
+     span.text-warning #{val.status}
+   if val.status != "Verfuegbar"
+     span "Rückgabe am: #{val.due_back})
+  else
+   li Es gibt aktuell noch kein Exemplare in der Bibliothek

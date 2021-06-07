@@ -1,0 +1,14 @@
+{
+  "name": "dotenv",
+  "version": "1.0.0",
+  "description": "dotenv-Test-Aufrufe",
+  "main": "EnvTest01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pemo",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}

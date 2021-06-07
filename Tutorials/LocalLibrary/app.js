@@ -8,6 +8,7 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var catalogRouter = require("./routes/catalog");
 
 var app = express();
 
@@ -23,10 +24,13 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/catalog", catalogRouter)
 
-var env = require("dotenv").config();
 var mongoose = require("mongoose");
-var conStr = env.process.mongoConStr;
+var env = require("dotenv").config({path:__dirname + "//.env"});
+// var conStr = env.process.mongoConStr;
+// Warum parsed statt process?
+var conStr = env.parsed.mongoConStr;
 mongoose.connect(conStr, {useNewUrlParser:true, useUnifiedTopology:true});
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "!!! Fehler beim Herstellen der Datenbankverbindung !!!"));

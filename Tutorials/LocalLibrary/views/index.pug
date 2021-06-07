@@ -2,4 +2,19 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Willkommen zu #{title}
+
+  h1 Statusdaten
+
+  if error
+   p Beim Abrufen der dynamischen Inhalte gab es ein oder mehrere Probleme
+   p error
+  else
+   p Der aktuelle Stand der Bibliothek: 
+
+   ul
+    li #[strong Bücher:] !{data.book_count}
+    li #[strong Exemplare:] !{data.book_instance_count}
+    li #[strong Verfügbare Exemplare:] !{data.book_instance_available_count}
+    li #[strong Autoren:] !{data.author_count}
+    li #[strong Genre:] !{data.genre_count}
