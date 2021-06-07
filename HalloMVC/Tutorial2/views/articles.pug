@@ -1,2 +1,13 @@
 extends layout
 
+block content
+   table(width="50%",border="1")
+     th Titel
+     th Inhalt
+     th Datum
+     tbody
+      each article in articles
+       tr
+        th #{article.title}
+        th #{article.body}
+        th #{article.date}

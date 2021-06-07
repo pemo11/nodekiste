@@ -6,6 +6,7 @@
 
 const mongoose = require("mongoose");
 const express = require("express");
+const path = require("path");
 const { REPL_MODE_SLOPPY } = require("repl");
 var morgan = require("morgan");
 
@@ -25,6 +26,10 @@ mongoose.connect(conStr, {useNewUrlParser:true, useUnifiedTopology: true})
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+
+app.set("view engine","pug");
+app.set("views", __dirname + "/views");
+app.use(express.static(path.join(__dirname, "public")));
 
 // app.get("/", (request, response) => {
 //     response.send("<h3>Hallo, hallo!</h3");

@@ -13,7 +13,8 @@ module.exports = {
             if(!articles) {
                 response.status(404).json("Es gibt noch keine Artikel");
             }
-            response.json(articles);
+            // response.json(articles);
+            response.render("articles", {articles:articles});
         } catch (err) {
             response.status(500).json({error: err});
         }
@@ -40,11 +41,12 @@ module.exports = {
 
     async updateArticle(request, response, next) {
         try {
+            let id = request.params.id || {};
             const title = request.body.title;
             const body = request.body.body;
             const articleImage = request.body.article_image;
 
-            const article = await ArticleService.updateArticle(title, body, articleImage);
+            const article = await ArticleService.updateArticle(id, title, body, articleImage);
             response.json(article);
 
         } catch(err) {
@@ -54,8 +56,8 @@ module.exports = {
 
     async deleteArticle(request, response, next) {
         try {
-            let id = request.params.id;
-            const deleteResponse = await ArticleService.getArticleById(id);
+            let id = request.params.id || {};
+            const deleteResponse = await ArticleService.deleteArticle(id);
             response.json(deleteResponse);
         } catch(err) {
             response.status(500).json({error: err});

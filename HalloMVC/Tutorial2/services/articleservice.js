@@ -29,7 +29,7 @@ module.exports = {
         }
     },
 
-    async getArticleById (articleId) {
+    async getArticleById(articleId) {
         console.log("*** Calling getAllArticleById ***");
         try {
             const singleArticleResponse = await Article.findById({_id:articleId});
@@ -39,11 +39,13 @@ module.exports = {
         }
     },
 
-    async updateArticle(title, body, articleImage) {
+    async updateArticle(articleId, title, body, articleImage) {
         console.log("*** Calling updateArticle ***");
         try {
+            console.log(`+++ _id: ${articleId} title=${title} +++`)
             const updateResponse = await Article.updateOne(
-                {title, body, articleImage},
+                {_id:articleId},
+                {title:title, body:body, article_image:articleImage},
                 {$set: {date: new Date()}});
             return updateResponse;
         } catch(err) {
@@ -54,7 +56,7 @@ module.exports = {
     async deleteArticle(articleId) {
         console.log("*** Calling deleteArticle ***");
         try {
-            const deleteResponse = await Article.findByOneAndDelete(articleId);
+            const deleteResponse = await Article.findOneAndDelete({_id:articleId});
             return deleteResponse;
         } catch(err) {
             console.log(`!!! Artikel mit Id=${articleId} kann nicht gelöscht werden ${err} !!!`);
