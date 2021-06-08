@@ -16,6 +16,9 @@ router.get("/", book_controller.index);
 // Get für alle books
 router.get("/books", book_controller.book_list);
 
+// Get für ein book
+router.get("/book/:id", book_controller.book_detail);
+
 // book create
 router.get("/book/create", book_controller.book_create_get);
 router.post("/book/create", book_controller.book_create_post);
@@ -32,6 +35,9 @@ router.post("/book/update", book_controller.book_update_post);
 
 // Get für alle genres
 router.get("/genres", genre_controller.genre_list);
+
+// Get für ein genre
+router.get("/genre/:id", genre_controller.genre_detail);
 
 // genre create
 router.get("/genre/create", genre_controller.genre_create_get);

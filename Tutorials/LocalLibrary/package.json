@@ -12,6 +12,7 @@
     "dotenv-save": "^1.2.0",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "luxon": "^1.27.0",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11"
   },

@@ -8,11 +8,12 @@ var GenreSchema = new Schema(
     {
         name: {type: String, required:true},
     }
-);
+)
+.set("toObject", {virtuals: true},"toJSON", {virtuals: true});
 
 GenreSchema
  .virtual("url")
- .get(()=> {
+ .get(function () {
      return "/catalog/genre/" + this._id;
  });
 

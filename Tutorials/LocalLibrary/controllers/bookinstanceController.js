@@ -2,6 +2,7 @@
 
 const { nextTick } = require("async");
 var BookInstance = require("../models/bookinstance");
+var luxon = require("luxon");
 
 // Liste aller BookInstances
 exports.bookinstance_list = (request, response) => {
@@ -14,8 +15,20 @@ exports.bookinstance_list = (request, response) => {
 };
 
 // Details zu einer Book Instance
-exports.bookinstance_detail = (request, response) => {
-    response.send("Noch nicht implementiert - Details zu einer Book Instance");
+exports.bookinstance_detail = (request, response, next) => {
+    BookInstance.findById(request.params.id)
+    .populate("book")
+    .exec((err, bookinstance)=> {
+        if (err) {return next(err)};
+        if (bookinstance==null) {
+            var err = new Error("Buchexamplar nicht gefunden.");
+            err.status = 404;
+            return next(err);
+        }
+        // Alles klar, also ausgeben
+        response.render("bookinstance_detail", {title:"Exemplar" + bookinstance.book.title, bookinstance: bookinstance});
+
+    })
 };
 
 // BookInstance anlegen Get

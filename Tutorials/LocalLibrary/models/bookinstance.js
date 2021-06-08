@@ -11,11 +11,12 @@ var BookInstanceSchema = new Schema(
         status: {type: String, required:true, enum: ["Verfügbar", "Reparatur", "Ausgeliehen", "Reserviert"],default:"Reparatur"},
         bue_back: {type: Date, default: Date.now}
     }
-);
+)
+.set("toObject", {virtuals: true},"toJSON", {virtuals: true});
 
 BookInstanceSchema
  .virtual("url")
- .get(()=> {
+ .get(function () {
      return "/catalog/bookinstance/" + this._id;
  });
 

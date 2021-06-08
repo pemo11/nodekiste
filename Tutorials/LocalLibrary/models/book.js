@@ -12,11 +12,12 @@ var BookSchema = new Schema(
         isbn: {type: String, required:true},
         genre: [{type: Schema.Types.ObjectId, ref: "Genre"}],
     }
-);
+)
+.set("toObject", {virtuals: true},"toJSON", {virtuals: true});
 
 BookSchema
  .virtual("url")
- .get(()=> {
+ .get(function () {
      return "/catalog/book/" + this._id;
 });
 

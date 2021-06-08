@@ -37,7 +37,7 @@ exports.index = (request, response) => {
 };
 
 // Liste aller Books
-exports.book_list = (request, response) => {
+exports.book_list = (request, response, next) => {
     Book.find({}, "title author")
     // Befülle das author-Feld mit dem Objekt aus der author-lissssssst
      .populate("author")
@@ -48,8 +48,33 @@ exports.book_list = (request, response) => {
 };
 
 // Details zum einem Book
-exports.book_detail = (request, response) => {
-    response.send("Noch nicht implementiert - Details zu einem Book");
+exports.book_detail = (request, response, next) => {
+
+    async.parallel({
+        book: (callback) => {
+
+            Book.findById(request.params.id)
+             .populate("author")
+             .populate("genre")
+             .exec(callback)
+        },
+
+        book_instance: (callback) => {
+            BookInstance.find({"book": request.params.id})
+            .exec(callback)
+        },
+
+    }, (err, results) => {
+        if (err) { return next(err)}
+        if (results.book == null) {
+            var err = new Error("Buch nicht gefunden");
+            err.status = 404;
+            return next(err);
+        }
+        // Alles klar - gib was zurück
+        response.render("book_detail", {title: results.book.title, book: results.book, book_instances: results.book_instance});
+    });
+
 };
 
 // Book anlegen Get
