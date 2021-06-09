@@ -1,6 +1,6 @@
 // file: Debuglog02.js
 const util = require("util");
-// NODE_DEBUG enthält entweder app oder timer oder gar nichts
+// NODE_DEBUG enthält entweder app oder timer oder gar nichts3
 const logGeneral = util.debuglog("app");
 const logTimer = util.debuglog("timer");
 const delay = 500;

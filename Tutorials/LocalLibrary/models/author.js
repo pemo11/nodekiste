@@ -1,6 +1,7 @@
 // file: author.js
 
 var mongoose = require("mongoose");
+// {} ist ab ES6 eine Abkürzung, um mehrere Properties eines Objekts mehreren Variablen zuzuweisen
 const { DateTime } = require("luxon");
 
 var Schema = mongoose.Schema;
@@ -31,7 +32,8 @@ AuthorSchema
 AuthorSchema
  .virtual("lifespan")
  .get(function() {
-     return (this.date_of_death.getYear() - this.date_of_birth.getYear()).toString();
+     // return (this.date_of_death.getYear() - this.date_of_birth.getYear()).toString();
+     return this.date_of_birth ? DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_MED) : '';
 });
 
 AuthorSchema

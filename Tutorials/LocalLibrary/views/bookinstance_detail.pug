@@ -17,4 +17,4 @@ block content
       span.text-warning #{bookinstance.status}
 
   if bookinstance.status != 'Verfuegbar'
-    p #[strong Rückgabe am:] #{bookinstance.due_back}
+    p #[strong Rückgabe am:] #{bookinstance.due_back_formatted}

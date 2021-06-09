@@ -18,7 +18,7 @@ block content
 
  h4 Kopien
 
-   each book in book_instances
+   each val in book_instances
     hr
     if val.status == "Verfuegbar"
      p.text-success #{val.status}
@@ -27,8 +27,8 @@ block content
     else
      p.text-warning #{val.status}
     if val.status != "Verfuegbar"
-     p #[strong Rückgabe am]: #{val.due_back})
-    p #[strong Id]: #{val._id})
+     p #[strong Rückgabe am]: #{val.due_back}
+    p #[strong Id]: #{val._id}
 
    else
     p Es gibt keine Exemplare dieses Buch in der Bibliothek.
