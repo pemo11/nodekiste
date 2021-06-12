@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link href="styles.css" rel="stylesheet" type="text/css"></link>
+    </head>
+<body>
+    <h3>Melde Dich an</h3>
+    <% if (messages.error)  { %>
+     <% messages.error %>
+    <% } %>
+    <form action="/login" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+        </div>
+        <div>
+            <label for="email">E-Mail:</label>
+            <input type="text" id="email" name="email" required />
+        </div>
+        <div>
+            <label for="password">Passwort:</label>
+            <input type="password" id="password" name="password" required />
+        </div>
+        <div>
+            <button type="submit">Anmelden</button>
+        </div>
+    </form>
+    <a href="/register">Registrieren</a>
+</body>
+
+</html>

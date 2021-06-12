@@ -1,12 +1,10 @@
-// file: Debuglog02.js
-const util = require("util");
-// NODE_DEBUG enthält entweder app oder timer oder gar nichts
-const logGeneral = util.debuglog("app");
-const logTimer = util.debuglog("timer");
-const delay = 500;
+// file: debuglog02.js
+// Erstellt: 12/06/2021
+// Start unter bash NODE_DEBUG=test1234 node debuglog01
 
-logGeneral("Die App startet...");
+const { debuglog } = require("util");
+  
+const logger = debuglog("test1234");
 
-setTimeout(() => {
-  logTimer("Der Timer hat nach %d Sekunden gefeuert", delay);
-}, delay);
+// Die Meldung erscheint nur, wenn die Umgebungsvariable NODE_DEBUG den Wert Test1234 erhalten hat
+logger("Das ist eine weitere coole Debug-Meldung [%d]",1234);

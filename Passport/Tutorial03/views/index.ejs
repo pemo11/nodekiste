@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <link href="styles.css" rel="stylesheet" type="text/css"></link>
+    </head>
+    <body>
+    <h3>Willkommen auf Treasure-Islands!</h3>
+    <% if (messages.info)  { %>
+        <% messages.info %>
+       <% } %>
+   
+    <a href="/treasure">Zum Schatz</a>
+    <p>
+    <a href="/login">Anmelden</a>
+    <p>
+    <a href="/register">Registrieren</a>
+
+    <form action="/logout?_method=DELETE" method="POST">
+        <button type="submit">Abmelden</button>
+      </form>
+    </body>
+</html> 

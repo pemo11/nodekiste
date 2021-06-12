@@ -1,5 +1,6 @@
 // file: debuglog01.js
 // Erstellt: 08/06/2021
+// Start unter bash NODE_DEBUG=test1234 node debuglog01
 
 const util = require("util");
 const debuglog = util.debuglog("test1234");

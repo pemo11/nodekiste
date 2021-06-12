@@ -1,0 +1,36 @@
+<style>
+    body {
+        font-family: verdana;
+    }
+    div.infos {
+        height: 120;
+        width: 400px;
+    }
+
+    div.info {
+        font-size: 0.8em;
+        background-color: lightblue;
+        color:blue;
+    }
+    div.error {
+        font-size: 0.8em;
+        background-color: lightyellow;
+        color:red;
+    }
+
+</style>
+<div class="infos">
+    <% if (messages.info) { %>
+        <% messages.info.forEach( info => { %>
+        <div class="info"><%= info %></div>
+        <% }) %>
+    <% } %>
+    <% if (messages.error) { %>
+        <% messages.error.forEach( info => { %>
+        <div class="error"><%= info %></div>
+        <% }) %>
+    <% } %>
+
+</div>
+
+<h3>Alles klar mit Flashie!</h3>

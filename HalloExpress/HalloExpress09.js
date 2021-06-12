@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 // Wichtig, damit nicht das views-Verzeichnis verwendet wird auf der Ebnene, auf der ejs installiert wurde
 app.set("views", __dirname + "/views");
 // Verzeichnis für die statischen Dateien festlegen
-app.use(express.static(__dirname+ "/public"));
+app.use(express.static(__dirname + "/public"));
 
 var portNr = 8082;
 var hostAdr = "127.0.0.1"
