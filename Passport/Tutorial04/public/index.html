@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutorial Nr. 4</title>
+        <meta charset="utf-8">
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <H3>Tutorial Nr. 4</H3>
+        <div id="welcome"></div>
+        <div>
+            <div style="display: inline-block;">
+                <a href="/private">Nur für Mitglieder</a>
+                <a href="/login">Anmelden</a>
+                <a href="/logout">Abmelden</a>
+                <a href="/register">Registrieren</a>
+            </div>
+        </div>
+        <script>
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    const user = JSON.parse(xhr.response).user;
+                    document.getElementById("welcome").innerText = `Willkommen, ${user.username}`
+                    console.log(user);
+                }
+            };
+            xhr.open("GET", "http://localhost:8024/user", true);
+            xhr.send();
+        </script>
+    </body>
+</html>

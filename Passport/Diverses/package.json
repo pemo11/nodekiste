@@ -1,0 +1,18 @@
+{
+  "name": "diverses",
+  "version": "1.0.0",
+  "description": "Verschiedene Passport-Beispiele",
+  "main": "PassportAuthenticate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "the Pemo",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.12.13",
+    "passport": "^0.4.1",
+    "passport-local-mongoose": "^6.1.0"
+  }
+}

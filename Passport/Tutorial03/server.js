@@ -82,7 +82,7 @@ app.post("/register", checkNotAuthenticated, async (request, response) => {
             email: request.body.email,
             password: hashpw
             });
-            logger("*** Der User wurde angelegt. ***");
+            logger("*** Der User wurde angelegt ***");
             console.log(users);
             response.redirect("/login");
     } catch (err) {
