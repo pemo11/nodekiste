@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  p Willkommen zu #{title}
+
+  h1 Statusdaten
+
+  if error
+   p Beim Abrufen der dynamischen Inhalte gab es ein oder mehrere Probleme
+   p error
+  else
+   p Der aktuelle Stand: 
+
+   ul
+    li #[strong Studiengänge:] !{data.syllabus_count}
+    li #[strong Module:] !{data.module_count}
+    li #[strong Helper:] !{data.helper_count}
