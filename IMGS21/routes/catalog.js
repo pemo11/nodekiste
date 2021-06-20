@@ -5,7 +5,7 @@ var router = express.Router();
 
 // Erforderliche Controller-Module
 var syllabus_controller = require("../controllers/syllabusController");
-var module_controller = require("../controllers/moduleController");
+var course_controller = require("../controllers/courseController");
 var helper_controller = require("../controllers/helperController");
 
 const Syllabus = require("../models/syllabus");
@@ -31,26 +31,26 @@ router.post("/syllabus/delete", syllabus_controller.syllabus_delete_post);
 router.get("/syllabus/update", syllabus_controller.syllabus_update_get);
 router.post("/syllabus/update", syllabus_controller.syllabus_update_post);
 
-// Module ROUTES
-router.get("/modules", module_controller.modules_list);
+// Course ROUTES
+router.get("/courses", course_controller.course_list);
 
-// Get für ein Module
-router.get("/module/:id", module_controller.module_detail);
+// Course Get
+router.get("/course/:id", course_controller.course_detail);
 
-// Module create
-router.get("/module/create", module_controller.module_create_get);
-router.post("/module/create", module_controller.module_create_post);
+// Course create
+router.get("/course/create", course_controller.course_create_get);
+router.post("/course/create", course_controller.course_create_post);
 
-// Module delete
-router.get("/module/delete", module_controller.module_delete_get);
-router.post("/module/delete", module_controller.module_delete_post);
+// Course delete
+router.get("/course/delete", course_controller.course_delete_get);
+router.post("/course/delete", course_controller.course_delete_post);
 
-// Module update
-router.get("/module/update", module_controller.module_update_get);
-router.post("/module/update", module_controller.module_update_post);
+// Course update
+router.get("/course/update", course_controller.course_update_get);
+router.post("/course/update", course_controller.course_update_post);
 
 // Helper Routes
-router.get("/helper", helper_controller.helpers_list);
+router.get("/helper", helper_controller.helper_list);
 
 // Get für einen Helper
 router.get("/helper/:id", helper_controller.helper_detail);

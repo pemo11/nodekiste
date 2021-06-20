@@ -6,13 +6,16 @@ var Schema = mongoose.Schema;
 var HelperSchema = new Schema(
     {
         title: {type: String, required:true, maxLength:100},
+        author: {type: String, required:true, maxLength:100},
         createDate: Date,
-        author: {type: Schema.Types.ObjectId, ref: "User", required:true},
-        description: String,
-        ratings: {type: Int, required:true},
+        creator: {type: Schema.Types.ObjectId, ref: "User", required:true},
+        course: {type: Schema.Types.ObjectId, ref: "Course", required:true},
+        type: { type: String, required:true, enum: ["YouTube", "Weblink", "Buch", "Sonstiges"],default:"Sonstiges"},
+        comment: String,
+        ratings: {type: Number, required:true},
     }
 )
-.set("toObject", {virtuals: true},"toJSON", {virtuals: true});
+.set("toObject", {virtuals: true}, "toJSON", {virtuals: true});
 
 HelperSchema
  .virtual("url")

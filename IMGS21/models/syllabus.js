@@ -1,15 +1,17 @@
 // file: syllabus.js
+
 var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
 var SyllabusSchema = new Schema(
     {
-        name: {type: String, required:true, maxLength:100},
-        faculty_name: {type: String, required:true, maxLength:100},
+        title: {type: String, required:true, maxLength:100},
+        alias: String,
+        faculty: {type: Schema.Types.ObjectId, ref: "Faculty", required:true},
     }
 )
-.set("toObject", {virtuals: true},"toJSON", {virtuals: true});
+.set("toObject", {virtuals: true}, "toJSON", {virtuals: true});
 
 SyllabusSchema
  .virtual("url")

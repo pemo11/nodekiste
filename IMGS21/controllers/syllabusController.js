@@ -1,9 +1,39 @@
 // file: syllabusController.js
 
+var Faculty = require("../models/faculty");
 var Syllabus = require("../models/syllabus");
-var Async = require("async");
+var Course = require("../models/course");
+var Helper = require("../models/helper");
+
+var async = require("async");
 const util = require("util");
 const debuglog = util.debuglog("app");
+
+// Standardroute für die Homepage
+exports.index = (request, response) => {
+    debuglog("*** Callings syllabus index ***");
+
+    async.parallel({
+        syllabus_count: (callback) => {
+            Syllabus.countDocuments({}, callback);
+        },
+
+        faculty_count: (callback) => {
+            Faculty.countDocuments({}, callback);
+        },
+
+        course_count: (callback) => {
+            Course.countDocuments({}, callback);
+        },
+
+        helper_count: (callback) => {
+            Helper.countDocuments({}, callback);
+        },
+
+    }, (err, results)=> {
+        response.render("index", { title: "Der Studi-Helper", error: err, data: results });
+    });
+};
 
 // Liste von Studientgängen anzeigen
 exports.syllabus_list = (request, response, next) => {
