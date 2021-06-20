@@ -30,6 +30,7 @@ exports.index = (request, response) => {
             Helper.countDocuments({}, callback);
         },
 
+       
     }, (err, results)=> {
         response.render("index", { title: "Der Studi-Helper", error: err, data: results });
     });

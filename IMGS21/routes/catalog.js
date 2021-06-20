@@ -14,7 +14,7 @@ const Syllabus = require("../models/syllabus");
 router.get("/", syllabus_controller.index);
 
 // Get für alle Syllabuse
-router.get("/syllabus", syllabus_controller.syllabus_list);
+router.get("/syllabuses", syllabus_controller.syllabus_list);
 
 // Get für einen Syllabus
 router.get("/syllabus/:id", syllabus_controller.syllabus_detail);
@@ -50,7 +50,7 @@ router.get("/course/update", course_controller.course_update_get);
 router.post("/course/update", course_controller.course_update_post);
 
 // Helper Routes
-router.get("/helper", helper_controller.helper_list);
+router.get("/helpers", helper_controller.helper_list);
 
 // Get für einen Helper
 router.get("/helper/:id", helper_controller.helper_detail);

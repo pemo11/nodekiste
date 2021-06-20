@@ -1,7 +1,7 @@
 // ============================================================================
 // IMG SS 21
 // Autor: Peter Monadjemi (7004123)
-// Letzte Aktualisierung: 19/06/21
+// Letzte Aktualisierung: 20/06/21
 // ============================================================================
 
 // Allgemeine Deklarationen
@@ -12,6 +12,7 @@ const util = require("util");
 const debuglog = util.debuglog("app");
 const path = require("path");
 const cookieParser = require("cookie-Parser");
+var createError = require("http-errors");
 
 require("dotenv").config({path: __dirname + "/.env"});
 
