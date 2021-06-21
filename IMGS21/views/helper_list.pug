@@ -2,4 +2,13 @@ extends layout
 
 block content
   h1= title
-  Liste aller Helper
+  div(style="margin-left:20px;margin-top:20px")
+  p Liste aller Helper
+    ul
+     - helper_list.sort((a, b) => { return (a.rating > b.rating) ? -1 : (a.rating < b.rating) ? 1 : 0});
+     each helper in helper_list
+      li
+       a(href=helper.url) #{helper.title} 
+
+     else
+      li Es gibt noch keine Helper

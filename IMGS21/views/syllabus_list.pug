@@ -2,4 +2,12 @@ extends layout
 
 block content
   h1= title
-  Liste aller Studiengänge
+  div(style="margin-left:20px;margin-top:20px")
+  p Liste aller Studiengänge
+    ul
+     each syllabus in syllabus_list
+      li
+       a(href=syllabus.url) #{syllabus.title} 
+
+     else
+      li Es gibt noch keine Studiengänge

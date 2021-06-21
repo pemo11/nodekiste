@@ -1,0 +1,31 @@
+extends layout
+
+block content
+ h1= title
+
+ form(method="POST" action="")
+  div.form-group
+   label(for="title") Titel:
+   input#title.form-control(type="text" placeholder="Neuer Helfer" name="title" required=true value=(undefined===helper ? "" : helper.title))
+  div.form-group
+   label(for="source") Quelle: 
+   input#url.form-control(type="text" placeholder="Die Quelle" name="source" required=true value=(undefined===helper ? "" : helper.source))
+  div.form-group
+   label(for="author") Tippgeber: 
+   input#url.form-control(type="text" placeholder="Der Tippgeber" name="author" required=true value=(undefined===helper ? "" : helper.author))
+  div.form-group
+   label(for="author") Autor: 
+   input#url.form-control(type="text" placeholder="Der Autor" name="creator" required=true value=(undefined===helper ? "" : helper.creator))
+  div.form-group
+   label(for="course") Kurs: 
+   input#url.form-control(type="text" placeholder="Einführung in die Informatik" name="course" required=true value=(undefined===helper ? "" : helper.course))
+  div.form-group
+   label(for="ratings") Bewertung: 
+   input#url.form-control(type="text" placeholder="0" name="ratings" required=true value=(undefined===helper ? "" : helper.ratings))
+
+  button.btn.btn-primary(type="submit") Anlegen
+
+ if errors
+  ul
+   for error in errors
+    li!= error.msg

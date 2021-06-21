@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 var HelperSchema = new Schema(
     {
         title: {type: String, required:true, maxLength:100},
+        source: {type: String, required:true, maxLength:256},
         author: {type: String, required:true, maxLength:100},
         createDate: Date,
         creator: {type: Schema.Types.ObjectId, ref: "User", required:true},

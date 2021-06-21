@@ -46,10 +46,10 @@ function userCreate(name, email, cb) {
 
 }
 
-function facultyCreate(name, alias, city, country, cb) {
+function facultyCreate(title, alias, city, country, cb) {
 
     facultyDetail = {
-        name: name,
+        title: title,
         alias: alias,
         city: city,
         country: country,
@@ -113,9 +113,10 @@ function courseCreate(title, description, alias, semester, syllabus, cb) {
     });
 }
 
-function helperCreate(title, author, createDate, creator, course, type, comment, cb) {
+function helperCreate(title, source, author, createDate, creator, course, type, comment, cb) {
     helperDetail = { 
         title: title,
+        source: source,
         author: author,
         createDate: createDate,
         creator: creator,
@@ -186,16 +187,16 @@ function createCourses(cb) {
 function createHelpers(cb) {
     async.parallel([
         function(callback) {
-          helperCreate("Informatik für Doofe","Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
+          helperCreate("Informatik für Doofe","Bücherschrank", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
         },
         function(callback) {
-            helperCreate("Informatik für Doofe","Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
+            helperCreate("Informatik für besonders Doofe","Bücherkiste 2", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
           },
         function(callback) {
-            helperCreate("Informatik für Doofe","Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
+            helperCreate("Informatik für extrem Doofe","Bücherkiste 2A", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
           },
         function(callback) {
-            helperCreate("Informatik für Doofe","Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
+            helperCreate("Informatik für Untalentierte","Regal", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
           }],
         // Optional callback
         cb);

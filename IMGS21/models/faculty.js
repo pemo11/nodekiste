@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 
 var FacultySchema = new Schema(
     {
-        name: {type: String, required:true, maxLength:100},
+        title: {type: String, required:true, maxLength:100},
         alias: String,
         city: String,
         country: String,

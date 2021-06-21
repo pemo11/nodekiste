@@ -2,4 +2,12 @@ extends layout
 
 block content
   h1= title
-  Liste aller Fakultäten
+  div(style="margin-left:20px;margin-top:20px")
+  p Liste aller Fakultäten
+    ul
+     each faculty in faculty_list
+      li
+       a(href=faculty.url) #{faculty.title} 
+
+     else
+      li Es gibt noch keine Fakultäten

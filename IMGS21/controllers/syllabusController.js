@@ -5,13 +5,15 @@ var Syllabus = require("../models/syllabus");
 var Course = require("../models/course");
 var Helper = require("../models/helper");
 
+const { body,validationResult } = require("express-validator");
+
 var async = require("async");
 const util = require("util");
 const debuglog = util.debuglog("app");
 
 // Standardroute für die Homepage
 exports.index = (request, response) => {
-    debuglog("*** Callings syllabus index ***");
+    debuglog("*** Syllabus Controller - calling syllabus index ***");
 
     async.parallel({
         syllabus_count: (callback) => {
@@ -32,23 +34,23 @@ exports.index = (request, response) => {
 
        
     }, (err, results)=> {
-        response.render("index", { title: "Der Studi-Helper", error: err, data: results });
+        response.render("index", {title: "Der Studi-Helper", error: err, data: results });
     });
 };
 
-// Liste von Studientgängen anzeigen
+// Liste von Studiengängen anzeigen
 exports.syllabus_list = (request, response, next) => {
-    debuglog("*** Calling syllabus_list ***");
-    Syllabus.find({}, "name")
+    debuglog("*** Syllabus Controller - calling syllabus_list ***");
+    Syllabus.find({}, "title")
      .exec((err, list_syllabus) => {
         if(err) { return next(err);}
-        response.render("syllabus_list", {title:"Alle Studiengänge", syllabus_list: list_syllabus});
+        response.render("syllabus_list", {title: "Alle Studiengänge", syllabus_list: list_syllabus});
      });
 };
 
 // Details zu einem Studiengang anzeigen
 exports.syllabus_detail = (request, response, next) => {
-    debuglog("*** Calling syllabus_detail ***");
+    debuglog("*** Syllabus Controller - calling syllabus_detail ***");
 
     async.parallel({
         syllabus: (callback) => {
@@ -63,42 +65,42 @@ exports.syllabus_detail = (request, response, next) => {
             return next(err);
         }
         // Alles klar, gib was zurück
-        response.render("syllabus_detail", {title:"Studientgangdetails", syllabuses: result.syllabuss});
+        response.render("syllabus_detail", {title: "Studiengangdetails", syllabus: results.syllabus});
     });
 };
 
 // Formular für das Anlegen eines Studiengang anzeigen
 exports.syllabus_create_get = (request, response) => {
-    debuglog("*** Calling syllabus_create_get ***");
+    debuglog("*** Syllabus Controller - calling syllabus_create_get ***");
     response.send("Noch nicht implementiert: Studiengang anlegen GET");
 };
 
 // Studiengang anlegen POST 
 exports.syllabus_create_post = (request, response) => {
-    debuglog("*** Calling syllabus_create_post ***");
+    debuglog("*** Syllabus Controller - calling syllabus_create_post ***");
     response.send("Noch nicht implementiert: Studiengang anlegen POST");
 };
 
 // Formular für das Löschen eines Studiengangs anzeigen
 exports.syllabus_delete_get = (request, response) => {
-    debuglog("*** Calling syllabus_delete_get ***");
+    debuglog("*** Syllabus Controller - calling syllabus_delete_get ***");
     response.send("Noch nicht implementiert: Studiengang löschen GET");
 };
 
 // Studiengang delete POST
 exports.syllabus_delete_post = (request, response) => {
-    debuglog("*** Calling syllabus_delete_post ***");
+    debuglog("*** Syllabus Controller - calling syllabus_delete_post ***");
     response.send("Noch nicht implementiert: Studiengang löschen POST");
 };
 
 // Formular für das Aktualisieren eines Studiengangs anzeigen
 exports.syllabus_update_get = (request, response) => {
-    debuglog("*** Calling syllabus_update_get ***");
+    debuglog("*** Syllabus Controller - calling syllabus_update_get ***");
     response.send("Noch nicht implementiert: Studiengang aktualisieren GET");
 };
 
 // Studiengang aktualisieren POST
 exports.syllabus_update_post = (request, response) => {
-    debuglog("*** Calling syllabus_update_post ***");
+    debuglog("*** Syllabus Controller - calling syllabus_update_post ***");
     response.send("Noch nicht implementiert: Studiengang aktualisieren POST");
 };

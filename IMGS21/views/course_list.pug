@@ -2,4 +2,13 @@ extends layout
 
 block content
   h1= title
-  Liste aller Kurse
+  div(style="margin-left:20px;margin-top:20px")
+  p Liste aller Kurse
+    ul
+     - course_list.sort((a, b) => { let textA = a.title.toUpperCase();let textB = b.title.toUpperCase();return (textA < textB) ? -1 : (textA > textB) ? 1 : 0});
+     each course in course_list
+      li
+       a(href=course.url) #{course.title} 
+
+     else
+      li Es gibt noch keine Kurse

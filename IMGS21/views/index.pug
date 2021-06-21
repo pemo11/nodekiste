@@ -1,10 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Willkommen zu #{title}
+  h1 Willkommen zu #{title}
 
-  h1 Statusdaten
+  h3 Statusdaten
 
   if error
    p Beim Abrufen der dynamischen Inhalte gab es ein oder mehrere Probleme
@@ -13,6 +12,7 @@ block content
    p Der aktuelle Stand: 
 
    ul
+    li #[strong Fakultäten:] !{data.faculty_count}
     li #[strong Studiengänge:] !{data.syllabus_count}
     li #[strong Kurse:] !{data.course_count}
     li #[strong Helper:] !{data.helper_count}
