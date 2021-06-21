@@ -49,8 +49,16 @@ exports.helper_detail = (request, response, next) => {
 // Formular für das Anlegen eines Helpers anzeigen
 exports.helper_create_get = (request, response) => {
     debuglog("*** Helper Controller - calling helper_create_get ***");
-    response.render("helper_form", {title: "Anlegen eines Helpers"});
+    response.render("helper_form", {title: "Anlegen einer Lernhilfe"});
 };
+
+// Formular für das Anlegen eines Helpers anzeigen mit CourseId
+exports.helper_create_get_courseId = (request, response) => {
+    var courseId = request.params.id
+    debuglog(`*** Helper Controller - calling helper_create_get_courseId mit Id=${courseId} ***`);
+    response.render("helper_form", {title: "Anlegen eines Helpers", courseId:courseId});
+};
+
 
 // Helper anlegen POST 
 exports.helper_create_post = [
