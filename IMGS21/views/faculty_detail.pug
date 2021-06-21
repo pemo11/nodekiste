@@ -4,3 +4,9 @@ block content
 
  h1 #{title}
  p #{faculty.title}
+ hr
+ p Liste aller Studiengänge
+  ul
+   each syllabus in syllabus_list
+    li
+     a(href=syllabus.url) #{syllabus.title}

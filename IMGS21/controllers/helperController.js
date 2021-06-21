@@ -33,6 +33,7 @@ exports.helper_detail = (request, response, next) => {
             Helper.findById(request.params.id)
             .exec(callback)
         },
+
     }, (err, results) => {
         if (err) { return next(err);}
         if (results.helper == null){
@@ -41,7 +42,7 @@ exports.helper_detail = (request, response, next) => {
             return next(err);
         }
         // Alles klar, gib was zurück
-        response.render("helper_detail", {title: "Details zu einem Helper", helper: results.helper});
+        response.render("helper_detail", {title: "Details zu einer Lernhilfe", helper: results.helper});
     });
 };
 

@@ -1,6 +1,7 @@
 // file: courseController.js
 
 var Course = require("../models/course");
+var Helper = require("../models/helper");
 var async = require("async");
 const { body,validationResult } = require("express-validator");
 const util = require("util");
@@ -24,6 +25,11 @@ exports.course_detail = (request, response, next) => {
             Course.findById(request.params.id)
             .exec(callback)
         },
+        helper_list: (callback) => {
+            Helper.find({"course": request.params.id}, "title url")
+            .exec(callback)
+        },
+
     }, (err, results) => {
         if (err) { return next(err);}
         if (results.course == null){
@@ -32,7 +38,7 @@ exports.course_detail = (request, response, next) => {
             return next(err);
         }
         // Alles klar, gib was zurück
-        response.render("course_detail", {title: "Details zu einem Kurs", course: results.course});
+        response.render("course_detail", {title: "Details zu einem Kurs", course: results.course, helper_list: results.helper_list});
     });
 };
 

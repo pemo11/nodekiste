@@ -4,3 +4,9 @@ block content
 
  h1 #{title}
  p #{course.title}
+ hr
+ p Liste aller Lernhilfen
+  ul
+   each helper in helper_list
+    li
+     a(href=helper.url) #{helper.title}

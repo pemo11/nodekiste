@@ -4,3 +4,9 @@ block content
 
  h1 #{title}
  p #{syllabus.title}
+ hr
+ p Liste aller Kurse
+  ul
+   each course in course_list
+    li
+     a(href=course.url) #{course.title}

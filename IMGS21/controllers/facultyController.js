@@ -1,6 +1,7 @@
 // file: facultyController.js
 
 var Faculty = require("../models/faculty");
+var Syllabus = require("../models/syllabus");
 const { body,validationResult } = require("express-validator");
 var async = require("async");
 const util = require("util");
@@ -24,6 +25,11 @@ exports.faculty_detail = (request, response, next) => {
             Faculty.findById(request.params.id)
             .exec(callback)
         },
+        faculty_syllabuses: (callback) => {
+            Syllabus.find({"faculty": request.params.id}, "title url")
+            .exec(callback)
+        },
+
     }, (err, results) => {
         if (err) { return next(err);}
         if (results.faculty == null){
@@ -32,6 +38,6 @@ exports.faculty_detail = (request, response, next) => {
             return next(err);
         }
         // Alles klar, gib was zurück
-        response.render("faculty_detail", {title:" Details zu einer Fakultät", faculty: results.faculty});
+        response.render("faculty_detail", {title:" Details zu einer Fakultät", faculty: results.faculty, syllabus_list:results.faculty_syllabuses});
     });
 };

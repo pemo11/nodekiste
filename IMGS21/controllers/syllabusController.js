@@ -57,6 +57,10 @@ exports.syllabus_detail = (request, response, next) => {
             Syllabus.findById(request.params.id)
             .exec(callback)
         },
+        course_list: (callback) => {
+            Course.find({"syllabus": request.params.id}, "title url")
+            .exec(callback)
+        },
     }, (err, results) => {
         if (err) { return next(err);}
         if (results.syllabus == null){
@@ -65,7 +69,7 @@ exports.syllabus_detail = (request, response, next) => {
             return next(err);
         }
         // Alles klar, gib was zurück
-        response.render("syllabus_detail", {title: "Studiengangdetails", syllabus: results.syllabus});
+        response.render("syllabus_detail", {title: "Studiengangdetails", syllabus: results.syllabus, course_list:results.course_list});
     });
 };
 

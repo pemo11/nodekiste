@@ -25,6 +25,10 @@ exports.author_detail = (request, response, next) => {
             Author.findById(request.params.id)
             .exec(callback)
         },
+        author_books: (callback) => {
+            Book.find({"author": request.params.id}, "title summary")
+            .exec(callback)
+        },
     }, (err, results) => {
         if (err) { return next(err);}
         if (results.author == null){
