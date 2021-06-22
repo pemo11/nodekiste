@@ -22,6 +22,8 @@ block content
   div.form-group
    label(for="ratings") Bewertung: 
    input#url.form-control(type="text" placeholder="0" name="ratings" required=true value=(undefined===helper ? "" : helper.ratings))
+   
+   input#url.form-control(type="hidden" name="courseId" value=(undefined===helper ? courseId : helper.courseId))
 
   button.btn.btn-primary(type="submit") Anlegen
 

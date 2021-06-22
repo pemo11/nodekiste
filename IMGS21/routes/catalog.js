@@ -63,6 +63,8 @@ router.get("/helpers", helper_controller.helper_list);
 
 // Helper create
 router.get("/helper/create/:id", helper_controller.helper_create_get_courseId);
+router.post("/helper/create/:id", helper_controller.helper_create_post_courseId);
+
 router.get("/helper/create", helper_controller.helper_create_get);
 router.post("/helper/create", helper_controller.helper_create_post);
 
