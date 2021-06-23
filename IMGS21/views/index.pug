@@ -16,3 +16,11 @@ block content
     li #[strong Studiengänge:] !{data.syllabus_count}
     li #[strong Kurse:] !{data.course_count}
     li #[strong Lernhilfen:] !{data.helper_count}
+
+  hr
+  | Die neuesten drei Lernhilfen
+  ul
+  each helper in data.helper_list
+    li
+     helper.url
+     a(href=helper.url) #{helper.title}

@@ -9,10 +9,10 @@ var syllabus_controller = require("../controllers/syllabusController");
 var course_controller = require("../controllers/courseController");
 var helper_controller = require("../controllers/helperController");
 
-// const Syllabus = require("../models/syllabus");
+// Der Controller für die Homepage
+router.get("/", faculty_controller.index);
 
 // Die Syllabus Routes
-router.get("/", syllabus_controller.index);
 
 // Get für alle Syllabuse
 router.get("/syllabuses", syllabus_controller.syllabus_list);

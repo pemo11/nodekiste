@@ -2,10 +2,47 @@
 
 var Faculty = require("../models/faculty");
 var Syllabus = require("../models/syllabus");
+var Course = require("../models/course");
+var Helper = require("../models/helper");
+
 const { body,validationResult } = require("express-validator");
 var async = require("async");
 const util = require("util");
 const debuglog = util.debuglog("app");
+
+// Standardroute für die Homepage
+exports.index = (request, response) => {
+    debuglog("*** Faculty Controller - calling falcuty index ***");
+
+    async.parallel({
+        syllabus_count: (callback) => {
+            Syllabus.countDocuments({}, callback);
+        },
+
+        faculty_count: (callback) => {
+            Faculty.countDocuments({}, callback);
+        },
+
+        course_count: (callback) => {
+            Course.countDocuments({}, callback);
+        },
+
+        helper_count: (callback) => {
+            Helper.countDocuments({}, callback);
+        },
+
+        helper_list: (callback) => {
+            Helper.aggregate([
+                {$sort: {rating: -1}},
+                {$limit: 3},
+                {$project: {url:1, title:1, rating:1}},
+                ], callback);
+            },
+    }, (err, results)=> {
+        response.render("index", {title: "Der Studi-Helper", error: err, data: results });
+    });
+};
+
 
 // Liste von Fakultäten anzeigen
 exports.faculty_list = (request, response, next) => {
