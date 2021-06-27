@@ -82,7 +82,11 @@ router.post("/helper/update", helper_controller.helper_update_post);
 
 // Login und Register
 router.get("/login", standard_controller.login_get);
+router.get("/logout", standard_controller.logout_get);
+router.post("/login", standard_controller.login_post);
 router.get("/register", standard_controller.register_get);
+router.post("/register", standard_controller.register_post);
 router.get("/passwordRecover", standard_controller.passwordRecover_get);
+router.post("/passwordRecover", standard_controller.passwordRecover_post);
 
 module.exports = router;

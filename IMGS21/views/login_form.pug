@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+    if error
+        p.text-danger Es traten leider Fehler auf
+
+    h3 Anmelden bei Studi-Helper
+    form(action="/catalog/login" method="post")
+     div.form-group
+      input#title.form-control(type="text" placeholder="Anmeldename" name="username" required autofocus value=(undefined=== login ? "" : login.username))
+     div.form-group
+      input#title.form-control(type="password" placeholder="Passwort" name="password")
+     div.form-group
+      button.btn.btn-primary(type="submit") Anmelden
+
+    p
+    if errors
+     ul
+     for error in errors
+      li!= error.msg
+
+    a(href="/catalog/passwordRecover") Passwort vergessen
+    p
+    a(href="/catalog/register") Registrieren

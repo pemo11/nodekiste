@@ -3,6 +3,9 @@ extends layout
 block content
   h1 Willkommen zu #{title}
 
+  if isAuthenticated
+    h3 Wir begrüßen #{user.username}
+  
   h3 Statusdaten
 
   if error

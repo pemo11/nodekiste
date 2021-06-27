@@ -3,7 +3,7 @@ extends layout
 block content
  h1= title
 
- form(method="POST" action="")
+ form(method="Post" action="")
   div.form-group
    label(for="title") Titel:
    input#title.form-control(type="text" placeholder="Neuer Helfer" name="title" required=true value=(undefined===helper ? "" : helper.title))

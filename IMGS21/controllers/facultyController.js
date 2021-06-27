@@ -42,12 +42,12 @@ exports.index = (request, response) => {
                 ]).exec(callback);
             },
     }, (err, results)=> {
-        var user = {username: "Anonyomous"}
-        if (!response.locals != undefined)
+        var curUser = {username: "Anonymous"};
+        if (response.locals != undefined)
         {
-            user = response.locals.currentUser != undefined ? response.locals.currentUser : {username: "Anonyomous"};
+            curUser = response.locals.currentUser != undefined ? response.locals.currentUser : {username: "Anonymous"};
         }
-        response.render("index", {title: "Der Studi-Helper",error: err,data: results,user:user,isAuthenticated:request.isAuthenticated()});
+        response.render("index", {title: "Der Studi-Helper",error: err,data: results, user:curUser, isAuthenticated:request.isAuthenticated()});
     });
 };
 

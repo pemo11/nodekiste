@@ -3,26 +3,39 @@
 const {body,validationResult } = require("express-validator");
 const util = require("util");
 const debuglog = util.debuglog("app");
+const User = require("../models/user");
+const passport = require("passport");
 
 // Login
 exports.login_get = (request, response, next) => {
     debuglog("*** Standard Controller - calling login get ***");
-    response.render("login");
+    response.render("login_form");
 };
 
-exports.login_post = (request, response, next) => {
-    debuglog("*** Standard Controller - calling login post ***");
-    passport.authenticate("local", {
-        successRedirect: "/",
-        failureRedirect: "/login",
-        failureFlash: "Ungültiger Benutzername oder Passwort."
-    });
+// Logout
+exports.logout_get = (request, response, next) => {
+    debuglog("*** Standard Controller - calling logout get ***");
+    // logout() wird von Passport angehängt
+    request.logout();
+    response.redirect("/");
 };
+
+// Habe ich selber gewusst, ohne Hilfe von Tante Google;)
+// Offenbar funktioniert es
+exports.login_post = [passport.authenticate("local", {
+        successRedirect: "/catalog",
+        failureRedirect: "/catalog/login",
+        failureFlash: "Ungültiger Benutzername oder Passwort."
+    }),
+    (request, response, next) => {
+        debuglog("*** Standard Controller - calling login post ***");
+    }
+];
 
 // Register
 exports.register_get = (request, response, next) => {
     debuglog("*** Standard Controller - calling register get ***");
-    response.render("register");
+    response.render("register_form");
 };
 
 exports.register_post = (request, response, next) => {
@@ -31,7 +44,7 @@ exports.register_post = (request, response, next) => {
     // Aufruf der register-Methode von local passport
     User.register(new User({
         username: request.body.username,
-        password: request.body.password,
+        email: request.body.email,
         }), request.body.password, (err, user) => {
             if (err) {
                 debuglog("!!! Fehler in register-Route: " + err.message + "!!!");
@@ -51,6 +64,11 @@ exports.register_post = (request, response, next) => {
 
 // Password Recover
 exports.passwordRecover_get = (request, response, next) => {
-    debuglog("*** Standard Controller - calling Password recover  ***");
+    debuglog("*** Standard Controller - calling Password recover get ***");
     response.render("passwordRecover", {});
+};
+
+exports.passwordRecover_post =  (request, response, next) => {
+    debuglog("*** Standard Controller - calling Password recover post ***");
+    response.send("*** Leider noch nicht umgesetzt ***");
 };

@@ -13,6 +13,7 @@ const debuglog = util.debuglog("app");
 const path = require("path");
 const cookieParser = require("cookie-Parser");
 var createError = require("http-errors");
+const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 require("dotenv").config({path: __dirname + "/.env"});
@@ -32,14 +33,22 @@ app.use(express.static(path.join(__dirname, "public")));
 // ============================================================================
 const mongoose = require("mongoose");
 var conStr = process.env.dbCon;
-mongoose.connect(conStr, {useNewUrlParser:true, useUnifiedTopology:true});
+
+// const User = mongoose.model("User", UserSchema, "User");
+const User = require("./models/user")
+mongoose.connect(conStr,
+    {useNewUrlParser:true, useUnifiedTopology:true})
+    .then(() => {
+        debuglog("*** Datenbankverbindung wurde hergestellt ***")
+    })
+    .catch(err => {
+        debuglog("!!! Fehler beim Herstellen der Datenbankverbindung !!!");
+});
+
 
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "!!! Fehler beim Herstellen der Datenbankverbindung !!!"));
 
-const UserSchema = require("./models/user");
-UserSchema.plugin(passportLocalMongoose);
-const User = mongoose.model("User", UserSchema, "User");
 
 // ============================================================================
 // Express-Initialisierung
