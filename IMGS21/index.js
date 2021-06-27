@@ -1,7 +1,7 @@
 // ============================================================================
 // IMG SS 21
 // Autor: Peter Monadjemi (7004123)
-// Letzte Aktualisierung: 20/06/21
+// Letzte Aktualisierung: 27/06/21
 // ============================================================================
 
 // Allgemeine Deklarationen
@@ -13,13 +13,16 @@ const debuglog = util.debuglog("app");
 const path = require("path");
 const cookieParser = require("cookie-Parser");
 var createError = require("http-errors");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 require("dotenv").config({path: __dirname + "/.env"});
 
 var indexRouter = require("./routes/index");
 var catalogRouter = require("./routes/catalog");
 
+// ============================================================================
 // View engine setup
+// ============================================================================
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use(express.static(path.join(__dirname, "public")));
@@ -34,6 +37,10 @@ mongoose.connect(conStr, {useNewUrlParser:true, useUnifiedTopology:true});
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "!!! Fehler beim Herstellen der Datenbankverbindung !!!"));
 
+const UserSchema = require("./models/user");
+UserSchema.plugin(passportLocalMongoose);
+const User = mongoose.model("User", UserSchema, "User");
+
 // ============================================================================
 // Express-Initialisierung
 // ============================================================================
@@ -41,6 +48,55 @@ db.on("error", console.error.bind(console, "!!! Fehler beim Herstellen der Daten
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// ============================================================================
+// Session-Initialisierung
+// ============================================================================
+
+const expressSession = require("express-session")({
+    secret: "geheim+1234",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 2*60000,
+        sameSite:true
+    },   
+});
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(expressSession);
+
+// =======================
+// Passport-Initialisierung
+// =======================
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Die lokale Strategie wird für das User-Objekt verwendet
+passport.use(User.createStrategy());
+
+// Der Aufruf von serializeUser und deserializeUser wird vereinfacht
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// =======================
+// Allgemeine Middleware
+// =======================
+
+function isLoggedIn(request, response, next) {
+    if(request.isAuthenticated()){
+        return next();
+    }
+    response.redirect("/login");
+}
+
+// Nach einer erfolgreichen Anmeldung soll der aktuelle User abgelegt werden 
+app.use((request, response, next) => {
+    response.locals.currentUser = request.user;
+    next();
+})
 
 // ============================================================================
 // Die Routen

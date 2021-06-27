@@ -1,0 +1,2 @@
+portNr=8030
+conStr=mongodb://localhost:27017/Passport3

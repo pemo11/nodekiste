@@ -11,16 +11,20 @@ block content
    label(for="source") Quelle: 
    input#url.form-control(type="text" placeholder="Die Quelle" name="source" required=true value=(undefined===helper ? "" : helper.source))
   div.form-group
-   label(for="author") Tippgeber: 
+   label(for="author") Autor der Lernhilfe: 
    input#url.form-control(type="text" placeholder="Der Tippgeber" name="author" required=true value=(undefined===helper ? "" : helper.author))
   div.form-group
-   label(for="author") Autor: 
+   label(for="author") Angelegt durch: 
    input#url.form-control(type="text" placeholder="Der Autor" name="creator" required=true value=(undefined===helper ? "" : helper.creator))
   div.form-group
-   label(for="ratings") Bewertung: 
+   label(for="comment") Kommentar:
+   input#url.form-control(type="text" placeholder="0" name="comment" value=(undefined===helper ? "" : helper.comment))
+  div.form-group
+   label(for="ratings") Bewertung (1-6): 
    input#url.form-control(type="text" placeholder="0" name="ratings" required=true value=(undefined===helper ? "" : helper.ratings))
    
-   input#url.form-control(type="hidden" name="courseId" value=(undefined===helper ? courseId : helper.courseId))
+   input#url.form-control(type="hidden" name="courseId" value=(undefined===helper ? courseId : helper.course))
+   input#url.form-control(type="hidden" name="creatorId" value=(undefined===helper ? courseId : helper.creator))
 
   button.btn.btn-primary(type="submit") Anlegen
 

@@ -5,12 +5,18 @@
 // https://codedec.com/tutorials/login-using-passport-module-in-node-js/
 // Noch nicht getestet: Register
 
+// 28/06/21 - Beispiel funktioniert, nachdem ich etwas an passport.autheticate geändert hatte, was eigentlich
+// nicht hätte funktionieren können (?)
+// flash-Message wird nicht angezeigt, muss in der view noch eingebaut werden
+
 const express = require("express");
 const passport = require("passport");
 
 const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 const { response } = require("express");
+
+const flash = require("connect-flash");
 
 var conStr = "mongodb://localhost:27017/Tut4";
 
@@ -44,6 +50,8 @@ require("dotenv").config({path: __dirname + "/.env"});
 const app = express();
 
 app.use(express.static(__dirname + "/public"));
+
+app.use(flash());
 
 // const bodyParser = require("body-parser");
 const expressSession = require("express-session")({
@@ -104,16 +112,15 @@ app.get("/", (request, response) => {
     response.sendFile("/public/index.html", {root: __dirname})
 });
 
-app.post("/login", passport.authenticate("local", (err, user, info) => {
-        if (err) {return next(err)};
-        if (!user) {return response.redirect("/login?info=" + info.message)};
-
-        request.login(user, (err) => {
-            if (err) {return next(err)};
-            return response.redirect("/");
-        });
-    }), (request, response, next) => {
-        console.log("*** Calling the post login route ***");;
+app.post("/login", 
+        passport.authenticate("local", {
+            successRedirect: "/",
+            failureRedirect: "/login",
+            failureFlash: "Invalid username or password."
+        }),
+        (request, response, next) => {
+            console.log("*** Calling the successfull post login route ***");
+            response.redirect("/members");
 });
 
 app.get("/login", (request, response) => {

@@ -19,8 +19,11 @@ block content
 
   hr
   | Die neuesten drei Lernhilfen
+  | !{JSON.stringify(data.helper_top3)}
+
   ul
-  each helper in data.helper_list
+   each helper in data.helper_top3
+    - var helperId = helper.url;
     li
-     helper.url
-     a(href=helper.url) #{helper.title}
+     a(href="/catalog/helper/" + helperId) #{helper.title}
+

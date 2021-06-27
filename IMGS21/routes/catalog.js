@@ -8,6 +8,7 @@ var faculty_controller = require("../controllers/facultyController");
 var syllabus_controller = require("../controllers/syllabusController");
 var course_controller = require("../controllers/courseController");
 var helper_controller = require("../controllers/helperController");
+var standard_controller = require("../controllers/standardController");
 
 // Der Controller für die Homepage
 router.get("/", faculty_controller.index);
@@ -78,5 +79,10 @@ router.post("/helper/delete", helper_controller.helper_delete_post);
 // Helper update
 router.get("/helper/update", helper_controller.helper_update_get);
 router.post("/helper/update", helper_controller.helper_update_post);
+
+// Login und Register
+router.get("/login", standard_controller.login_get);
+router.get("/register", standard_controller.register_get);
+router.get("/passwordRecover", standard_controller.passwordRecover_get);
 
 module.exports = router;

@@ -1,0 +1,20 @@
+extend layout
+
+block content
+
+ if isAuthenticated
+  - var username = user.username.charAt(0).toUpperCase() + user.username.slice(1)
+  | Willkommen, #{username}
+  p
+
+ a(href="/login") Anmelden
+ p
+ a(href="/logout") Abmelden
+ p
+ a(href="/register") Registrieren
+
+ p
+ if isAuthenticated
+   a(href="/users") Alle Benutzer
+ else
+  | Nicht autorisiert (bitte Anmelden)

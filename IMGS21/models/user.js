@@ -8,7 +8,8 @@ var UserSchema = new Schema(
     {
         name: {type: String, required:true, maxLength:100},
         email: {type: String, required:true, maxLength:100},
-        password: {type: String, maxLength:100},
+        createDate: Date,
+        birthDate: Date,
     }
 )
 .set("toObject", {virtuals: true}, "toJSON", {virtuals: true});

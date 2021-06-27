@@ -31,15 +31,23 @@ exports.index = (request, response) => {
             Helper.countDocuments({}, callback);
         },
 
-        helper_list: (callback) => {
+        // Wichtig: aggregate verwendet das MongoDB document aus der Datenbank, so dass die virtuellen Properties
+        // nicht dabei sind, also z.B, kein url - es gibt aber Lösungen
+        // https://stackoverflow.com/questions/30038855/mongoose-virtuals-in-mongodb-aggregate
+        helper_top3: (callback) => {
             Helper.aggregate([
                 {$sort: {rating: -1}},
                 {$limit: 3},
-                {$project: {url:1, title:1, rating:1}},
-                ], callback);
+                {$project: {title:1, url:"$_id"}},
+                ]).exec(callback);
             },
     }, (err, results)=> {
-        response.render("index", {title: "Der Studi-Helper", error: err, data: results });
+        var user = {username: "Anonyomous"}
+        if (!response.locals != undefined)
+        {
+            user = response.locals.currentUser != undefined ? response.locals.currentUser : {username: "Anonyomous"};
+        }
+        response.render("index", {title: "Der Studi-Helper",error: err,data: results,user:user,isAuthenticated:request.isAuthenticated()});
     });
 };
 

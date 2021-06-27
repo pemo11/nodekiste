@@ -1,0 +1,11 @@
+extend layout
+
+block content
+ h3= "Alle User, die es gibt"
+  ul
+   each user in users
+    -var username = user.username.charAt(0).toUpperCase() + user.username.slice(1)
+    li #{username}
+
+ p
+ a(href="/") Zurück

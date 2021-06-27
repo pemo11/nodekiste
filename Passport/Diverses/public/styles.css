@@ -1,0 +1,47 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
+    align-items: center;
+    background: #37474F;
+    color: #cfd8dc;
+    justify-content: center;
+}
+
+.message-box {
+    text-align: center;
+  }
+  
+  a {
+    color: azure;
+  }
+  
+  .field {
+    margin: 10px;
+  }
+  
+  input {
+    font-family: monospace;
+    font-size: 20px;
+    border: none;
+    background: #1c232636;
+    color: #CFD8DC;
+    padding: 7px;
+    border: #4c5a61 solid 2px;
+    width: 120px;
+  }
+  
+  .submit-btn {
+    width: 25%;
+  }
+  
+  .title {
+    margin: 10px 0px 20px 10px
+  }
+  
+  #error-message {
+    color: #E91E63;
+    display: block;
+    margin: 10px;
+    font-size: large;
+    max-width: fit-content;
+  }

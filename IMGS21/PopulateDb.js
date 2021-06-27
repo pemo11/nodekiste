@@ -5,6 +5,7 @@ console.log("*** Die Datenbank IMGSS21 wird eingerichtet ***")
 const dbCon = "mongodb://localhost:27017/IMGS21"
 
 var async = require("async")
+var bcrypt = require("bcrypt")
 var User = require("./models/user")
 var Faculty = require("./models/faculty")
 var Syllabus = require("./models/syllabus")
@@ -23,26 +24,31 @@ var faculties = []
 var syllabuses = []
 var courses = []
 var helpers = []
+var saltRounds = 4;
 
 function userCreate(name, email, cb) {
-    userDetail = {
-        name: name,
-        email: email,
-        createDate: Date.now
-    }
 
-    var user = new User(userDetail);
+    bcrypt.hash("omi21", saltRounds, (err, hash) => {
+        userDetail = {
+            name: name,
+            email: email,
+            password: hash,
+            createDate: Date.now
+        };
 
-    user.save((err) => {
-        if (err) {
-          cb(err, null)
-          return
-        }
+        var user = new User(userDetail);
+
+        user.save((err) => {
+            if (err) {
+            cb(err, null)
+            return
+            }
     
-        console.log("Neuer User: " + user);
-        users.push(user)
-        cb(null, user)
-      });
+            console.log("Neuer User: " + user);
+            users.push(user)
+            cb(null, user)
+        });    
+    });
 
 }
 
@@ -144,7 +150,10 @@ function createUsers(cb) {
             userCreate("pemo", "peter.monadjemi@stud.hs-emden-leer.de", callback)
         },
         function(callback) {
-            userCreate("susi", "susi@girlschools-pomonoa.edu", callback)
+            userCreate("percy", "parvical.stewarti@stud.hs-emden-leer.de", callback)
+        },
+        function(callback) {
+            userCreate("susi", "susanne.moosmann@girlschools-pomonoa.edu", callback)
         }],
         // optional callback
         cb);
@@ -179,6 +188,9 @@ function createCourses(cb) {
         function(callback) {
             courseCreate("Grundlagen der Programmierung 1", "Einführung in die Java-Programmierung", "GP1", "WS 20/21", syllabuses[0], callback);
         },
+        function(callback) {
+            courseCreate("Grundlagen der Programmierung 2", "Java-Programmierung für Fortgeschrittene", "GP2", "WS 20/21", syllabuses[0], callback);
+        },
         ],
         // optional callback
         cb);
@@ -187,16 +199,25 @@ function createCourses(cb) {
 function createHelpers(cb) {
     async.parallel([
         function(callback) {
-          helperCreate("Informatik für Doofe","Bücherschrank", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
+          helperCreate("Informatik für Doofe","Bücherschrank", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super!!!", callback);
         },
         function(callback) {
-            helperCreate("Informatik für besonders Doofe","Bücherkiste 2", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
+            helperCreate("Informatik für besonders Doofe","Bücherkiste 2", "Arthur Doyle", "2020/10/03", users[1], courses[0],"YouTube","Einfach genial", callback);
           },
         function(callback) {
-            helperCreate("Informatik für extrem Doofe","Bücherkiste 2A", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
+            helperCreate("Informatik für extrem Doofe","Bücherkiste 2A", "Mark Twain", "2021/06/21", users[2], courses[2],"YouTube", "Einfach klasse", callback);
           },
         function(callback) {
-            helperCreate("Informatik für Untalentierte","Regal", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super,super", callback);
+            helperCreate("Informatik für Schüchterne","Bücherstrand", "Timothy Chandler", "2020/06/21", users[1], courses[1],"YouTube","Hammerhart", callback);
+        },
+        function(callback) {
+            helperCreate("Programmieren supereinfach","Lernmalwas", "Otto Waalkes", "2021/05/21", users[0], courses[0],"YouTube","Irgendwie lustig", callback);
+        },
+        function(callback) {
+           helperCreate("Alles mal ganz anders", "Wissenskahn", "Charles Dickens", "2019/08/11", users[0], courses[0],"YouTube","Kurz und gut", callback);
+         },
+        function(callback) {
+            helperCreate("Informatik für total Untalentierte", "Wüste der Ödnis", "Stephen Kink", "2020/11/19", users[0], courses[0],"YouTube","Spannend bis zum Schluss", callback);
           }],
         // Optional callback
         cb);
@@ -217,6 +238,7 @@ function(err, results) {
         console.log(`!!! Am Ende trat ein Fehler auf: ${err} !!!`);
     }
     else {
+        console.log(`*** Angelegte User: ${users.length} ***`);
         console.log(`*** Angelegte Fakultäten: ${faculties.length} ***`);
         console.log(`*** Angelegte Studiengänge: ${syllabuses.length} ***`);
         console.log(`*** Angelegte Kurse: ${courses.length} ***`);
