@@ -11,4 +11,7 @@ block content
     li
      a(href=helper.url) #{helper.title}
 
-  a(href='/catalog/helper/create/' + `${course.id}`) Lernhilfe anlegen
+  if userId != 0
+   a(href='/catalog/helper/create/' + `${course.id}`) Lernhilfe anlegen
+  else
+   | Für das Anlegen von Lernhilfen bitte anmelden

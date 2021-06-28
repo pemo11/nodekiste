@@ -65,6 +65,7 @@ exports.faculty_list = (request, response, next) => {
 // Details zu einer Fakultät anzeigen
 exports.faculty_detail = (request, response, next) => {
     debuglog("*** Faculty Controller - calling faculty_detail ***");
+    
     async.parallel({
         faculty: (callback) => {
             Faculty.findById(request.params.id)

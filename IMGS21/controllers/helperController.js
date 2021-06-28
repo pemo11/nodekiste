@@ -51,7 +51,8 @@ exports.helper_detail = (request, response, next) => {
 
 // Formular für das Anlegen eines Helpers anzeigen
 exports.helper_create_get = (request, response) => {
-    debuglog("*** Helper Controller - calling helper_create_get ***");
+    var courseId = request.locals.courseId;
+    debuglog(`*** Helper Controller - calling helper_create_get with courseId=${courseId} ***`);
     response.render("helper_form", {title: "Anlegen einer Lernhilfe"});
 };
 
@@ -79,22 +80,23 @@ exports.helper_create_post_courseId = [
             // CourseId abfragen
             var courseTitle = request.body.course;
             var creatorName = request.body.creator;
-            var creatorId = 0;
+            var creatorId = request.user.id;
+            var courseId = request.body.courseId;
             console.log(`+++ ${courseTitle} +++`)
             // Zuerst den User finden für Creator
             User.findOne({name: creatorName}, "_id")
              .then((result) => {
                 console.log(`+++ ${result.id} +++`)
-                creatorId = result.id;
-                Course.findOne({title: courseTitle}, "_id")
-                .then((result) => {
-                   console.log(`+++ ${result} +++`)
+                // creatorId = result.id;
+                // Course.findOne({title: courseTitle}, "_id")
+                // .then((result) => {
+                //    console.log(`+++ ${result} +++`)
    
                    var helper = new Helper({
                        title: request.body.title,
                        source: request.body.source,
-                       createDate: Date.now,
-                       course: mongoose.Types.ObjectId(result.id),
+                       createDate: Date.now(),
+                       course: mongoose.Types.ObjectId(courseId),
                        author: request.body.author,
                        ratings: request.body.ratings,
                        creator: mongoose.Types.ObjectId(creatorId)
@@ -104,11 +106,11 @@ exports.helper_create_post_courseId = [
                        if (err) {return next(err);}
                        response.redirect(helper.url);
                    });
-                })
-               .catch(err => {
-                   console.log("!!! Fehler bei der Abfrage der CourseId !!!");
-                   if (err) {return next(err);}
-               })
+                // })
+               // .catch(err => {
+               //     console.log("!!! Fehler bei der Abfrage der CourseId !!!");
+               //     if (err) {return next(err);}
+               // })
              })
              .catch(err => {
                 console.log("!!! Fehler bei der Abfrage der CreatorId !!!");
@@ -140,7 +142,7 @@ exports.helper_create_post = [
                 course: request.body.course,
                 author: request.body.author,
                 ratings: request.body.ratings,
-                creator: request.body.creator
+                creator: response.locals.currentUser.id
 
             });
             helper.save(err => {

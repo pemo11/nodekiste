@@ -11,11 +11,8 @@ block content
    label(for="source") Quelle: 
    input#url.form-control(type="text" placeholder="Die Quelle" name="source" required=true value=(undefined===helper ? "" : helper.source))
   div.form-group
-   label(for="author") Autor der Lernhilfe: 
+   label(for="author") Autor: 
    input#url.form-control(type="text" placeholder="Der Tippgeber" name="author" required=true value=(undefined===helper ? "" : helper.author))
-  div.form-group
-   label(for="author") Angelegt durch: 
-   input#url.form-control(type="text" placeholder="Der Autor" name="creator" required=true value=(undefined===helper ? "" : helper.creator))
   div.form-group
    label(for="comment") Kommentar:
    input#url.form-control(type="text" placeholder="0" name="comment" value=(undefined===helper ? "" : helper.comment))

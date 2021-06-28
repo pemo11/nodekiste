@@ -38,7 +38,11 @@ exports.course_detail = (request, response, next) => {
             return next(err);
         }
         // Alles klar, gib was zurück
-        response.render("course_detail", {title: "Details zu einem Kurs", course: results.course, helper_list: results.helper_list});
+        // Über course wird auch die CourseId übergeben
+        var userId=0;
+        if (response.locals.currentUser != undefined)
+        { userId = response.locals.currentUser.id; }
+        response.render("course_detail", {title: "Details zu einem Kurs", course: results.course, userId: userId, helper_list: results.helper_list});
     });
 };
 
