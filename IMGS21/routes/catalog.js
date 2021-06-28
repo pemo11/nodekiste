@@ -60,7 +60,7 @@ router.post("/course/update", course_controller.course_update_post);
 router.get("/course/:id", course_controller.course_detail);
 
 // Helper Routes
-router.get("/helpers", helper_controller.helper_list);
+router.get("/helper", helper_controller.helper_list);
 
 // Helper create
 router.get("/helper/create/:id", helper_controller.helper_create_get_courseId);
@@ -73,8 +73,8 @@ router.post("/helper/create", helper_controller.helper_create_post);
 router.get("/helper/:id", helper_controller.helper_detail);
 
 // Helper delete
-router.get("/helper/delete", helper_controller.helper_delete_get);
-router.post("/helper/delete", helper_controller.helper_delete_post);
+// router.get("/helper/delete", helper_controller.helper_delete_get);
+router.post("/helper/delete/:id", helper_controller.helper_delete_post);
 
 // Helper update
 router.get("/helper/update", helper_controller.helper_update_get);

@@ -9,3 +9,7 @@ block content
  p Typ: #{helper.type}
  p Kommentar: #{helper.comment}
  p Bewertung: #{helper.ratings}
+
+ if isAuthenticated
+  form(method="post" action="/catalog/helper/delete/" + helper.id)
+   button.btn.btn-danger(type="submit") Löschen

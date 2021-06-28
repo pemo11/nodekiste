@@ -45,7 +45,7 @@ exports.helper_detail = (request, response, next) => {
             return next(err);
         }
         // Alles klar, gib was zurück
-        response.render("helper_detail", {title: "Details zu einer Lernhilfe", helper: results.helper});
+        response.render("helper_detail", {title: "Details zu einer Lernhilfe", helper: results.helper,isAuthenticated:request.isAuthenticated()});
     });
 };
 
@@ -143,6 +143,7 @@ exports.helper_create_post = [
 ];
 
 // Formular für das Löschen eines Helpers anzeigen
+// Wird eventuell gar nicht benötigt ???
 exports.helper_delete_get = (request, response) => {
     debuglog("*** Helper Controller - calling helper_delete_get ***");
     response.send("Noch nicht implementiert: Helper löschen GET");
@@ -151,7 +152,16 @@ exports.helper_delete_get = (request, response) => {
 // Helper delete POST
 exports.helper_delete_post = (request, response) => {
     debuglog("*** Helper Controller - calling helper_delete_post ***");
-    response.send("Noch nicht implementiert: Helper löschen POST");
+    var helperId = request.params.id;
+    // findByIdAndDelete mit id statt _id
+    Helper.findOneAndDelete({_id:helperId})
+    .then(()=> {
+        debuglog(`*** Helfer mit id=${helperId} wurde gelöscht ***`);
+    })
+    .catch((err)=> {
+        debuglog(`!!! Fehler beim Löschen des Helfers mit id=${HelperId} (${err})`);
+    });
+    response.redirect("/catalog/helper");
 };
 
 // Formular für das Aktualisieren eines Helpers anzeigen
