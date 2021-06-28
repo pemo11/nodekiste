@@ -82,41 +82,30 @@ exports.helper_create_post_courseId = [
             var creatorName = request.body.creator;
             var creatorId = request.user.id;
             var courseId = request.body.courseId;
-            console.log(`+++ ${courseTitle} +++`)
-            // Zuerst den User finden für Creator
+            debuglog(`+++ ${courseTitle} +++`)
+            // Den User finden über den Namen des Creators
             User.findOne({name: creatorName}, "_id")
              .then((result) => {
-                console.log(`+++ ${result.id} +++`)
-                // creatorId = result.id;
-                // Course.findOne({title: courseTitle}, "_id")
-                // .then((result) => {
-                //    console.log(`+++ ${result} +++`)
-   
-                   var helper = new Helper({
-                       title: request.body.title,
-                       source: request.body.source,
-                       createDate: Date.now(),
-                       course: mongoose.Types.ObjectId(courseId),
-                       author: request.body.author,
-                       ratings: request.body.ratings,
-                       creator: mongoose.Types.ObjectId(creatorId)
-       
+                debuglog(`+++ ${result.id} +++`)
+                // Lernhilfe anlegen
+                var helper = new Helper({
+                    title: request.body.title,
+                    source: request.body.source,
+                    createDate: Date.now(),
+                    course: mongoose.Types.ObjectId(courseId),
+                    author: request.body.author,
+                    ratings: request.body.ratings,
+                    creator: mongoose.Types.ObjectId(creatorId)
                    });
-                   helper.save(err => {
-                       if (err) {return next(err);}
-                       response.redirect(helper.url);
-                   });
-                // })
-               // .catch(err => {
-               //     console.log("!!! Fehler bei der Abfrage der CourseId !!!");
-               //     if (err) {return next(err);}
-               // })
+                helper.save(err => {
+                    if (err) {return next(err);}
+                    response.redirect(helper.url);
+                });
              })
              .catch(err => {
-                console.log("!!! Fehler bei der Abfrage der CreatorId !!!");
+                debuglog("!!! Fehler bei der Abfrage der CreatorId !!!");
                 if (err) {return next(err);}
             })
-
         }
     }
 ];
