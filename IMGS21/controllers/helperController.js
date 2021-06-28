@@ -23,7 +23,7 @@ exports.helper_list = (request, response, next) => {
     Helper.find({}, "title")
      .exec((err, list_helper) => {
         if(err) { return next(err);}
-        response.render("helper_list", {title: "Alle Helper", helper_list: list_helper});
+        response.render("helper_list", {title: "Alle Lernhilfen", helper_list: list_helper});
      });
 };
 
@@ -142,13 +142,6 @@ exports.helper_create_post = [
     }
 ];
 
-// Formular für das Löschen eines Helpers anzeigen
-// Wird eventuell gar nicht benötigt ???
-exports.helper_delete_get = (request, response) => {
-    debuglog("*** Helper Controller - calling helper_delete_get ***");
-    response.send("Noch nicht implementiert: Helper löschen GET");
-};
-
 // Helper delete POST
 exports.helper_delete_post = (request, response) => {
     debuglog("*** Helper Controller - calling helper_delete_post ***");
@@ -175,3 +168,9 @@ exports.helper_update_post = (request, response) => {
     debuglog("*** Helper Controller - calling helper_update_post ***");
     response.send("Noch nicht implementiert: Helper aktualisieren POST");
 };
+
+exports.helper_like_post = (request, response) => {
+    debuglog("*** Helper Controller - calling helper_like_post ***");
+    var helperId = request.params.id;
+    debuglog(`*** Like für Helper ${helperId} wurde gezählt ***`);
+}

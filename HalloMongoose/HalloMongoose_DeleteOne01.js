@@ -1,4 +1,4 @@
-// file: HalloMongo_DeleteOne.js
+// file: HalloMongo_DeleteOne01.js
 // Erstellt: 05/06/21 - Löschen eines Objekts per DeleteOne
 
 const mongoose = require("mongoose");

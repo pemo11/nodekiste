@@ -80,6 +80,9 @@ router.post("/helper/delete/:id", helper_controller.helper_delete_post);
 router.get("/helper/update", helper_controller.helper_update_get);
 router.post("/helper/update", helper_controller.helper_update_post);
 
+// Helper like
+router.post("/helper/like/:id", helper_controller.helper_like_post);
+
 // Login und Register
 router.get("/login", standard_controller.login_get);
 router.get("/logout", standard_controller.logout_get);

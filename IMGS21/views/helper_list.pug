@@ -9,6 +9,8 @@ block content
      each helper in helper_list
       li
        a(href=helper.url) #{helper.title} 
+       form(method="post" action="/catalog/helper/like/" + helper.id)
+        button.btn.btn-success.btn-sm(type="submit") Like+
 
      else
       li Es gibt noch keine Helper
