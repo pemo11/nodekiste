@@ -1,0 +1,30 @@
+extends layout
+
+block content
+
+    h3 Benutzerkonto anlegen
+    form(method="post" action="/catalog/registeruser" enctype="multipart/form-data")
+     div.form-group
+      input#title.form-control(type="text" placeholder="Vollständiger Name" name="fullname" required autofocus value=(undefined=== login ? "" : login.username))
+     div.form-group
+      input#title.form-control(type="text" placeholder="Stadt" name="city" required value=(undefined=== registerInfo ? "" : registerInfo.city))
+     div.form-group
+      input#title.form-control(type="text" placeholder="Land" name="country" required value=(undefined=== registerInfo ? "" : registerInfo.country))
+     div.form-group
+      input#title.form-control(type="text" placeholder="Geschlecht" name="gender" required value=(undefined=== registerInfo ? "" : registerInfo.gender))
+     div.form-group
+      input#title.form-control(type="text" placeholder="Fakultät" name="faculty" required value=(undefined=== registerInfo ? "" : registerInfo.faculty))
+     div.form-group
+      input#title.form-control(type="text" placeholder="Studiengang" name="syllabus" required value=(undefined=== registerInfo ? "" : registerInfo.syllabus))
+     div.form-group
+      input#title.form-control(type="date" placeholder="Geburtssdatum" name="birthdate" required value=(undefined=== registerInfo ? "" : registerInfo.birthdate))
+     div.form-group
+      input#title.form-control(type="file" placeholder="Avatar" name="avatar" required value=(undefined=== registerInfo ? "" : registerInfo.avatar))
+     div.form-group
+      button.btn.btn-primary(type="submit") Benutzerkonto anlegen
+
+    p
+    if errors
+     ul
+     for error in errors
+      li!= error.msg

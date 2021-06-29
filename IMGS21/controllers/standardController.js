@@ -72,3 +72,13 @@ exports.passwordRecover_post =  (request, response, next) => {
     debuglog("*** Standard Controller - calling Password recover post ***");
     response.send("*** Leider noch nicht umgesetzt ***");
 };
+
+exports.register_useraccount_get =  (request, response, next) => {
+    debuglog("*** Standard Controller - calling Register User Account get ***");
+    response.render("register_userAccount")
+};
+
+exports.register_useraccount_post =  (request, response, next) => {
+    debuglog("*** Standard Controller - calling Register User Post Account ***");
+    response.send("*** Leider noch nicht umgesetzt ***");
+};

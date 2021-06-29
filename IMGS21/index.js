@@ -15,6 +15,7 @@ const cookieParser = require("cookie-Parser");
 var createError = require("http-errors");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+const fs = require("fs");
 
 require("dotenv").config({path: __dirname + "/.env"});
 
@@ -131,13 +132,21 @@ app.use((err, request, response, next) => {
     response.render("error");
   });
   
+var httpsOptions = {
+    key: fs.readFileSync("certs/privkey.pem"),
+    cert: fs.readFileSync("certs/cert.pem")
+};
 
-portNr = process.env.portNr;
+portHttpNr = process.env.portHttpNr;
+portHttpsNr = process.env.portHttpsNr
 
-app.listen(portNr, () => {
-    debuglog(`*** Ey gude, der Server horscht heute uff de port ${portNr} ***`);
+app.listen(portHttpNr, () => {
+    debuglog(`*** Der OMI-Studi-Helper horcht per HTTP auf Port ${portHttpNr} ***`);
 });
 
+// httpsServer.listen(portHttpsNr, function() {
+//  debuglog(`*** Der OMI-Studi-Helper horcht per HTTPS auf Port ${portNrHttps} ***`);
+// });
 
 
 

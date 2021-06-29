@@ -1,13 +1,5 @@
 // file: helperController.js
 
-// TODO: 21/06/21 - das Anlegen eines Helpers ist noch mitten in der umsetzung
-// Was noch nicht geht, ist die Zuordnung von creator und course zu der objectId
-// Außerdem sollten die Felder mit den möglichen Werten vorbelegt sein - eventuell löst das auch das Problem
-// https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/forms/Create_book_form
-// Das ist noch eine Hürde, wenn ich die genommen habe und die Anmeldung funktioniert, erst dann soll das Anlegen
-// eines Helpers möglich sein, geht es direkt mit den PWA weiter, so dass ich dei App Ende Juni deployen kann
-// dann habe ich noch 4 Tage
-
 var Helper = require("../models/helper");
 var Course = require("../models/course");
 var User = require("../models/user");
