@@ -20,7 +20,7 @@ var mongoose = require("mongoose");
 // Liste von helpern anzeigen (Liste kann theoretisch sehr groß werden)
 exports.helper_list = (request, response, next) => {
     debuglog("*** Helper Controller - calling helper_list ***");
-    Helper.find({}, "title")
+    Helper.find({}, "title url ratings")
      .exec((err, list_helper) => {
         if(err) { return next(err);}
         response.render("helper_list", {title: "Alle Lernhilfen", helper_list: list_helper});
@@ -169,8 +169,23 @@ exports.helper_update_post = (request, response) => {
     response.send("Noch nicht implementiert: Helper aktualisieren POST");
 };
 
+// Helper like inkrementieren
 exports.helper_like_post = (request, response) => {
     debuglog("*** Helper Controller - calling helper_like_post ***");
     var helperId = request.params.id;
-    debuglog(`*** Like für Helper ${helperId} wurde gezählt ***`);
+    // debuglog(`*** Like für Helper ${helperId} wurde gezählt ***`);
+
+    // Update mit Increment klappt;)
+    // Es kommt auf den Filter an, in diesem Fall _id statt id
+    Helper.findOneAndUpdate(
+        { _id: helperId },
+        { $inc: {ratings: 1 }},
+        {new: true})
+        .then((helperNeu) => {
+            debuglog(`*** Ein Like mehr für Helper ${helperNeu} ***`);
+        })
+        .catch(err => {
+            debuglog(`!!! Fehler beim Updaten von ${helperId} ${err.Message} !!!`);
+        });
+        response.redirect("/catalog/helper");
 }
