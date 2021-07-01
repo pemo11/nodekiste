@@ -13,8 +13,8 @@ var UserInfoSchema = new Schema(
         gender: {type: String, required:true, maxLength:12},
         faculty: {type: String, required:true, maxLength:100},
         syllabus: {type: String, required:true, maxLength:100},
-        avatar: {type: String, required:true, maxLength:100},
-        birthDate: Date,
+        avatar: {type: String, maxLength:100},
+        birthdate: Date,
     }
 )
 .set("toObject", {virtuals: true}, "toJSON", {virtuals: true});
@@ -25,4 +25,4 @@ UserInfoSchema
      return "/catalog/userinfo/" + this._id;
 });
 
-module.exports = mongoose.model("Userinfo", UserInfoSchema);
+module.exports = mongoose.model("UserInfo", UserInfoSchema);

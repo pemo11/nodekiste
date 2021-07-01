@@ -7,6 +7,7 @@ const dbCon = "mongodb://localhost:27017/IMGS21"
 var async = require("async")
 var bcrypt = require("bcrypt")
 var User = require("./models/user")
+var UserInfo = require("./models/userinfo")
 var Faculty = require("./models/faculty")
 var Syllabus = require("./models/syllabus")
 var Course = require("./models/course")
@@ -20,6 +21,7 @@ var db = mongoose.connection;
 db.on("error", console.error.bind(console, "!!! Fehler beim Herstellen der MongoDB-Connection !!!"));
 
 var users = []
+var userInfos = []
 var faculties = []
 var syllabuses = []
 var courses = []
@@ -30,10 +32,9 @@ function userCreate(name, email, cb) {
 
     bcrypt.hash("omi21", saltRounds, (err, hash) => {
         userDetail = {
-            name: name,
+            username: name,
             email: email,
-            password: hash,
-            createDate: Date.now
+            createDate: Date.now(),
         };
 
         var user = new User(userDetail);
@@ -49,6 +50,35 @@ function userCreate(name, email, cb) {
             cb(null, user)
         });    
     });
+
+}
+
+function userInfoCreate(user, fullname, city, country, gender, faculty, syllabus, avatar, birthdate, cb) {
+
+    userInfoDetail = {
+        user: user,
+        fullname: fullname,
+        city: city,
+        country: country,
+        gender: gender,
+        faculty: faculty,
+        syllabus: syllabus,
+        avatar: avatar,
+        birthdate: birthdate
+    };
+
+    var userInfo = new UserInfo(userInfoDetail);
+
+    userInfo.save((err) => {
+        if (err) {
+        cb(err, null)
+        return
+        }
+
+        console.log("Neuer Userinfo: " + userInfo);
+        userInfos.push(userInfo)
+        cb(null, userInfo)
+    });    
 
 }
 
@@ -145,6 +175,7 @@ function helperCreate(title, source, author, createDate, creator, course, type, 
 }
 
 function createUsers(cb) {
+
     async.series([
         function(callback) {
             userCreate("pemo", "peter.monadjemi@stud.hs-emden-leer.de", callback)
@@ -154,6 +185,21 @@ function createUsers(cb) {
         },
         function(callback) {
             userCreate("susi", "susanne.moosmann@girlschools-pomonoa.edu", callback)
+        }],
+        // optional callback
+        cb);
+}
+
+function createUserInfos(cb) {
+    async.series([
+        function(callback) {
+            userInfoCreate(users[0], "Peter Monadjemi", "Esslingen", "Deutschland", "m", "HS Emden", "OMI", "", "1984/04/01", callback)
+        },
+        function(callback) {
+            userInfoCreate(users[1], "Percy Stewart", "Hamburg Harburg", "Deutschland", "m", "FH Lübeck", "OOP", "", "1955/06/20", callback)
+        },
+        function(callback) {
+            userInfoCreate(users[2], "Susi Sailer", "Oberammergau", "Deutschland", "w", "Kempten", "1. FC RKI", "", "1990/09/12", callback)
         }],
         // optional callback
         cb);
@@ -226,6 +272,7 @@ function createHelpers(cb) {
 // Der Reihe nach ausführen
 async.series([
     createUsers,
+    createUserInfos,
     createFaculties,
     createSyllabuses,
     createCourses,
@@ -239,6 +286,7 @@ function(err, results) {
     }
     else {
         console.log(`*** Angelegte User: ${users.length} ***`);
+        console.log(`*** Angelegte UserInfos: ${userInfos.length} ***`);
         console.log(`*** Angelegte Fakultäten: ${faculties.length} ***`);
         console.log(`*** Angelegte Studiengänge: ${syllabuses.length} ***`);
         console.log(`*** Angelegte Kurse: ${courses.length} ***`);

@@ -30,3 +30,9 @@ block content
     li
      a(href="/catalog/helper/" + helperId) #{helper.title}
 
+block extraSidebar
+ if isAuthenticated
+  hr
+  li
+   a(href="/catalog/useraccount") Benutzerkonto
+

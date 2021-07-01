@@ -1,7 +1,7 @@
 // ============================================================================
 // IMG SS 21
 // Autor: Peter Monadjemi (7004123)
-// Letzte Aktualisierung: 27/06/21
+// Letzte Aktualisierung: 30/06/21
 // ============================================================================
 
 // Allgemeine Deklarationen
@@ -133,8 +133,8 @@ app.use((err, request, response, next) => {
   });
   
 var httpsOptions = {
-    key: fs.readFileSync("certs/privkey.pem"),
-    cert: fs.readFileSync("certs/cert.pem")
+    key: fs.readFileSync(path.join(__dirname, "certs/privkey.pem")),
+    cert: fs.readFileSync(path.join(__dirname, "certs/cert.pem"))
 };
 
 portHttpNr = process.env.portHttpNr;

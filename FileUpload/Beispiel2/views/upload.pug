@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+    h3 Lade was hoch
+    form(method="post" action="upload" enctype="multipart/form-data")
+      p
+      input(type="text" placeholder="Dein Name" name="username" required autofocus)
+      p
+      input(type="text" placeholder="E-Mail" name="email")
+      p
+      input(type="file" placeholder="Avatar" name="avatar" required)
+      input(type="hidden" name="userid" value="" + userId)
+      p
+      button(type="submit") Ab geht die Post...
+

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+ h1 #{title}
+ p Vollständiger Name: #{userinfo.fullname}
+ p Stadt: #{userinfo.city}
+ p Land: #{userinfo.country}
+ p Geschlecht: #{userinfo.gender}
+ p Fakultät: #{userinfo.faculty}
+ p Studiengang #{userinfo.syllabus}
+ p Geburtsdatum: #{userinfo.birthdate}
+ p Avatar: 
+   img(src="/filedrop/" + userinfo.avatar width="64" height="64")
+ p
+ a(href="/catalog/registeraccount") Benutzerkonto anlegen
+ p
+ a(href="/") Zurück

@@ -10,31 +10,31 @@ html(lang="de")
     script(src="/scripts/bootstrap.min.js")
   body
    div(class="container-fluid")
-    div(class="row")
-     div(class="col-sm-2")
-      block sidebar
-       ul(class="sidebar-nav")
-        li
-         a(href="/catalog") Home
-        li
-         a(href="/catalog/faculties") Alle Fakultäten
-        li
-         a(href="/catalog/syllabuses") Alle Studiengänge
-        li
-         a(href="/catalog/courses") Alle Kurse
-        li
-         a(href="/catalog/helper") Alle Lernhilfen
-        hr
-        li
-         a(href="/catalog/login") Anmelden
-        li
-         a(href="/catalog/logout") Abmelden
-        hr
-        li
-         a(href="/catalog/register") Registrieren
+    block menu
+     div(class="row")
+      div(class="col-sm-2")
+       block sidebar
+        ul(class="sidebar-nav")
+         li
+          a(href="/catalog") Home
+         li
+          a(href="/catalog/faculties") Alle Fakultäten
+         li
+          a(href="/catalog/syllabuses") Alle Studiengänge
+         li
+          a(href="/catalog/courses") Alle Kurse
+         li
+          a(href="/catalog/helper") Alle Lernhilfen
+         hr
+         li
+          a(href="/catalog/login") Anmelden
+         li
+          a(href="/catalog/logout") Abmelden
+
+        block extraSidebar
          
-     div(class="col-sm-10")
-      block content
+      div(class="col-sm-10")
+       block content
          
         
         

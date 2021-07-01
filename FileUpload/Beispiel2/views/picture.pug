@@ -1,0 +1,8 @@
+extends layout
+
+block content
+ h3 Und hier ist das Bild...
+ h3= picture.filename
+
+ img(src="/filedrop/" + picture.filename width="160" height="120")
+
