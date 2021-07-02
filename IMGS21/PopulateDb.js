@@ -14,11 +14,15 @@ var Course = require("./models/course")
 var Helper = require("./models/helper")
 
 var mongoose = require("mongoose")
+var passport = require("passport")
 mongoose.connect(dbCon, {useNewUrlParser: true, useUnifiedTopology: true})
-mongoose.Promise = global.Promise;
-var db = mongoose.connection;
+mongoose.Promise = global.Promise
+var db = mongoose.connection
 
-db.on("error", console.error.bind(console, "!!! Fehler beim Herstellen der MongoDB-Connection !!!"));
+const LocalStrategy = require("passport-local").Strategy
+passport.use(new LocalStrategy(User.authenticate()))
+
+db.on("error", console.error.bind(console, "!!! Fehler beim Herstellen der MongoDB-Connection !!!"))
 
 var users = []
 var userInfos = []
@@ -30,10 +34,27 @@ var saltRounds = 4;
 
 function userCreate(name, email, cb) {
 
+    var newUser = new User({username: name, email: email})
+    User.register(newUser, "omi21", (err, user) => {
+        if (err) {
+            console.log(`!!! Fehler beim Regstrieren von User ${name} (${err.message}) !!!!`)
+            cb(err, null)
+        } else {
+            console.log(`*** User ${user.username} wurde von Passport-Local registriert ***`)
+            users.push(user)
+            cb(null, user)
+        }
+    })
+
+    /*
     bcrypt.hash("omi21", saltRounds, (err, hash) => {
+        // Wie wird der salt gebildet?
+        // Mongo-connect legt im Rahmen der register-Function automatisch auch einen Salt an
         userDetail = {
             username: name,
             email: email,
+            hash: hash,
+            salt: salt,
             createDate: Date.now(),
         };
 
@@ -41,17 +62,38 @@ function userCreate(name, email, cb) {
 
         user.save((err) => {
             if (err) {
-            cb(err, null)
-            return
+             cb(err, null)
+             return
             }
-    
             console.log("Neuer User: " + user);
             users.push(user)
             cb(null, user)
-        });    
+        });
     });
-
+    */    
 }
+
+/*
+/ Aufruf der register-Methode von local passport
+    User.register(new User({
+        username: request.body.username,
+        password: request.body.password,
+        }), request.body.password, (err, user) => {
+            if (err) {
+                console.log("!!! Fehler in register-Route: " + err.message + "!!!");
+                response.redirect("/register");
+            } else {
+                console.log("*** Registration was good ***");
+                passport.authenticate("local", (err,user,info) => {
+                    console.log("*** Inside the authenticate callback ***");
+                    if (err) {
+                        return next(err);
+                    }
+                    response.redirect("/login");
+                })(request, response, next);
+            }
+        });
+*/
 
 function userInfoCreate(user, fullname, city, country, gender, faculty, syllabus, avatar, birthdate, cb) {
 

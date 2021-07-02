@@ -11,6 +11,7 @@
   "dependencies": {
     "async": "^3.2.0",
     "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
     "crypt": "0.0.2",
     "dotenv": "^10.0.0",

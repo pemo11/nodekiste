@@ -9,6 +9,7 @@ var UserSchema = new Schema(
     {
         username: {type: String, required:true, maxLength:100},
         email: {type: String, required:true, maxLength:100},
+        hash: String,
         createDate: Date,
     }
 )

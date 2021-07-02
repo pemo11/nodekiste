@@ -82,7 +82,7 @@ exports.register_post = (request, response, next) => {
         }), request.body.password, (err, user) => {
             if (err) {
                 debuglog("!!! Fehler in register-Route: " + err.message + "!!!");
-                response.redirect("/register");
+                response.redirect("/catalog/register");
             } else {
                 debuglog("*** Registration was good ***");
                 passport.authenticate("local", (err,user,info) => {
@@ -90,7 +90,7 @@ exports.register_post = (request, response, next) => {
                     if (err) {
                         return next(err);
                     }
-                    response.redirect("/login");
+                    response.redirect("/catalog/login");
                 })(request, response, next);
             }
         });
@@ -118,17 +118,19 @@ exports.register_useraccount_post = [
         debuglog("*** Standard Controller - calling Register User Post Account ***");
         // Jetzt das UserInfo-Objekt anlegen
         // Die UserId, die für das UserInfo-Objekt benötigt wird, wird auch über das request-Objekt geliefert
-        UserInfo.save({
-            user: request.userid,
-            fullname: request.fullname,
-            city: request.city,
-            country: request.country,
-            gender: request.gender,
-            faculty: request.faculty,
-            syllabus: request.syllabus,
-            avatar: request.avatar,
-            birthdate: request.birthdate
-        })
+        // Am Anfang kam hier immer UserInfo.save() is not a function?
+        var userNeu = new UserInfo({
+            user: request.user.id,
+            fullname: request.body.fullname,
+            city: request.body.city,
+            country: request.body.country,
+            gender: request.body.gender,
+            faculty: request.body.faculty,
+            syllabus: request.body.syllabus,
+            avatar: request.body.avatar,
+            birthdate: request.body.birthdate
+        });
+        userNeu.save()
         .then(() => {
             debuglog("*** Das UserInfo-Objekt wurde angelegt ***")
         })
@@ -136,7 +138,7 @@ exports.register_useraccount_post = [
             debuglog(`!!! Fehler beim Abspeichern des UserInfo-Objekts $(err.message)  !!!`)
         })
         // Zurück zur UserInfo-Seite
-        response.render("userinfo", {title: "Alle Details zum Benutzerkonto", userinfo: Userinfo});
+        response.render("useraccount_detail", {title: "Alle Details zum Benutzerkonto", userinfo: userNeu});
     }
 ]
 

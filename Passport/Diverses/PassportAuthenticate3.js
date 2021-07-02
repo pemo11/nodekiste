@@ -20,8 +20,8 @@ var conStr = process.env.conStr;
 const Schema = mongoose.Schema;
 // Wichtig: password oder hash kommen nicht vor, da sie automatisch angelegt werden
 const UserSchema = new Schema({
-    email: String,
     username: String,
+    email: String,
 });
 
 UserSchema.plugin(passportLocalMongoose);

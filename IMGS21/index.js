@@ -1,7 +1,7 @@
 // ============================================================================
 // IMG SS 21
 // Autor: Peter Monadjemi (7004123)
-// Letzte Aktualisierung: 30/06/21
+// Letzte Aktualisierung: 02/07/21
 // ============================================================================
 
 // Allgemeine Deklarationen
@@ -16,6 +16,7 @@ var createError = require("http-errors");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const fs = require("fs");
+const flash = require("connect-flash");
 
 require("dotenv").config({path: __dirname + "/.env"});
 
@@ -35,8 +36,6 @@ app.use(express.static(path.join(__dirname, "public")));
 const mongoose = require("mongoose");
 var conStr = process.env.dbCon;
 
-// const User = mongoose.model("User", UserSchema, "User");
-const User = require("./models/user")
 mongoose.connect(conStr,
     {useNewUrlParser:true, useUnifiedTopology:true})
     .then(() => {
@@ -81,8 +80,14 @@ app.use(expressSession);
 // Passport-Initialisierung
 // =======================
 
+// Flash wird von Passport benötigt
+app.use(flash())
+
 app.use(passport.initialize());
 app.use(passport.session());
+
+// const User = mongoose.model("User", UserSchema, "User");
+const User = require("./models/user")
 
 // Die lokale Strategie wird für das User-Objekt verwendet
 passport.use(User.createStrategy());
@@ -147,7 +152,6 @@ app.listen(portHttpNr, () => {
 // httpsServer.listen(portHttpsNr, function() {
 //  debuglog(`*** Der OMI-Studi-Helper horcht per HTTPS auf Port ${portNrHttps} ***`);
 // });
-
 
 
 
