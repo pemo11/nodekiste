@@ -46,8 +46,9 @@ exports.index = (request, response) => {
         if (response.locals != undefined)
         {
             curUser = response.locals.currentUser != undefined ? response.locals.currentUser : {username: "Anonymous"};
+            curUser.username = curUser.username.charAt(0).toUpperCase() + curUser.username.slice(1);
         }
-        response.render("index", {title: "Der Studi-Helper",error: err,data: results, user:curUser, isAuthenticated:request.isAuthenticated()});
+        response.render("index", {title: "Studi-Helper 1.0",error: err,data: results, user:curUser, isAuthenticated:request.isAuthenticated()});
     });
 };
 

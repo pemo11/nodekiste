@@ -1,7 +1,7 @@
 // ============================================================================
 // IMG SS 21
 // Autor: Peter Monadjemi (7004123)
-// Letzte Aktualisierung: 02/07/21
+// Letzte Aktualisierung: 06/07/21
 // ============================================================================
 
 // Allgemeine Deklarationen
@@ -11,10 +11,11 @@ const app = express();
 const util = require("util");
 const debuglog = util.debuglog("app");
 const path = require("path");
-const cookieParser = require("cookie-Parser");
+const cookieParser = require("cookie-parser");
 var createError = require("http-errors");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+const https = require("https");
 const fs = require("fs");
 const flash = require("connect-flash");
 
@@ -48,7 +49,6 @@ mongoose.connect(conStr,
 
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "!!! Fehler beim Herstellen der Datenbankverbindung !!!"));
-
 
 // ============================================================================
 // Express-Initialisierung
@@ -107,11 +107,16 @@ function isLoggedIn(request, response, next) {
     response.redirect("/login");
 }
 
+var portNrHttp = process.env.portHttpNr;
+var portNrHttps = process.env.portHttpsNr;
+
 // Nach einer erfolgreichen Anmeldung soll der aktuelle User abgelegt werden 
 app.use((request, response, next) => {
+    // Umleiten auf Https
     response.locals.currentUser = request.user;
+    // request.secure ? next() : response.redirect("https://" + request.headers.host + `:${portNrHttps}` + request.url);
     next();
-})
+});
 
 // ============================================================================
 // Die Routen
@@ -135,26 +140,21 @@ app.use((err, request, response, next) => {
     // render the error page
     response.status(err.status || 500);
     response.render("error");
-  });
-  
+});
+
+app.listen(portNrHttp, () => {
+    debuglog(`*** Der OMI-Studi-Helper horcht per HTTP auf Port ${portNrHttp} ***`);
+});
+
 var httpsOptions = {
     key: fs.readFileSync(path.join(__dirname, "certs/privkey.pem")),
     cert: fs.readFileSync(path.join(__dirname, "certs/cert.pem"))
 };
 
-portHttpNr = process.env.portHttpNr;
-portHttpsNr = process.env.portHttpsNr
+/*
+var httpsServer = https.createServer(httpsOptions, app);
 
-app.listen(portHttpNr, () => {
-    debuglog(`*** Der OMI-Studi-Helper horcht per HTTP auf Port ${portHttpNr} ***`);
+httpsServer.listen(portNrHttps, () => {
+    debuglog(`*** Der OMI-Studi-Helper horcht per HTTPS auf Port ${portNrHttps} ***`);
 });
-
-// httpsServer.listen(portHttpsNr, function() {
-//  debuglog(`*** Der OMI-Studi-Helper horcht per HTTPS auf Port ${portNrHttps} ***`);
-// });
-
-
-
-
-
-
+*/

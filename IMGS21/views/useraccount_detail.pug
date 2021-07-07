@@ -10,8 +10,12 @@ block content
  p Studiengang #{userinfo.syllabus}
  p Geburtsdatum: #{userinfo.birthdate}
  p Avatar: 
-   img(src="/filedrop/" + userinfo.avatar width="64" height="64")
+  // Abfrage an dieser Stelle überflüssig, da avavar-Eigenschaft mit diesem Namen vorbelegt wird
+  -var imgName = userinfo.avatar != null ? userinfo.avatar : "SmileyHelfer.png"
+   img(src="/filedrop/" + imgName width="48" height="48")
  p
  a(href="/catalog/registeraccount") Benutzerkonto anlegen
+ p
+ a(href="/catalog/updateaccount") Benutzerkonto aktualisieren
  p
  a(href="/") Zurück

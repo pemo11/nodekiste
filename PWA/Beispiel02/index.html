@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>PWA-Beispiel Nr. 2A</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="theme-color" content="#764ABC">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="manifest" href="/pwa.webmanifest">
+        <link rel="apple-touch-icon" href="/images/apple-touch.jpg">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css">
+        <script src="/scripts/script01.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", getStatus, false);
+
+            function registerServiceWorker2() {
+                console.log("*** Calling registerServiceWorker2() ***");
+                var serviceWorkerPfad = "pwa.js";
+                navigator.serviceWorker.register(serviceWorkerPfad);
+                console.log(`*** ${serviceWorkerPfad} soll registriert werden ***`);
+                navigator.serviceWorker.ready
+                .then((registration) => {
+                    console.log(`*** Der Service-Worker wurde soeben mit Scope=${registration.scope} registriert ***`);
+                })
+                // Dieser Teil wird offenbar nie ausgeführt???
+                .catch(err => {
+                  console.error("!!! Der Service-Worker konnte leider nicht registriert werden !!! " + err);
+                })
+            }
+
+            window.onload = (event) => {
+                registerServiceWorker2();
+                flaggenLaden();
+                elFlagge = document.getElementById("imgFlagge");
+                elFlagge.src = flaggen[0].path;
+                elFlaggenName = document.getElementById("divFlagge");
+                divFlagge.innerHTML = flaggen[0].name;
+                console.log(`*** ${flaggen.length} Flaggen geladen ***`);
+            }
+        </script>
+    </head>
+
+    <body>
+        <h3>PWA-Beispiel Nr. 2A</h3>
+        <img id="imgFlagge"></img>
+        <div id="divFlagge"></div>
+        <div>
+            <button id="btnPrev" style="width:120px;" onclick="prevPic()">Zurück</button>
+            <button id="btnNext" style="width:120px;" onclick="nextPic()">Vor</button>
+        </div>
+        <span>Dein aktueller Status: </span><span><b class="page-status"><span style="color:gray">undefined</span></b></span>
+    </body>
+</html>

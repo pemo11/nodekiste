@@ -12,7 +12,8 @@ var mongoose = require("mongoose");
 // Liste von helpern anzeigen (Liste kann theoretisch sehr groß werden)
 exports.helper_list = (request, response, next) => {
     debuglog("*** Helper Controller - calling helper_list ***");
-    Helper.find({}, "title url ratings")
+    // Die Eigenschaft avatar ist aucg Teil des Helper-Schemas und wird beim Anlegen eines Helpers festgelegt
+    Helper.find({}, "title url ratings avatar")
      .exec((err, list_helper) => {
         if(err) { return next(err);}
         response.render("helper_list", {title: "Alle Lernhilfen", helper_list: list_helper});
@@ -69,16 +70,17 @@ exports.helper_create_post_courseId = [
             response.render("helper_form", {title: "Anlegen einer Lernhilfe", helper:request.body, errors: errors.array()} );
             return;
         } else {
-            // CourseId abfragen
+            // Alle Daten aus dem Helper Anlegen-Formular holen
             var courseTitle = request.body.course;
             var creatorName = request.body.creator;
             var creatorId = request.user.id;
             var courseId = request.body.courseId;
             debuglog(`+++ ${courseTitle} +++`)
             // Den User finden über den Namen des Creators
-            User.findOne({name: creatorName}, "_id")
+            // Geht neben _id auch id?
+            User.findOne({name: creatorName}, "_id avatar")
              .then((result) => {
-                debuglog(`+++ ${result.id} +++`)
+                debuglog(`+++ Helper anlegen - UserId= ${result.id} +++`)
                 // Lernhilfe anlegen
                 var helper = new Helper({
                     title: request.body.title,
@@ -87,6 +89,7 @@ exports.helper_create_post_courseId = [
                     course: mongoose.Types.ObjectId(courseId),
                     author: request.body.author,
                     ratings: request.body.ratings,
+                    avatar: result.avatar,
                     creator: mongoose.Types.ObjectId(creatorId)
                    });
                 helper.save(err => {

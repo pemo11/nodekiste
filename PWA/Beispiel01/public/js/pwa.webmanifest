@@ -1,0 +1,16 @@
+{
+    "name": "Mein erstes PWA",
+    "short_name": "PWA01",
+    "description": "Ein erster Test mit den Basics",
+    "icons": [
+        {
+            "src": "/public/images/splash-screen.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#764ABC",
+    "background_color": "#764ABC"
+}

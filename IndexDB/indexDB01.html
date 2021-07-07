@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>indexedDB-Beispiel Nr. 1</title>
+    </head>
+    <body>
+        <h3>indexedDB-Beispiel Nr. 1</h3>
+        <h4>Die Datenbank wird angelegt...</h4>
+        <script>
+            if (!self.indexedDB) {
+                console.log("*** IndexDB wird leider nicht unterstützt ***");
+            } else {
+                var request = self.indexedDB.open("IMGS21", 1);
+                var db;
+
+                request.onsuccess = (event) => {
+                    console.log("*** Success event mit " + event.target);
+                    db = event.target.result;
+                }
+
+                request.onerror = (event) => {
+                    console.log("*** Es trat ein Error auf: " + request.error);
+                    console.log("*** Es trat ein Error auf: " + event.target.error);
+                }
+
+            }
+
+        </script>
+    </body>
+</html>

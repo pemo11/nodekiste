@@ -8,7 +8,9 @@ block content
      - helper_list.sort((a, b) => { return (a.ratings > b.ratings) ? -1 : (a.ratings < b.ratings) ? 1 : 0});
      each helper in helper_list
       li
-       a(href=helper.url) #{helper.title} (#{helper.ratings})
+       a(href=helper.url) #{helper.title} (#{helper.ratings}) 
+       -var imgName = helper.avatar != "" ? helper.avatar : "SmileyHelfer.png"
+       img(src= "/filedrop/" + imgName width="48" height="48")
        form(method="post" action="/catalog/helper/like/" + helper.id)
         button.btn.btn-success.btn-sm(type="submit") Like+
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>indexedDB-Beispiel Nr. 3</title>
+    </head>
+    <body>
+        <h3>indexedDB-Beispiel Nr. 3</h3>
+        <h4>Der ObjectStore erhält Werte...</h4>
+        <script>
+            // Datenbank muss zuvor gelöscht werden, wenn sie aus Beispiel 1 heraus bereits angelegt wurde
+            var db;
+            var storeName = "Helper";
+            var request = self.indexedDB.open("IMGS21", 1);
+
+            request.onsuccess = (event) => {
+                console.log("*** Success event mit " + event.target);
+                db = event.target.result;
+                // Jetzt ein paar Werte eintragen - der zweite Parameter, mode, ist optional - readOnly ist der Default
+                var transaction = db.transaction(storeName,"readwrite");
+                // objectStore bietet Methoden wie get, add, clear, count, put, delete usw.
+                var objectStore = transaction.objectStore(storeName);
+                // eine Transaktion kann drei DOM-Events erhalten: error, abort und complete
+                // wenn es keinen Error-Handler gibt oder abort() aufgerufen wird, wird die Transaktion nicht ausgeführt
+                transaction.onsuccess = (event) => {
+                    console.log(`*** Transaktion verlief überaus erfolgreich ***`);
+                };
+                var helpers = [
+                    {id:1, title:"Alles klar mit LA", author:"pemo"},
+                    {id:2, title:"Mehr Durchblick mit KSK", author:"susi"},
+                    {id:3, title:"Ich erkläre Euch GP1", author:"otto"},
+                ];
+                helpers.forEach((helper) => {
+                    var dbRequest = objectStore.add(helper);
+                })
+            }
+
+            request.onupgradeneeded = (event) => {
+                db = event.target.result;
+                var store = db.createObjectStore(storeName, {autoIncrement:true, keyPath:"id"});
+                // Optionaler Index, damit die id-Spalte eindeutige Werte besitzen muss
+                store.createIndex("helper_index", "id", {unique:true});
+                console.log(`*** ObjectStore ${storeName} wurde angelegt ***`);
+
+            }
+
+            request.onerror = (event) => {
+                console.log("*** Es trat ein Error auf: " + request.error);
+                console.log("*** Es trat ein Error auf: " + event.target.error);
+            }
+
+
+        </script>
+    </body>
+</html>

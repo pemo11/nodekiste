@@ -99,7 +99,7 @@ exports.register_post = (request, response, next) => {
 // Password Recover
 exports.passwordRecover_get = (request, response, next) => {
     debuglog("*** Standard Controller - calling Password recover get ***");
-    response.render("passwordRecover", {});
+    response.render("password_recover", {});
 };
 
 exports.passwordRecover_post =  (request, response, next) => {
@@ -109,16 +109,17 @@ exports.passwordRecover_post =  (request, response, next) => {
 
 exports.register_useraccount_get = (request, response, next) => {
     debuglog("*** Standard Controller - calling Register User Account get ***");
-    response.render("register_userAccount")
+    response.render("useraccount_register")
 };
 
 exports.register_useraccount_post = [
-    imageUpload.single("avatar"),
+    imageUpload.single("avatar"), 
     (request, response, next) => {
         debuglog("*** Standard Controller - calling Register User Post Account ***");
         // Jetzt das UserInfo-Objekt anlegen
         // Die UserId, die für das UserInfo-Objekt benötigt wird, wird auch über das request-Objekt geliefert
         // Am Anfang kam hier immer UserInfo.save() is not a function?
+        var avatarName =  request.body.avatar != undefined ? request.body.avatar : "SmileyHelfer.png";
         var userNeu = new UserInfo({
             user: request.user.id,
             fullname: request.body.fullname,
@@ -127,7 +128,7 @@ exports.register_useraccount_post = [
             gender: request.body.gender,
             faculty: request.body.faculty,
             syllabus: request.body.syllabus,
-            avatar: request.body.avatar,
+            avatar: avatarName,
             birthdate: request.body.birthdate
         });
         userNeu.save()
@@ -173,14 +174,23 @@ exports.register_useraccount_post = (request, response, next) => {
 // TODO: Aus der Anzeigeform eine Update Form machen
 exports.useraccount_get = (request, response, next) => {
     debuglog("*** Standard Controller - calling Register User Account get ***");
-    UserInfo.find({id: request.user.id})
+    var userId = request.user.id;
+    debuglog(`*** Current UserId= ${userId}`)
+    // Lokalisiere das eine UserInfo-Objekt
+    UserInfo.findById(userId)
     .then(userInfo => {
         if (userInfo) {
-            response.render("useraccount_detail", {userinfo: userInfo});
+            debuglog(`*** UserInfo-Objekt mit Id= ${userId} gefunden ***`)
         } else {
             // Nicht gefunden, wieder zurück ins Hauptmenü (?)
-            response.redirect("/")
+            debuglog(`!!! Es gibt kein UserInfo-Objekt mit Id= ${userId} !!!`)
+            userInfo = new UserInfo({
+                username: "Kein Username",
+                city: "Keine Stadt",
+                country: "Kein Land"
+            })
         }
+        response.render("useraccount_detail", {userinfo: userInfo});
     })
     .catch(err => {
         response.render("error", {error: err})

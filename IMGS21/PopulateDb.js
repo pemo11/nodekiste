@@ -201,7 +201,8 @@ function helperCreate(title, source, author, createDate, creator, course, type, 
         course: course,
         type: type,
         comment: comment,
-        ratings: 0
+        ratings: 0,
+        avatar: "",
     };
   
     var helper = new Helper(helperDetail);    

@@ -1,0 +1,16 @@
+{
+    "name": "PWA-Beispiel Nr. 2",
+    "short_name": "PWA02",
+    "description": "Eine PWA nur mit JavaScript und sonst nix",
+    "icons": [
+        {
+            "src": "/images/splash-screen.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#764ABC",
+    "background_color": "#764ABC"
+}

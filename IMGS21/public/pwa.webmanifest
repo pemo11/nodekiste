@@ -1,0 +1,28 @@
+﻿{
+    "name":"Studi-Helper IMG SS21",
+    "short_name":"IMGS21",
+    "description":"Praxisprojekt für das Modul IMG im SS21",
+    "start_url":"/",
+    "background_color":"#FFA500",
+    "theme_color":"#009578",
+    "display":"standalone",
+    "icons": [
+        {
+            "src":"images/IMGS21Logo_512.png",
+            "sizes": "512x512",
+            "type":"image/png"
+        },
+        {
+            "src":"images/IMGS21Logo_192.png",
+            "sizes":"192x192",
+            "type":"image/png"
+        },
+        {
+            "src":"images/maskable_icon_x48.png",
+            "sizes":"48x48",
+            "type":"image/png",
+            "purpose":"any maskable"
+        }
+
+    ]
+}

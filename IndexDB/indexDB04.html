@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>indexedDB-Beispiel Nr. 4</title>
+    </head>
+    <body>
+        <h3>indexedDB-Beispiel Nr. 4</h3>
+        <h4>Dynamische Daten aus einer IndexDB...</h4>
+        <div id="divHelfer">Alle Helfer</div>
+        
+        <script>
+            // Datenbank muss zuvor gelöscht werden, wenn sie aus Beispiel 1 heraus bereits angelegt wurde
+            var db;
+            var storeName = "Helper";
+            var request = self.indexedDB.open("IMGS21", 1);
+
+            // Abrufen der Daten
+            request.onsuccess = (event) => {
+                console.log("*** Success event mit database " + event.target.result.name);
+                db = event.target.result;
+                var transaction = db.transaction(storeName,"readwrite");
+                var objectStore = transaction.objectStore(storeName);
+                // objectStore bietet Methoden wie get, add, clear, count, put, delete usw.
+                // Für das Durchlaufen aller Objekte bietet sich ein Cursor an
+                objectStore.openCursor().onsuccess = (event) => {
+                    var cursor = event.target.result;
+                    var divHelfer = document.getElementById("divHelfer");
+                    var ulElement = document.createElement("lu");
+                    if (cursor) {
+                        var liElement = document.createElement("li");
+                        liElement.innerHTML = cursor.value.title; 
+                        ulElement.append(liElement);
+                        // etwas seltsam, aber es funktioniert
+                        cursor.continue();
+                    }
+                    else {
+                        console.log("*** Keine weiteren Elemente ***");
+                    }
+                    divHelfer.append(ulElement);
+                }
+            }
+
+            request.onupgradeneeded = (event) => {
+                console.log(`*** Event upgradeneed mit result= ${event.result} ***`);
+            }
+
+            request.onerror = (event) => {
+                console.log("*** Es trat ein Error auf: " + event.target.error);
+            }
+
+
+        </script>
+    </body>
+</html>

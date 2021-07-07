@@ -8,6 +8,10 @@ var HelperSchema = new Schema(
         title: {type: String, required:true, maxLength:100},
         source: {type: String, required:true, maxLength:256},
         author: {type: String, required:true, maxLength:100},
+        // Problem: avatar soll auf User verweisen, aber auf die avatar-Property von User
+        // Geht das in MongoDb überhaupt?
+        // avatar: {type: Schema.Types.ObjectId, ref: "User"},
+        avatar: {type: String, maxLength: 100},
         createDate: Date,
         creator: {type: Schema.Types.ObjectId, ref: "User", required:true},
         course: {type: Schema.Types.ObjectId, ref: "Course", required:true},

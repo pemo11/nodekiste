@@ -3,11 +3,24 @@ html(lang="de")
   head
     title= title
     meta(charset="utf-8")
+    meta(name="theme-color", content="#009578")
     meta(name="viewport", content="width=device-width,initial-scale=1")
     link(rel="stylesheet", href="/styles/bootstrap.min.css")
-    link(rel="stylesheet", href="/styles/style.css")
-    script(src="/scripts/jquery-3.6.0.js")
-    script(src="/scripts/bootstrap.min.js")
+    link(rel="stylesheet", href="styles/style.css")
+    link(rel="apple-touch-icon", href="images/IMGS21Logo.png")
+    link(href="pwa.webmanifest", rel="manifest", type="text/json")
+    script(src="scripts/jquery-3.6.0.js")
+    script(src="scripts/bootstrap.min.js")
+    script(src="/sw-helper.js")
+    script.
+      var elOffline = document.getElementById("imgOffline");
+      elOffline.src = navigator.onLine ? "/images/OnlineButton.png" : "/images/OfflineButton.png";
+      if (navigator.onLine) {
+          console.log("*** Online-Status: Online ***");
+      } else {
+          console.log("!!! Online-Status: Offline !!!");
+      }
+
   body
    div(class="container-fluid")
     block menu
@@ -30,9 +43,13 @@ html(lang="de")
           a(href="/catalog/login") Anmelden
          li
           a(href="/catalog/logout") Abmelden
+         hr
+         li
+          a(href="/catalog/about") Info&Impressum
 
         block extraSidebar
-         
+         img(id="imgOffline", width="64", height="64")
+
       div(class="col-sm-10")
        block content
          

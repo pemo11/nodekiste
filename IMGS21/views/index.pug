@@ -1,18 +1,18 @@
 extends layout
 
 block content
-  h1 Willkommen zu #{title}
+  div(style="display:flex;margin-bottom:16px")
+   img(src="/images/IMGS21Logo.png", style="margin-right:16px")
+   h1 Willkommen zu #{title}
 
   if isAuthenticated
     h3 Wir begrüßen #{user.username}
   
-  h3 Statusdaten
-
   if error
    p Beim Abrufen der dynamischen Inhalte gab es ein oder mehrere Probleme
    p error
   else
-   p Der aktuelle Stand: 
+   h4 Der aktuelle Stand: 
 
    ul
     li #[strong Fakultäten:] !{data.faculty_count}
@@ -22,7 +22,7 @@ block content
 
   hr
   | Die neuesten drei Lernhilfen
-  | !{JSON.stringify(data.helper_top3)}
+  // | !{JSON.stringify(data.helper_top3)}
 
   ul
    each helper in data.helper_top3
@@ -33,6 +33,7 @@ block content
 block extraSidebar
  if isAuthenticated
   hr
-  li
-   a(href="/catalog/useraccount") Benutzerkonto
+  a(href="/catalog/useraccount") Benutzerkonto
 
+ if offlineMode
+   img(src="/images/OfflineButton.png" alt="Offline-Modus aktiv")

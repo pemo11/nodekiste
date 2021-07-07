@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>indexedDB-Beispiel Nr. 2</title>
+    </head>
+    <body>
+        <h3>indexedDB-Beispiel Nr. 2</h3>
+        <h4>Die Datenbank wird mit einem ObjectStore angelegt...</h4>
+        <script>
+            // Datenbank muss zuvor gelöscht werden, wenn sie aus Beispiel 1 heraus bereits angelegt wurde
+            var request = self.indexedDB.open("IMGS21", 1);
+            var db;
+            var storeName = "Helper";
+
+            request.onsuccess = (event) => {
+                console.log("*** Success event mit " + event.target);
+                db = event.target.result;
+            }
+
+            request.onupgradeneeded = (event) => {
+                db = event.target.result;
+                db.createObjectStore(storeName, {autoIncrement:true, keyPath:"id"});
+                console.log(`*** ObjectStore ${storeName} wurde angelegt ***`);
+            }
+
+            request.onerror = (event) => {
+                console.log("*** Es trat ein Error auf: " + request.error);
+                console.log("*** Es trat ein Error auf: " + event.target.error);
+            }
+
+
+        </script>
+    </body>
+</html>
