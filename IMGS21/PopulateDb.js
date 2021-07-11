@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-console.log("*** Die Datenbank IMGSS21 wird eingerichtet ***")
+console.log("*** Die Datenbank IMGS21 wird eingerichtet ***")
 
 const dbCon = "mongodb://localhost:27017/IMGS21"
 
@@ -14,12 +14,12 @@ var Course = require("./models/course")
 var Helper = require("./models/helper")
 
 var mongoose = require("mongoose")
-var passport = require("passport")
+var passport = require("passport/lib")
 mongoose.connect(dbCon, {useNewUrlParser: true, useUnifiedTopology: true})
 mongoose.Promise = global.Promise
 var db = mongoose.connection
 
-const LocalStrategy = require("passport-local").Strategy
+const LocalStrategy = require("passport-local/lib").Strategy
 passport.use(new LocalStrategy(User.authenticate()))
 
 db.on("error", console.error.bind(console, "!!! Fehler beim Herstellen der MongoDB-Connection !!!"))
@@ -30,14 +30,14 @@ var faculties = []
 var syllabuses = []
 var courses = []
 var helpers = []
-var saltRounds = 4;
 
 function userCreate(name, email, cb) {
 
     var newUser = new User({username: name, email: email})
+
     User.register(newUser, "omi21", (err, user) => {
         if (err) {
-            console.log(`!!! Fehler beim Regstrieren von User ${name} (${err.message}) !!!!`)
+            console.log(`!!! Fehler beim Registrieren von User ${name} (${err.message}) !!!!`)
             cb(err, null)
         } else {
             console.log(`*** User ${user.username} wurde von Passport-Local registriert ***`)
@@ -45,55 +45,7 @@ function userCreate(name, email, cb) {
             cb(null, user)
         }
     })
-
-    /*
-    bcrypt.hash("omi21", saltRounds, (err, hash) => {
-        // Wie wird der salt gebildet?
-        // Mongo-connect legt im Rahmen der register-Function automatisch auch einen Salt an
-        userDetail = {
-            username: name,
-            email: email,
-            hash: hash,
-            salt: salt,
-            createDate: Date.now(),
-        };
-
-        var user = new User(userDetail);
-
-        user.save((err) => {
-            if (err) {
-             cb(err, null)
-             return
-            }
-            console.log("Neuer User: " + user);
-            users.push(user)
-            cb(null, user)
-        });
-    });
-    */    
 }
-
-/*
-/ Aufruf der register-Methode von local passport
-    User.register(new User({
-        username: request.body.username,
-        password: request.body.password,
-        }), request.body.password, (err, user) => {
-            if (err) {
-                console.log("!!! Fehler in register-Route: " + err.message + "!!!");
-                response.redirect("/register");
-            } else {
-                console.log("*** Registration was good ***");
-                passport.authenticate("local", (err,user,info) => {
-                    console.log("*** Inside the authenticate callback ***");
-                    if (err) {
-                        return next(err);
-                    }
-                    response.redirect("/login");
-                })(request, response, next);
-            }
-        });
-*/
 
 function userInfoCreate(user, fullname, city, country, gender, faculty, syllabus, avatar, birthdate, cb) {
 
@@ -106,7 +58,8 @@ function userInfoCreate(user, fullname, city, country, gender, faculty, syllabus
         faculty: faculty,
         syllabus: syllabus,
         avatar: avatar,
-        birthdate: birthdate
+        birthdate: birthdate,
+        lastLogin: null,
     };
 
     var userInfo = new UserInfo(userInfoDetail);
@@ -201,7 +154,7 @@ function helperCreate(title, source, author, createDate, creator, course, type, 
         course: course,
         type: type,
         comment: comment,
-        ratings: 0,
+        rating: 0,
         avatar: "",
     };
   
@@ -221,6 +174,9 @@ function createUsers(cb) {
 
     async.series([
         function(callback) {
+            userCreate("admin", "peter.monadjemi@stud.hs-emden-leer.de", callback)
+        },
+        function(callback) {
             userCreate("pemo", "peter.monadjemi@stud.hs-emden-leer.de", callback)
         },
         function(callback) {
@@ -236,13 +192,13 @@ function createUsers(cb) {
 function createUserInfos(cb) {
     async.series([
         function(callback) {
-            userInfoCreate(users[0], "Peter Monadjemi", "Esslingen", "Deutschland", "m", "HS Emden", "OMI", "", "1984/04/01", callback)
+            userInfoCreate(users[1], "Peter Monadjemi", "Esslingen", "Deutschland", "m", "HS Emden", "OMI", "", "1984/04/01", callback)
         },
         function(callback) {
-            userInfoCreate(users[1], "Percy Stewart", "Hamburg Harburg", "Deutschland", "m", "FH Lübeck", "OOP", "", "1955/06/20", callback)
+            userInfoCreate(users[2], "Percy Stewart", "Hamburg Harburg", "Deutschland", "m", "FH Lübeck", "OOP", "", "1955/06/20", callback)
         },
         function(callback) {
-            userInfoCreate(users[2], "Susi Sailer", "Oberammergau", "Deutschland", "w", "Kempten", "1. FC RKI", "", "1990/09/12", callback)
+            userInfoCreate(users[3], "Susi Sailer", "Oberammergau", "Deutschland", "w", "Kempten", "1. FC RKI", "", "1990/09/12", callback)
         }],
         // optional callback
         cb);
@@ -288,25 +244,25 @@ function createCourses(cb) {
 function createHelpers(cb) {
     async.parallel([
         function(callback) {
-          helperCreate("Informatik für Doofe","Bücherschrank", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super!!!", callback);
+          helperCreate("Informatik für Sensible","Bücherschrank", "Charles M. Schultz", "2021/06/21", users[0], courses[0],"YouTube","Super!!!", callback);
         },
         function(callback) {
-            helperCreate("Informatik für besonders Doofe","Bücherkiste 2", "Arthur Doyle", "2020/10/03", users[1], courses[0],"YouTube","Einfach genial", callback);
+            helperCreate("Informatik für besonders Sensible","Bücherkiste 2", "Arthur Doyle", "2020/10/03", users[1], courses[0],"YouTube","Einfach genial", callback);
           },
         function(callback) {
-            helperCreate("Informatik für extrem Doofe","Bücherkiste 2A", "Mark Twain", "2021/06/21", users[2], courses[2],"YouTube", "Einfach klasse", callback);
+            helperCreate("Bresenham ganz einfach","Bücherkiste 2A", "Mark Twain", "2021/06/21", users[2], courses[2],"YouTube", "Einfach klasse", callback);
           },
         function(callback) {
-            helperCreate("Informatik für Schüchterne","Bücherstrand", "Timothy Chandler", "2020/06/21", users[1], courses[1],"YouTube","Hammerhart", callback);
+            helperCreate("Bubble Sort super simpel","Bücherstrand", "Timothy Chandler", "2020/06/21", users[1], courses[1],"YouTube","Hammerhart", callback);
         },
         function(callback) {
-            helperCreate("Programmieren supereinfach","Lernmalwas", "Otto Waalkes", "2021/05/21", users[0], courses[0],"YouTube","Irgendwie lustig", callback);
+            helperCreate("Damit verstehst Du endlich, was eine Variable ist","Lernmalwas", "Otto Waalkes", "2021/05/21", users[0], courses[0],"YouTube","Irgendwie lustig", callback);
         },
         function(callback) {
-           helperCreate("Alles mal ganz anders", "Wissenskahn", "Charles Dickens", "2019/08/11", users[0], courses[0],"YouTube","Kurz und gut", callback);
+           helperCreate("Der Dreisatz glasklar erklärt", "Wissenskahn", "Charles Dickens", "2019/08/11", users[0], courses[0],"YouTube","Kurz und gut", callback);
          },
         function(callback) {
-            helperCreate("Informatik für total Untalentierte", "Wüste der Ödnis", "Stephen Kink", "2020/11/19", users[0], courses[0],"YouTube","Spannend bis zum Schluss", callback);
+            helperCreate("Das Ohmsgesetz, endlich habe ich es kapiert", "Wüste der Ödnis", "Stephen Kink", "2020/11/19", users[0], courses[0],"YouTube","Spannend bis zum Schluss", callback);
           }],
         // Optional callback
         cb);
@@ -320,14 +276,13 @@ async.series([
     createSyllabuses,
     createCourses,
     createHelpers
-],
+ ],
 
-// Optionaler callback für das Finale
-function(err, results) {
+  // Optionaler callback für das Finale
+  function(err, results) {
     if (err) {
         console.log(`!!! Am Ende trat ein Fehler auf: ${err} !!!`);
-    }
-    else {
+    } else {
         console.log(`*** Angelegte User: ${users.length} ***`);
         console.log(`*** Angelegte UserInfos: ${userInfos.length} ***`);
         console.log(`*** Angelegte Fakultäten: ${faculties.length} ***`);

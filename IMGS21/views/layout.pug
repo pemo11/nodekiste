@@ -6,23 +6,29 @@ html(lang="de")
     meta(name="theme-color", content="#009578")
     meta(name="viewport", content="width=device-width,initial-scale=1")
     link(rel="stylesheet", href="/styles/bootstrap.min.css")
-    link(rel="stylesheet", href="styles/style.css")
-    link(rel="apple-touch-icon", href="images/IMGS21Logo.png")
+    link(rel="stylesheet", href="/styles/style.css")
+    link(rel="apple-touch-icon", href="/images/IMGS21Logo.png")
     link(href="pwa.webmanifest", rel="manifest", type="text/json")
-    script(src="scripts/jquery-3.6.0.js")
-    script(src="scripts/bootstrap.min.js")
-    script(src="/sw-helper.js")
+    script(src="/scripts/jquery-3.6.0.js")
+    script(src="/scripts/bootstrap.min.js")
+    script(src="sw-helper.js")
     script.
-      var elOffline = document.getElementById("imgOffline");
-      elOffline.src = navigator.onLine ? "/images/OnlineButton.png" : "/images/OfflineButton.png";
-      if (navigator.onLine) {
-          console.log("*** Online-Status: Online ***");
-      } else {
-          console.log("!!! Online-Status: Offline !!!");
-      }
+      window.addEventListener("DOMContentLoaded", () => {
+        var elOffline = document.getElementById("imgOffline");
+        if (elOffline) {
+          elOffline.src = navigator.onLine ? "/images/OnlineButton.png" : "/images/OfflineButton.png";
+          if (navigator.onLine) {
+              console.log("+++ Online-Status: Online +++");
+          } else {
+              console.log("+++ Online-Status: Offline +++");
+          }
+        } else {
+          console.log("+++ imgOffline nicht gefunden +++");
+        }
+      })
 
   body
-   div(class="container-fluid")
+   div(id="divMenu" class="container-fluid")
     block menu
      div(class="row")
       div(class="col-sm-2")
@@ -47,8 +53,9 @@ html(lang="de")
          li
           a(href="/catalog/about") Info&Impressum
 
+        img(id="imgOffline", src="/images/OnlineButton.png", alt="Online-Offline-Indikator")
+
         block extraSidebar
-         img(id="imgOffline", width="64", height="64")
 
       div(class="col-sm-10")
        block content

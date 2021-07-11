@@ -6,10 +6,11 @@ var async = require("async");
 const { body,validationResult } = require("express-validator");
 const util = require("util");
 const debuglog = util.debuglog("app");
+const helpers = require("../helpers");
 
 // Liste von Kursen anzeigen
 exports.course_list = (request, response, next) => {
-    debuglog("*** Course Controller - calling course_list ***");
+    debuglog(`[${helpers.getTime()}] *** Course Controller - calling course_list ***`);
     Course.find({}, "title")
      .exec((err, list_courses) => {
         if(err) { return next(err);}
@@ -19,7 +20,7 @@ exports.course_list = (request, response, next) => {
 
 // Details zu einem Kurs anzeigen
 exports.course_detail = (request, response, next) => {
-    debuglog("*** Course Controller - calling course_detail ***");
+    debuglog(`[${helpers.getTime()}] *** Course Controller - calling course_detail ***`);
     async.parallel({
         course: (callback) => {
             Course.findById(request.params.id)
@@ -48,36 +49,36 @@ exports.course_detail = (request, response, next) => {
 
 // Formular für das Anlegen eines Kurs anzeigen
 exports.course_create_get = (request, response) => {
-    debuglog("*** Course Controller - calling course_create_get ***");
+    debuglog(`[${helpers.getTime()}] *** Course Controller - calling course_create_get ***`);
     response.send("Noch nicht implementiert: Kurs anlegen GET");
 };
 
 // Kurs anlegen POST 
 exports.course_create_post = (request, response) => {
-    debuglog("*** Course Controller - calling course_create_post ***");
+    debuglog(`[${helpers.getTime()}] *** Course Controller - calling course_create_post ***`);
     response.send("Noch nicht implementiert: Kurs anlegen POST");
 };
 
 // Formular für das Löschen eines Kurses anzeigen
 exports.course_delete_get = (request, response) => {
-    debuglog("*** Course Controller - calling course_delete_get ***");
+    debuglog(`[${helpers.getTime()}] *** Course Controller - calling course_delete_get ***`);
     response.send("Noch nicht implementiert: Kurs löschen GET");
 };
 
 // Kurs delete POST
 exports.course_delete_post = (request, response) => {
-    debuglog("*** Course Controller - calling course_delete_post ***");
+    debuglog(`[${helpers.getTime()}] *** Course Controller - calling course_delete_post ***`);
     response.send("Noch nicht implementiert: Kurs löschen POST");
 };
 
 // Formular für das Aktualisieren eines Kurses anzeigen
 exports.course_update_get = (request, response) => {
-    debuglog("*** Course Controller - calling course_update_get ***");
+    debuglog(`[${helpers.getTime()}] *** Course Controller - calling course_update_get ***`);
     response.send("Noch nicht implementiert: Kurs aktualisieren GET");
 };
 
 // Kurs aktualisieren POST
 exports.course_update_post = (request, response) => {
-    debuglog("*** Course Controller - calling course_update_post ***");
+    debuglog(`[${helpers.getTime()}] *** Course Controller - calling course_update_post ***`);
     response.send("Noch nicht implementiert: Kurs aktualisieren POST");
 };

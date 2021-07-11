@@ -5,10 +5,10 @@ block content
   div(style="margin-left:20px;margin-top:20px")
   p Liste aller Lernhilfen
     ul
-     - helper_list.sort((a, b) => { return (a.ratings > b.ratings) ? -1 : (a.ratings < b.ratings) ? 1 : 0});
+     - helper_list.sort((a, b) => { return (a.rating > b.rating) ? -1 : (a.rating < b.rating) ? 1 : 0});
      each helper in helper_list
       li
-       a(href=helper.url) #{helper.title} (#{helper.ratings}) 
+       a(href=helper.url) #{helper.title} (#{helper.rating}) 
        -var imgName = helper.avatar != "" ? helper.avatar : "SmileyHelfer.png"
        img(src= "/filedrop/" + imgName width="48" height="48")
        form(method="post" action="/catalog/helper/like/" + helper.id)

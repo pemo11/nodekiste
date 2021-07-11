@@ -1,0 +1,27 @@
+extends layout 
+
+block content
+
+ h3 Alle Benutzerkonten
+
+ table(style="width:80%", border="1")
+  
+  tr
+   th Name
+   th Stadt
+   th Land
+   th Geschlecht
+   th Fakultät
+   th Studiengang
+   th Letzte Anmeldung
+  each user in userlist
+   tr
+    td 
+     a(href="/catalog/user_detail/" + user.id) #{user.fullname}</a>
+    td #{user.city}
+    td #{user.country}
+    td #{user.gender}
+    td #{user.faculty}
+    td #{user.syllabus}
+    td #{user.lastLogin}
+

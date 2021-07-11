@@ -1,0 +1,35 @@
+body {
+    font-family: Verdana;
+    font-size: 11pt;
+}
+
+.myNav a {
+    display: block;
+    clear: none; 
+    padding: 8px;
+    background-color: #dddddd;
+}
+
+.myNav a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+  }
+  
+.myNav a.active {
+    background-color: #04AA6D; /* Add a green color to the "active/current" link */
+    color: white;
+}
+
+.myText {
+    float: right;
+}
+
+.myNav {
+    width: 200px;
+    float: left;
+}
+
+@media (max-width: 500px) {
+    .myText {
+        visibility: collapse;
+    }
+}

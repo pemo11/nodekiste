@@ -1,0 +1,18 @@
+body {
+    font-family: Verdana;
+}
+
+.title {
+    font-size: 6rem;
+    color: green;
+}
+
+@media (max-width: 500px) {
+    body {
+        background-color: peachpuff;
+    }
+    .title {
+        font-size: 3rem;
+        color: blue;
+    }
+}

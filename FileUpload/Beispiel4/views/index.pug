@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+ h3 Alle User
+
+ each user in userlist
+  li #{user.username}
+  lu #{user.avatar}
+  img(src="/filedrop/" + user.avatar width="48" height="48")
+
+ form(method="post" action="/createuser" enctype="multipart/form-data")
+  label("Username: ")
+  input(type="text" name="username")
+  p
+  label("E-Mail: ")
+  input(type="text" name="email")
+  p
+  label("Avatar:")
+  input(type="file" name="avatar")
+  p
+  button(type="submit") Anlegen
+

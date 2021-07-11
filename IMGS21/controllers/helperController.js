@@ -8,12 +8,13 @@ var async = require("async");
 const util = require("util");
 const debuglog = util.debuglog("app");
 var mongoose = require("mongoose");
+const helpers = require("../helpers");
 
 // Liste von helpern anzeigen (Liste kann theoretisch sehr groß werden)
 exports.helper_list = (request, response, next) => {
-    debuglog("*** Helper Controller - calling helper_list ***");
+    debuglog(`[${helpers.getTime()}] *** Helper Controller - calling helper_list ***`);
     // Die Eigenschaft avatar ist aucg Teil des Helper-Schemas und wird beim Anlegen eines Helpers festgelegt
-    Helper.find({}, "title url ratings avatar")
+    Helper.find({}, "title url rating avatar")
      .exec((err, list_helper) => {
         if(err) { return next(err);}
         response.render("helper_list", {title: "Alle Lernhilfen", helper_list: list_helper});
@@ -22,7 +23,7 @@ exports.helper_list = (request, response, next) => {
 
 // Details zu einem Helper anzeigen
 exports.helper_detail = (request, response, next) => {
-    debuglog("*** Helper Controller - calling helper_detail ***");
+    debuglog(`[${helpers.getTime()}] *** Helper Controller - calling helper_detail ***`);
 
     async.parallel({
         helper: (callback) => {
@@ -45,14 +46,14 @@ exports.helper_detail = (request, response, next) => {
 // Formular für das Anlegen eines Helpers anzeigen
 exports.helper_create_get = (request, response) => {
     var courseId = request.locals.courseId;
-    debuglog(`*** Helper Controller - calling helper_create_get with courseId=${courseId} ***`);
+    debuglog(`[${helpers.getTime()}] - *** Helper Controller - calling helper_create_get with courseId=${courseId} ***`);
     response.render("helper_form", {title: "Anlegen einer Lernhilfe"});
 };
 
 // Formular für das Anlegen eines Helpers anzeigen mit CourseId
 exports.helper_create_get_courseId = (request, response) => {
     var courseId = request.params.id;
-    debuglog(`*** Helper Controller - calling helper_create_get_courseId mit Id=${courseId} ***`);
+    debuglog(`[${helpers.getTime()}] - *** Helper Controller - calling helper_create_get_courseId mit Id=${courseId} ***`);
     response.render("helper_form", {title: "Anlegen einer Lernhilfe", courseId:courseId});
 };
 
@@ -62,7 +63,7 @@ exports.helper_create_post_courseId = [
     body("title").trim().isLength({min:1}).escape().withMessage("Der Titel muss angegeben werden."),
 
     (request, response, next) => {
-        debuglog("*** Helper Controller - calling helper_create_post_courseId ***");
+        debuglog(`[${helpers.getTime()}] - *** Helper Controller - calling helper_create_post_courseId ***`);
 
         const errors = validationResult(request);
 
@@ -88,7 +89,7 @@ exports.helper_create_post_courseId = [
                     createDate: Date.now(),
                     course: mongoose.Types.ObjectId(courseId),
                     author: request.body.author,
-                    ratings: request.body.ratings,
+                    rating: request.body.rating,
                     avatar: result.avatar,
                     creator: mongoose.Types.ObjectId(creatorId)
                    });
@@ -98,7 +99,7 @@ exports.helper_create_post_courseId = [
                 });
              })
              .catch(err => {
-                debuglog("!!! Fehler bei der Abfrage der CreatorId !!!");
+                debuglog(`[${helpers.getTime()}] !!! Fehler bei der Abfrage der CreatorId !!!`);
                 if (err) {return next(err);}
             })
         }
@@ -112,7 +113,7 @@ exports.helper_create_post = [
     body("title").trim().isLength({min:1}).escape().withMessage("Der Titel muss angegeben werden."),
 
     (request, response, next) => {
-        debuglog("*** Helper Controller - calling helper_create_post ***");
+        debuglog(`[${helpers.getTime()}] *** Helper Controller - calling helper_create_post ***`);
 
         const errors = validationResult(request);
 
@@ -125,7 +126,7 @@ exports.helper_create_post = [
                 source: request.body.source,
                 course: request.body.course,
                 author: request.body.author,
-                ratings: request.body.ratings,
+                rating: request.body.rating,
                 creator: response.locals.currentUser.id
 
             });
@@ -139,34 +140,34 @@ exports.helper_create_post = [
 
 // Helper delete POST
 exports.helper_delete_post = (request, response) => {
-    debuglog("*** Helper Controller - calling helper_delete_post ***");
+    debuglog(`[${helpers.getTime()}] - *** Helper Controller - calling helper_delete_post ***`);
     var helperId = request.params.id;
     // findByIdAndDelete mit id statt _id
     Helper.findOneAndDelete({_id:helperId})
     .then(()=> {
-        debuglog(`*** Helfer mit id=${helperId} wurde gelöscht ***`);
+        debuglog(`[${helpers.getTime()}] - *** Helfer mit id=${helperId} wurde gelöscht ***`);
     })
     .catch((err)=> {
-        debuglog(`!!! Fehler beim Löschen des Helfers mit id=${HelperId} (${err})`);
+        debuglog(`[${helpers.getTime()}] - !!! Fehler beim Löschen des Helfers mit id=${HelperId} (${err})`);
     });
     response.redirect("/catalog/helper");
 };
 
 // Formular für das Aktualisieren eines Helpers anzeigen
 exports.helper_update_get = (request, response) => {
-    debuglog("*** Helper Controller - calling helper_update_get ***");
+    debuglog(`[${helpers.getTime()}] - *** Helper Controller - calling helper_update_get ***`);
     response.send("Noch nicht implementiert: Helper aktualisieren GET");
 };
 
 // Helper aktualisieren POST
 exports.helper_update_post = (request, response) => {
-    debuglog("*** Helper Controller - calling helper_update_post ***");
+    debuglog(`[${helpers.getTime()}] *** Helper Controller - calling helper_update_post ***`);
     response.send("Noch nicht implementiert: Helper aktualisieren POST");
 };
 
 // Helper like inkrementieren
 exports.helper_like_post = (request, response) => {
-    debuglog("*** Helper Controller - calling helper_like_post ***");
+    debuglog(`[${helpers.getTime()}] *** Helper Controller - calling helper_like_post ***`);
     var helperId = request.params.id;
     // debuglog(`*** Like für Helper ${helperId} wurde gezählt ***`);
 
@@ -174,13 +175,13 @@ exports.helper_like_post = (request, response) => {
     // Es kommt auf den Filter an, in diesem Fall _id statt id
     Helper.findOneAndUpdate(
         { _id: helperId },
-        { $inc: {ratings: 1 }},
+        { $inc: {rating: 1 }},
         {new: true})
         .then((helperNeu) => {
-            debuglog(`*** Ein Like mehr für Helper ${helperNeu} ***`);
+            debuglog(`[${helpers.getTime()}] *** Ein Like mehr für Helper ${helperNeu} ***`);
         })
         .catch(err => {
-            debuglog(`!!! Fehler beim Updaten von ${helperId} ${err.Message} !!!`);
+            debuglog(`[${helpers.getTime()}] !!! Fehler beim Updaten von ${helperId} ${err.Message} !!!`);
         });
         response.redirect("/catalog/helper");
 }

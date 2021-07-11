@@ -94,5 +94,8 @@ router.post("/registeraccount", standard_controller.register_useraccount_post);
 router.get("/useraccount", standard_controller.useraccount_get);
 router.get("/passwordRecover", standard_controller.passwordRecover_get);
 router.post("/passwordRecover", standard_controller.passwordRecover_post);
-
+router.get("/about", standard_controller.about);
+// Nur nach Authentifizierung
+router.get("/adminuser", standard_controller.adminuser)
+router.get("/user_detail/:id", standard_controller.useraccount_getId)
 module.exports = router;

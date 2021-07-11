@@ -14,6 +14,7 @@ var UserInfoSchema = new Schema(
         faculty: {type: String, required:true, maxLength:100},
         syllabus: {type: String, required:true, maxLength:100},
         avatar: {type: String, maxLength:100},
+        lastLogin: Date,
         birthdate: Date,
     }
 )

@@ -17,7 +17,7 @@ var HelperSchema = new Schema(
         course: {type: Schema.Types.ObjectId, ref: "Course", required:true},
         type: { type: String, required:true, enum: ["YouTube", "Weblink", "Buch", "Sonstiges"],default:"Sonstiges"},
         comment: String,
-        ratings: {type: Number, required:true},
+        rating: {type: Number, required:true},
     }
 )
 .set("toObject", {virtuals: true}, "toJSON", {virtuals: true});

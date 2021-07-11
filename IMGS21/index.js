@@ -1,7 +1,7 @@
 // ============================================================================
 // IMG SS 21
 // Autor: Peter Monadjemi (7004123)
-// Letzte Aktualisierung: 06/07/21
+// Letzte Aktualisierung: 11/07/21
 // ============================================================================
 
 // Allgemeine Deklarationen
@@ -13,11 +13,12 @@ const debuglog = util.debuglog("app");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 var createError = require("http-errors");
-const passport = require("passport");
+const passport = require("passport/lib");
 const passportLocalMongoose = require("passport-local-mongoose");
 const https = require("https");
 const fs = require("fs");
 const flash = require("connect-flash");
+const helpers = require(__dirname + "/helpers");
 
 require("dotenv").config({path: __dirname + "/.env"});
 
@@ -40,10 +41,10 @@ var conStr = process.env.dbCon;
 mongoose.connect(conStr,
     {useNewUrlParser:true, useUnifiedTopology:true})
     .then(() => {
-        debuglog("*** Datenbankverbindung wurde hergestellt ***")
+        debuglog(`[${helpers.getTime()}] *** Die Datenbankverbindung wurde hergestellt ***`)
     })
     .catch(err => {
-        debuglog("!!! Fehler beim Herstellen der Datenbankverbindung !!!");
+        debuglog(`[${helpers.getTime()}] Fehler beim Herstellen der Datenbankverbindung !!!`);
 });
 
 
@@ -107,14 +108,26 @@ function isLoggedIn(request, response, next) {
     response.redirect("/login");
 }
 
-var portNrHttp = process.env.portHttpNr;
-var portNrHttps = process.env.portHttpsNr;
+var portNrHttp = process.env.portNrHttp;
+var portNrHttps = process.env.portNrHttps;
+var portNrHttpExtern = process.env.portNrHttpExtern;
+var portNrHttpsExtern = process.env.portNrHttpsExtern;
 
-// Nach einer erfolgreichen Anmeldung soll der aktuelle User abgelegt werden 
+// Wird immer aufgerufen
 app.use((request, response, next) => {
-    // Umleiten auf Https
+    debuglog(`[${helpers.getTime()}] *** Calling general app.use ***`);
+    // Nach einer erfolgreichen Anmeldung soll der aktuelle User abgelegt werden 
     response.locals.currentUser = request.user;
     // request.secure ? next() : response.redirect("https://" + request.headers.host + `:${portNrHttps}` + request.url);
+    // Umleiten auf Https außer im Textmodus
+    if (process.env.testMode != "yes") {
+        if (!request.secure) {
+            // var newUrl = "https://" + request.headers.host.replace(`${portNrHttpExtern}`,`${portNrHttpsExtern}`) + request.url;
+            var newUrl = `https://${request.hostname}:${portNrHttpsExtern}${request.url}`;
+            debuglog(`[${helpers.getTime()}] +++ HTTP-Umleitung nach ${newUrl} +++`);
+            return response.redirect(newUrl);
+        }
+    }
     next();
 });
 
@@ -125,11 +138,6 @@ app.use((request, response, next) => {
 app.use("/", indexRouter);
 app.use("/catalog", catalogRouter)
 
-// Nicht vorhandene Seiten (404) abfangen und allgemeiner Fehlerhandler
-app.use((request, response, next) => {
-    next(createError(404));
-});
-  
 // Allgemeiner Error handler
 app.use((err, request, response, next) => {
 
@@ -142,19 +150,26 @@ app.use((err, request, response, next) => {
     response.render("error");
 });
 
-app.listen(portNrHttp, () => {
-    debuglog(`*** Der OMI-Studi-Helper horcht per HTTP auf Port ${portNrHttp} ***`);
-});
 
-var httpsOptions = {
-    key: fs.readFileSync(path.join(__dirname, "certs/privkey.pem")),
-    cert: fs.readFileSync(path.join(__dirname, "certs/cert.pem"))
-};
+if(process.env.testMode == "yes")
+{
+    portNrHttp = process.env.portNrHttpTest
+    app.listen(portNrHttp, () => {
+        debuglog(`[${helpers.getTime()}] *** Der OMI-Studi-Helper horcht per HTTP auf Port ${portNrHttp} ***`);
+    });
+} else {
+    app.listen(portNrHttp, () => {
+        debuglog(`[${helpers.getTime()}] *** Der OMI-Studi-Helper horcht per HTTP auf Port ${portNrHttp} ***`);
+    });
 
-/*
-var httpsServer = https.createServer(httpsOptions, app);
+    var httpsOptions = {
+        key: fs.readFileSync(path.join(__dirname, "certs/privkey.pem")),
+        cert: fs.readFileSync(path.join(__dirname, "certs/cert.pem"))
+    };
 
-httpsServer.listen(portNrHttps, () => {
-    debuglog(`*** Der OMI-Studi-Helper horcht per HTTPS auf Port ${portNrHttps} ***`);
-});
-*/
+    var httpsServer = https.createServer(httpsOptions, app);
+
+    httpsServer.listen(portNrHttps, () => {
+        debuglog(`[${helpers.getTime()}] *** Der OMI-Studi-Helper horcht per HTTPS auf Port ${portNrHttps} ***`);
+    });
+}

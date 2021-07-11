@@ -8,7 +8,7 @@ block content
  p Angelegt von: #{helper.creator}
  p Typ: #{helper.type}
  p Kommentar: #{helper.comment}
- p Bewertung: #{helper.ratings}
+ p Bewertung: #{helper.rating}
 
  if isAuthenticated
   form(method="post" action="/catalog/helper/delete/" + helper.id)

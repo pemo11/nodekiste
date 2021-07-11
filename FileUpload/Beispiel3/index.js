@@ -1,6 +1,6 @@
 // file: index.js
 // erstellt: 02/07/21
-// ein weiteres Beispiel mit Mulder, dieses Mal mit einer Controller-Klasse
+// ein weiteres Beispiel mit Mulder, bei dem auch die anderen Form-Eingaben ausgewertet werden
 // https://stackoverflow.com/questions/58474765/how-to-call-multer-middleware-inside-a-controller-in-nodejs
 
 var express = require("express")
@@ -13,6 +13,13 @@ var path = require("path");
 app.set("view engine", "pug");
 app.set("views", __dirname + "/views");
 app.use(express.static(path.join(__dirname, "public")));
+
+var userList = [];
+
+userList.push({
+    username: "Pemo",
+    avatar: "avatar_1625162298048.png"
+});
 
 // Ein Zielverzeichnis anlegen
 const imageDrop = multer.diskStorage({
@@ -31,7 +38,7 @@ const imageUpload = multer({
       fileSize: 1000000 
     },
     fileFilter(request, file, cb) {
-      if (!file.originalname.match(/\.(png|jpg)$/)) { 
+      if (file.originalname.match(/\.(png|jpg)$/) == null) { 
          // Es sollen nur png und jpg Dateien hoch geladen werden können
          return cb(new Error("Nur Bitmaps erlaubt!"))
        }
@@ -44,7 +51,12 @@ const imageUpload = multer({
 app.post("/upload", imageUpload.single("avatar"), (request, response) => {
     // Über request.body stehen alle Felder zur Verfügung - auch userid
     // response.send(request.file)
-    response.render("picture", {picture:request.file})
+    userList.push({
+        username: request.body.username,
+        eMail: request.body.email,
+        avatar: request.file.filename
+    });
+    response.render("index", {userlist: userList})
 }, (error, request, response, next) => {
     response.status(400).send({ error: error.message })
 })
@@ -67,7 +79,7 @@ img.rescrop(
 var portNr = process.env.portNr;
 
 app.get("/", (request, response) => {
-    response.render("upload", {userId: 1234});
+    response.render("index", {userlist: userList});
 });
 
 app.listen(portNr, () => {

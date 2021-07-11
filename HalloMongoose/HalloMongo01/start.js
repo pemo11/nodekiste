@@ -27,3 +27,5 @@ const server = app.listen(portNr, () => {
 });
 
 
+app.use("/", routes);
+
