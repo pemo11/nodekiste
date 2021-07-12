@@ -7,6 +7,7 @@ const { body,validationResult } = require("express-validator");
 const util = require("util");
 const debuglog = util.debuglog("app");
 const helpers = require("../helpers");
+const logger = require("../logger");
 
 // Liste von Kursen anzeigen
 exports.course_list = (request, response, next) => {

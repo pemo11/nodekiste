@@ -10,6 +10,7 @@ const { body,validationResult } = require("express-validator");
 var async = require("async");
 const util = require("util");
 const debuglog = util.debuglog("app");
+const logger = require("../logger");
 
 // Standardroute für die Homepage
 exports.index = (request, response) => {

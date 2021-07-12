@@ -9,6 +9,7 @@ var async = require("async");
 const util = require("util");
 const debuglog = util.debuglog("app");
 const helpers = require("../helpers");
+const logger = require("../logger");
 
 // Liste von Studiengängen anzeigen
 exports.syllabus_list = (request, response, next) => {

@@ -9,6 +9,7 @@ const util = require("util");
 const debuglog = util.debuglog("app");
 var mongoose = require("mongoose");
 const helpers = require("../helpers");
+const logger = require("../logger");
 
 // Liste von helpern anzeigen (Liste kann theoretisch sehr groß werden)
 exports.helper_list = (request, response, next) => {

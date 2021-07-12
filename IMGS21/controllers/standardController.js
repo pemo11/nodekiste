@@ -11,6 +11,7 @@ const { userInfo } = require("os");
 const fs = require("fs");
 const multer = require("multer");
 const helpers = require("../helpers");
+const logger = require("../logger");
 
 var express = require('express');
 const { response } = require("express");
@@ -51,13 +52,16 @@ function isLoggedIn(request, response, next) {
 
 // Login
 exports.login_get = (request, response, next) => {
-    debuglog(`[${helpers.getTime()}] - Standard Controller - calling login get ***`);
+    logMsg = "*** Standard Controller - calling login get ***"
+    logger.info(logMsg)
+    debuglog(`[${helpers.getTime()}] ${logMsg}`);
     response.render("login_form");
 };
 
 // Logout
 exports.logout_get = (request, response, next) => {
-    debuglog(`[${helpers.getTime()}] - Standard Controller - calling logout get ***`);
+    logMsg = "*** Standard Controller - calling logout get ***";
+    debuglog(`[${helpers.getTime()}] - ${logMsg}`);
     // logout() wird von Passport angehängt
     request.logout();
     response.redirect("/");
@@ -104,14 +108,18 @@ exports.login_post = [passport.authenticate("local",
                            failureFlash: true
                      }),
                      (request, response) => {
+                         // Zeitpunkt des letzten Loggin aktualisieren
                         var query = { "user": request.user.id };
                         var update = { lastLogin: new Date().toISOString() };
                         var options = { new: true, useFindAndModify: false};
                         UserInfo.findOneAndUpdate(query, update, options, (err, user) => {
                             if (err) {
-                                debuglog(`[${helpers.getTime()}] (StandardController->login_post) Fehler ${err} !!!`);
+                                logMsg = `!!! StandardController->login_post - Fehler ${err} !!!`
+                                logger.error(logMsg);
+                                debuglog(`[${helpers.getTime()}] ${logMsg}`);
                             } else {
-                                debuglog(`[${helpers.getTime()}] (StandardController->login_post) LastLogin wurde aktualisiert ***`);
+                                logMsg = `*** StandardController->login_post - LastLogin wurde aktualisiert ***`
+                                debuglog(`[${helpers.getTime()}] ${logMsg}`);
                             }
                         });
                         response.redirect("/");
@@ -119,12 +127,16 @@ exports.login_post = [passport.authenticate("local",
 
 // Register
 exports.register_get = (request, response, next) => {
-    debuglog(`[${helpers.getTime()}] (Standard Controller) - calling register get ***`);
+    logMsg = `Standard Controller - calling register get ***`
+    logger.info(logMsg)
+    debuglog(`[${helpers.getTime()}] ${logMsg}`);
     response.render("register_form");
 };
 
 exports.register_post = (request, response, next) => {
-    debuglog(`[${helpers.getTime()}] (Standard Controller) - calling register post ***`);
+    logMsg = `*** Standard Controller - calling register post ***`
+    logger.info(logMsg)
+    debuglog(`[${helpers.getTime()}] ${logMsg}`);
 
     // Aufruf der register-Methode von local passport
     User.register(new User({
@@ -132,12 +144,18 @@ exports.register_post = (request, response, next) => {
         email: request.body.email,
         }), request.body.password, (err, user) => {
             if (err) {
-                debuglog(`[${helpers.getTime()}] (Standard Controller) - Fehler in register-Route: ${err.message} !!!`);
+                logMsg = `!!! Standard Controller - Fehler in register-Route: ${err.message} !!!`
+                logger.error(logMsg)
+                debuglog(`[${helpers.getTime()}] ${logMsg}`);
                 response.redirect("/catalog/register");
             } else {
-                debuglog(`[${helpers.getTime()}] (Standard Controller) - Registration was good ***`);
+                logMsg = `*** Standard Controller - Registration was good ***`
+                logger.info(logMsg)
+                debuglog(`[${helpers.getTime()}] ${logMsg}`);
                 passport.authenticate("local", (err,user,info) => {
-                    debuglog(`[${helpers.getTime()}] - Inside the authenticate callback ***`);
+                    logMsg = "*** Inside the authenticate callback ***"
+                    logger.info(logMsg)
+                    debuglog(`[${helpers.getTime()}] ${logMsg}`);
                     if (err) {
                         return next(err);
                     }
@@ -149,17 +167,23 @@ exports.register_post = (request, response, next) => {
 
 // Password Recover
 exports.passwordRecover_get = (request, response, next) => {
-    debuglog(`[${helpers.getTime()}] (Standard Controller) - calling Password recover get ***`);
+    logMsg = `*** Standard Controller - calling Password recover get ***`
+    logger.info(logMsg)
+    debuglog(`[${helpers.getTime()}] ${logMsg}`);
     response.render("password_recover", {});
 };
 
 exports.passwordRecover_post =  (request, response, next) => {
-    debuglog(`[${helpers.getTime()}] (Standard Controller) - calling Password recover post ***`);
+    logMsg = `*** Standard Controller - calling Password recover post ***`
+    logger.info(logMsg)
+    debuglog(`[${helpers.getTime()}] ${logMsg}`);
     response.send("*** Leider noch nicht umgesetzt ***");
 };
 
 exports.register_useraccount_get = (request, response, next) => {
-    debuglog(`[${helpers.getTime()}] (Standard Controller) - calling Register User Account get ***`);
+    logMsg = `*** Standard Controller - calling Register User Account get ***`
+    logger.info(logMsg)
+    debuglog(`[${helpers.getTime()}] ${logMsg}`);
     response.render("useraccount_register")
 };
 
@@ -167,7 +191,9 @@ exports.register_useraccount_get = (request, response, next) => {
 exports.register_useraccount_post = [
     imageUpload.single("avatar"), 
     (request, response, next) => {
-        debuglog(`[${helpers.getTime()}] (Standard Controller) - calling Register User Post Account ***`);
+        logMsg = "*** Standard Controller - calling Register User Post Account ***"
+        logger.info(logMsg)
+        debuglog(`[${helpers.getTime()}] ${logMsg}`);
         // Jetzt das UserInfo-Objekt anlegen
         // Die UserId, die für das UserInfo-Objekt benötigt wird, wird auch über das request-Objekt geliefert
         // Am Anfang kam hier immer UserInfo.save() is not a function?
@@ -185,7 +211,9 @@ exports.register_useraccount_post = [
         });
         userNeu.save(err => {
             if (err) {return next(err);}
-            debuglog(`[${helpers.getTime()}] - Neuer User wurde angelegt... ***`);
+            logMsg = "*** Neuer User wurde angelegt... ***";
+            logger.info(logMsg)
+            debuglog(`[${helpers.getTime()}] - ${logMsg}`);
         });
         // Zurück zur UserInfo-Seite
         response.render("useraccount_detail", {title: "Alle Details zum Benutzerkonto", userinfo: userNeu});
@@ -195,17 +223,25 @@ exports.register_useraccount_post = [
 // Anzeigen der Eigenschaften eines Benutzerkontos
 // TODO: Aus der Anzeigeform eine Update Form machen
 exports.useraccount_get = (request, response, next) => {
-    debuglog(`[${helpers.getTime()}] - (Standard Controller) calling Register User Account get ***`);
+    logMsg = "*** Standard Controller - calling Register User Account get ***"
+    logger.info(logMsg)
+    debuglog(`[${helpers.getTime()}] - ${logMsg} ***`);
     var userId = request.user.id;
-    debuglog(`[${helpers.getTime()}] - (Standard Controller) current UserId= ${userId} ***`)
+    logMsg = `*** (Standard Controller) current UserId= ${userId} ***`
+    logger.info(logMsg)
+    debuglog(`[${helpers.getTime()}] - ${logMsg}`)
     // Lokalisiere das eine UserInfo-Objekt
     UserInfo.findOne({user:userId})
     .then(userInfo => {
         if (userInfo) {
-            debuglog(`[${helpers.getTime()}] (Standard Controller) - UserInfo-Objekt mit Id= ${userId} gefunden ***`)
+            logMsg = `*** Standard Controller) - UserInfo-Objekt mit Id= ${userId} gefunden `
+            logger.info(logMsg)
+            debuglog(`[${helpers.getTime()}] ${logMsg}`)
         } else {
             // Nicht gefunden, wieder zurück ins Hauptmenü (?)
-            debuglog(`[${helpers.getTime()}] (Standard Controller) - Es gibt kein UserInfo-Objekt mit Id= ${userId} !!!`)
+            logMsg = `*** Standard Controller - Es gibt kein UserInfo-Objekt mit Id= ${userId} !!! ***`
+            logger.info(logMsg)
+            debuglog(`[${helpers.getTime()}] ${logMsg} `)
             userInfo = {id:-1}
         }
         response.render("useraccount_detail", {userinfo: userInfo});
@@ -218,14 +254,20 @@ exports.useraccount_get = (request, response, next) => {
 // Abfrage eines UserInfo-Objekts über seine Id
 exports.useraccount_getId = (request, response, next) => {
     var userId = request.params.id;
-    debuglog(`[${helpers.getTime()}] (Standard Controller->useraccount_getId) - UserId= ${userId} ***`)
+    logMsg = `*** Standard Controller->useraccount_getId - UserId= ${userId} ***`
+    logger.info(logMsg)
+    debuglog(`[${helpers.getTime()}] ${logMsg}`)
     UserInfo.findById(userId)
     .then(userInfo => {
         if (userInfo) {
-            debuglog(`[${helpers.getTime()}] (Standard Controller->useraccount_getId) - UserInfo-Objekt ${userId} gefunden ***`)
+            logMsg = `*** Standard Controller->useraccount_getId - UserInfo-Objekt ${userId} gefunden ***`
+            logger.info(logMsg)
+            debuglog(`[${helpers.getTime()}] ${logMsg}`)
         } else {
             // Nicht gefunden, wieder zurück ins Hauptmenü (?)
-            debuglog(`[${helpers.getTime()}] (Standard Controller) - Es gibt kein UserInfo-Objekt mit Id= ${userId} !!!`)
+            logMsg = `!!! Standard Controller - Es gibt kein UserInfo-Objekt mit Id= ${userId} !!!`
+            logger.error(logMsg)
+            debuglog(`[${helpers.getTime()}] ${logMsg}`)
             userInfo = {id:-1}
         }
         response.render("useraccount_detail", {userinfo: userInfo});
@@ -237,16 +279,20 @@ exports.useraccount_getId = (request, response, next) => {
 
 // Aufruf der About-Seite
 exports.about = (request, response, next) => {
-    debuglog(`[${helpers.getTime()}] (Standard Controller) - calling about ***`);
+    logMsg = "*** Standard Controller - calling about ***"
+    logger.error(logMsg)
+    debuglog(`[${helpers.getTime()}] ${logMsg}`);
     response.render("about");
 };
 
 // Aufruf soll nur nach Anmeldung möglich sein
 exports.adminuser = [isLoggedIn, 
      (request, response, next) => {
-     debuglog(`[${helpers.getTime()}] (Standard Controller) - calling adminuser ***`);
-     UserInfo.find()
-     .then(userList => {
-        response.render("admin_user",{userlist:userList});
-     });
+        logMsg = "*** Standard Controller - calling adminuser ***";
+        logger.error(logMsg)
+        debuglog(`[${helpers.getTime()}] ${logMsg}`);
+        UserInfo.find()
+        .then(userList => {
+            response.render("admin_user",{userlist:userList});
+        });
 }];

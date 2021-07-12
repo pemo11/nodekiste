@@ -42,15 +42,20 @@ var conStr = process.env.dbCon;
 mongoose.connect(conStr,
     {useNewUrlParser:true, useUnifiedTopology:true})
     .then(() => {
-        debuglog(`[${helpers.getTime()}] *** Die Datenbankverbindung wurde hergestellt ***`)
+        logMsg = "Die Datenbankverbindung wurde hergestellt"
+        debuglog(`[${helpers.getTime()}] ${logMsg} `)
+        logger.info(logMsg);
     })
     .catch(err => {
-        debuglog(`[${helpers.getTime()}] Fehler beim Herstellen der Datenbankverbindung !!!`);
+        logMsg = "Fehler beim Herstellen der Datenbankverbindung"
+        logger.error(logMsg);
+        debuglog(`[${helpers.getTime()}] ${logMsg} !!!`);
 });
 
 
 var db = mongoose.connection;
-db.on("error", console.error.bind(console, "!!! Fehler beim Herstellen der Datenbankverbindung !!!"));
+logMsg = "!!! Fehler beim Herstellen der Datenbankverbindung !!!";
+db.on("error", console.error.bind(console, logMsg));
 
 // ============================================================================
 // Express-Initialisierung
@@ -125,7 +130,8 @@ app.use((request, response, next) => {
         if (!request.secure) {
             // var newUrl = "https://" + request.headers.host.replace(`${portNrHttpExtern}`,`${portNrHttpsExtern}`) + request.url;
             var newUrl = `https://${request.hostname}:${portNrHttpsExtern}${request.url}`;
-            debuglog(`[${helpers.getTime()}] +++ HTTP-Umleitung nach ${newUrl} +++`);
+            logMsg = "+++ HTTP-Umleitung nach ${newUrl} +++"
+            debuglog(`[${helpers.getTime()}] ${logMsg}`);
             return response.redirect(newUrl);
         }
     }
@@ -158,11 +164,13 @@ if(process.env.testMode == "yes")
     app.listen(portNrHttp, () => {
         logMsg = `*** Der OMI-Studi-Helper horcht per HTTP auf Port ${portNrHttp} ***`
         logger.info(logMsg);
-        debuglog(`[${helpers.getTime()}] *** Der OMI-Studi-Helper horcht per HTTP auf Port ${portNrHttp} ***`);
+        debuglog(`[${helpers.getTime()}] ${logMsg} ***`);
     });
 } else {
     app.listen(portNrHttp, () => {
-        debuglog(`[${helpers.getTime()}] *** Der OMI-Studi-Helper horcht per HTTP auf Port ${portNrHttp} ***`);
+        logMsg = `*** Der OMI-Studi-Helper horcht per HTTP auf Port ${portNrHttp} ***`
+        logger.info(logMsg);
+        debuglog(`[${helpers.getTime()}] ${logMsg}`);
     });
 
     var httpsOptions = {
@@ -173,6 +181,8 @@ if(process.env.testMode == "yes")
     var httpsServer = https.createServer(httpsOptions, app);
 
     httpsServer.listen(portNrHttps, () => {
-        debuglog(`[${helpers.getTime()}] *** Der OMI-Studi-Helper horcht per HTTPS auf Port ${portNrHttps} ***`);
+        logMsg = "*** Der OMI-Studi-Helper horcht per HTTPS auf Port ${portNrHttps} ***"
+        logger.info(logMsg);
+        debuglog(`[${helpers.getTime()}] ${logMsg}`);
     });
 }
