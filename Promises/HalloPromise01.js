@@ -11,9 +11,7 @@ let p = new Promise((resolve, reject) => {
         reject("Versprechen nicht erfüllt!");
     }
 })
-.then((message) => {
-    console.log(message);
-})
+.then(message => console.log(message))
 .catch((err) => {
     console.log(`!!! Fehler ${err} !!!`);
 });

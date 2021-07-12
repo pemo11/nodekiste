@@ -1,7 +1,7 @@
 // ============================================================================
 // IMG SS 21
 // Autor: Peter Monadjemi (7004123)
-// Letzte Aktualisierung: 11/07/21
+// Letzte Aktualisierung: 12/07/21
 // ============================================================================
 
 // Allgemeine Deklarationen
@@ -19,6 +19,7 @@ const https = require("https");
 const fs = require("fs");
 const flash = require("connect-flash");
 const helpers = require(__dirname + "/helpers");
+const logger = require(__dirname + "/logger");
 
 require("dotenv").config({path: __dirname + "/.env"});
 
@@ -155,6 +156,8 @@ if(process.env.testMode == "yes")
 {
     portNrHttp = process.env.portNrHttpTest
     app.listen(portNrHttp, () => {
+        logMsg = `*** Der OMI-Studi-Helper horcht per HTTP auf Port ${portNrHttp} ***`
+        logger.info(logMsg);
         debuglog(`[${helpers.getTime()}] *** Der OMI-Studi-Helper horcht per HTTP auf Port ${portNrHttp} ***`);
     });
 } else {
