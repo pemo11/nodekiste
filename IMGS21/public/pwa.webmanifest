@@ -2,7 +2,7 @@
     "name":"Studi-Helper IMG SS21",
     "short_name":"IMGS21",
     "description":"Praxisprojekt für das Modul IMG im SS21",
-    "start_url":"/",
+    "start_url":"/catalog/",
     "background_color":"#FFA500",
     "theme_color":"#009578",
     "display":"standalone",

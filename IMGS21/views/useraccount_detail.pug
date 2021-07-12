@@ -11,7 +11,7 @@ block content
  p Geburtsdatum: #{userinfo.birthdate}
  p Letzte Anmeldung: #{userinfo.lastLogin}
  p Avatar: 
-  -var imgName = userinfo.avatar != "" ? userinfo.avatar : "SmileyHelfer.png"
+  -var imgName = userinfo.avatar ? userinfo.avatar : "SmileyHelfer.png"
    img(src="/filedrop/" + imgName width="48" height="48")
  p
  if userinfo.id == -1

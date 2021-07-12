@@ -13,7 +13,7 @@ a {
   list-style: none;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 360px) {
   .divMenu {
       visibility: collapse;
   }

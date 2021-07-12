@@ -17,7 +17,7 @@ exports.helper_list = (request, response, next) => {
     Helper.find({}, "title url rating avatar")
      .exec((err, list_helper) => {
         if(err) { return next(err);}
-        response.render("helper_list", {title: "Alle Lernhilfen", helper_list: list_helper});
+        response.render("helper_list", {title: "Alle Lernhilfen", helper_list: list_helper, isAuthenticated:request.isAuthenticated()});
      });
 };
 
@@ -90,7 +90,7 @@ exports.helper_create_post_courseId = [
                     course: mongoose.Types.ObjectId(courseId),
                     author: request.body.author,
                     rating: request.body.rating,
-                    avatar: result.avatar,
+                    avatar: request.user.avatar,
                     creator: mongoose.Types.ObjectId(creatorId)
                    });
                 helper.save(err => {

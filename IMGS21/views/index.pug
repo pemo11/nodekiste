@@ -2,7 +2,6 @@ extends layout
 
 block content
  div(style="display:flex;margin-bottom:16px")
- img(src="/images/StudiHelper_Logo.png" alt="Studi-Helper-Logo")
  h1 Willkommen zu #{title}
 
   if isAuthenticated
@@ -21,7 +20,7 @@ block content
    li #[strong Lernhilfen:] !{data.helper_count}
 
   hr
-  | Die neuesten drei Lernhilfen
+  | Die beliebtesten Lernhilfen
   // | !{JSON.stringify(data.helper_top3)}
 
   ul

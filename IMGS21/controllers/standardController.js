@@ -223,12 +223,12 @@ exports.useraccount_getId = (request, response, next) => {
     .then(userInfo => {
         if (userInfo) {
             debuglog(`[${helpers.getTime()}] (Standard Controller->useraccount_getId) - UserInfo-Objekt ${userId} gefunden ***`)
-            response.render("useraccount_detail", {userinfo: userInfo});
         } else {
             // Nicht gefunden, wieder zurück ins Hauptmenü (?)
             debuglog(`[${helpers.getTime()}] (Standard Controller) - Es gibt kein UserInfo-Objekt mit Id= ${userId} !!!`)
             userInfo = {id:-1}
         }
+        response.render("useraccount_detail", {userinfo: userInfo});
     })
     .catch(err => {
         response.render("error", {error: err})

@@ -9,10 +9,13 @@ block content
      each helper in helper_list
       li
        a(href=helper.url) #{helper.title} (#{helper.rating}) 
-       -var imgName = helper.avatar != "" ? helper.avatar : "SmileyHelfer.png"
+       -var imgName = helper.avatar ? helper.avatar : "SmileyHelfer.png"
        img(src= "/filedrop/" + imgName width="48" height="48")
        form(method="post" action="/catalog/helper/like/" + helper.id)
         button.btn.btn-success.btn-sm(type="submit") Like+
 
      else
       li Es gibt noch keine Helper
+
+  if !isAuthenticated
+   | Für das Anlegen von Lernhilfen bitte anmelden

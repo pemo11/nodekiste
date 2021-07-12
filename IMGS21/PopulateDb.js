@@ -192,6 +192,9 @@ function createUsers(cb) {
 function createUserInfos(cb) {
     async.series([
         function(callback) {
+            userInfoCreate(users[0], "Achim Admin", "Emden", "Deutschland", "m", "HS Emden", "Keine", "", "1984/04/01", callback)
+        },
+        function(callback) {
             userInfoCreate(users[1], "Peter Monadjemi", "Esslingen", "Deutschland", "m", "HS Emden", "OMI", "", "1984/04/01", callback)
         },
         function(callback) {

@@ -3,7 +3,7 @@
 const CACHE_NAME = "IMGS21";
 
 var cacheFiles = [
-    "/",
+    "/catalog",
     "/images/IMGS21Logo.png",
     "/images/IMGS21Logo_192.png",
     "/images/IMGS21Logo_512.png",
@@ -16,10 +16,10 @@ var cacheFiles = [
     "/scripts/jquery-3.6.0.js",
     "/styles/bootstrap.min.css",
     "/styles/style.css",
-    "/favicon.ico",
-    "/pwa.webmanifest",
-    "/sw-helper.js",
-    "/sw.js",   
+    "favicon.ico",
+    "pwa.webmanifest",
+    "sw-helper.js",
+    "sw.js",   
 ]
 
 // ==================== Install ====================
